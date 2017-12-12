@@ -1,5 +1,7 @@
 package day2
 
+import utils.getSpaceSeparatedMultiLineInput
+
 /*
 The spreadsheet consists of rows of apparently-random numbers. To make sure the recovery process is on the right track, they need you to calculate the spreadsheet's checksum. For each row, determine the difference between the largest value and the smallest value; the checksum is the sum of all of these differences.
 For example, given the following spreadsheet:
@@ -12,16 +14,7 @@ The third row's difference is 6.
 In this example, the spreadsheet's checksum would be 8 + 4 + 6 = 18.
 */
 fun main(args: Array<String>) {
-    println("Insert your input (empty line to end):")
-
-    val input = mutableListOf<List<Int>>()
-    while (true) {
-        val inputLine = readLine() ?: throw IllegalArgumentException()
-        if (inputLine.isEmpty())
-            break
-
-        input.add(inputLine.split(" ", "\t").map { it.toInt() })
-    }
+    val input = getSpaceSeparatedMultiLineInput()
 
     var captcha = 0
     input.forEach {

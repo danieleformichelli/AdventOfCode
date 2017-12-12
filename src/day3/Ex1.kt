@@ -1,5 +1,7 @@
 package day3
 
+import utils.getSingleLineInput
+
 /*
 You come across an experimental new kind of memory stored on an infinite two-dimensional grid.
 Each square on the grid is allocated in a spiral pattern starting at a location marked 1 and then counting up while spiraling outward. For example, the first few squares are allocated like this:
@@ -17,9 +19,7 @@ Data from square 1024 must be carried 31 steps.
 How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port?
 */
 fun main(args: Array<String>) {
-    print("Insert your input: ")
-
-    val input = readLine()?.toInt() ?: throw IllegalArgumentException()
+    val input = getSingleLineInput().toInt()
 
     var level = 0
     var lastValueForLevel = 1

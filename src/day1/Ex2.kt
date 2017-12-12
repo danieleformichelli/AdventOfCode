@@ -1,5 +1,7 @@
 package day1
 
+import utils.getSingleLineInput
+
 /*
 Now, instead of considering the next digit, it wants you to consider the digit halfway around the circular list. That is, if your list contains 10 items, only include a digit in your sum if the digit 10/2 = 5 steps forward matches it. Fortunately, your list has an even number of elements.
 For example:
@@ -10,8 +12,7 @@ For example:
 12131415 produces 4.
 */
 fun main(args: Array<String>) {
-    print("Insert your input: ")
-    val input = readLine() ?: throw IllegalArgumentException()
+    val input = getSingleLineInput()
     var previousIndex = input.length / 2
     var captcha = 0
     input.forEach {

@@ -1,5 +1,7 @@
 package day1
 
+import utils.getSingleLineInput
+
 /*
 The captcha requires you to review a sequence of digits (your puzzle input) and find the sum of all digits that match the next digit in the list. The list is circular, so the digit after the last digit is the first digit in the list.
 For example:
@@ -9,8 +11,7 @@ For example:
 91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
 */
 fun main(args: Array<String>) {
-    print("Insert your input: ")
-    val input = readLine() ?: throw IllegalArgumentException()
+    val input = getSingleLineInput()
     var previousChar = input.last()
     var captcha = 0
     input.forEach {
