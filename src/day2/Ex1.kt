@@ -17,17 +17,19 @@ fun main(args: Array<String>) {
     val input = getSpaceSeparatedMultiLineInput()
 
     var captcha = 0
-    input.forEach {
-        if (it.isEmpty())
+    input.forEach { line ->
+        if (line.isEmpty())
             throw IllegalArgumentException()
 
         var min = Int.MAX_VALUE
         var max = Int.MIN_VALUE
-        it.forEach {
-            if (it < min)
-                min = it
-            if (it > max)
-                max = it
+        line.forEach { value ->
+            val intVlue = value.toInt()
+
+            if (intVlue < min)
+                min = intVlue
+            if (intVlue > max)
+                max = intVlue
         }
 
         captcha += max - min

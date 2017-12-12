@@ -17,17 +17,19 @@ fun main(args: Array<String>) {
     val input = getSpaceSeparatedMultiLineInput()
 
     var captcha = 0
-    input.forEach {
-        if (it.isEmpty())
+    input.forEach { list ->
+        if (list.isEmpty())
             throw IllegalArgumentException()
 
-        it.subList(0, it.lastIndex).forEachIndexed lineFor@ { index, value ->
-            it.subList(index + 1, it.lastIndex + 1).forEach { innerValue ->
-                if (innerValue % value == 0) {
-                    captcha += innerValue / value
+        list.subList(0, list.lastIndex).forEachIndexed lineFor@ { index, value ->
+            val intValue = value.toInt()
+            list.subList(index + 1, list.lastIndex + 1).forEach { innerValue ->
+                val intInnerValue = innerValue.toInt()
+                if (intInnerValue % intValue == 0) {
+                    captcha += intInnerValue / intValue
                     return@lineFor
-                } else if (value % innerValue == 0) {
-                    captcha += value / innerValue
+                } else if (intValue % intInnerValue == 0) {
+                    captcha += intValue / intInnerValue
                     return@lineFor
                 }
             }
