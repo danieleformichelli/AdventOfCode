@@ -5,16 +5,21 @@ fun getSingleLineInput(): String {
     return readLine() ?: throw IllegalArgumentException()
 }
 
-fun getSpaceSeparatedMultiLineInput(): MutableList<List<String>> {
+fun getSpaceSeparatedSingleLineInput(): List<String> = getSingleLineInput().split(" ", "\t")
+
+fun getMultiLineInput(): List<String> {
     println("Insert your input (empty line to end):")
 
-    val input = mutableListOf<List<String>>()
+    val input = mutableListOf<String>()
     while (true) {
-        val inputLine = readLine() ?: throw IllegalArgumentException()
-        if (inputLine.isEmpty())
+        val line = readLine() ?: throw IllegalArgumentException()
+        if (line.isEmpty())
             break
 
-        input.add(inputLine.split(" ", "\t"))
+        input.add(line)
     }
     return input
 }
+
+fun getSpaceSeparatedMultiLineInput(): List<List<String>> =
+    getMultiLineInput().map { it.split(" ", "\t") }
