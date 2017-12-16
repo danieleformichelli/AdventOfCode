@@ -23,3 +23,8 @@ fun getMultiLineInput(): List<String> {
 
 fun getSpaceSeparatedMultiLineInput(): List<List<String>> =
     getMultiLineInput().map { it.split(" ", "\t") }
+
+fun MutableList<Int>.addAt(index: Int, increase: Int = 1) {
+    this.add(index, this[index] + increase)
+    this.removeAt(index + 1)
+}

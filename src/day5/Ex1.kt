@@ -1,6 +1,7 @@
 package day5
 
 import utils.getMultiLineInput
+import utils.addAt
 
 /*
 The message includes a list of the offsets for each jump. Jumps are relative: -1 moves to the previous instruction, and 2 skips the next one. Start at the first instruction in the list. The goal is to follow the jumps until one leads outside the list.
@@ -29,14 +30,9 @@ fun main(args: Array<String>) {
     while (index >= 0 && index < input.size) {
         ++steps
         val jump = input[index]
-        input.increaseAt(index)
+        input.addAt(index, 1)
         index += jump
     }
 
     println(steps)
-}
-
-fun MutableList<Int>.increaseAt(index: Int) {
-    this.add(index, this[index] + 1)
-    this.removeAt(index + 1)
 }
