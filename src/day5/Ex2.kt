@@ -1,7 +1,7 @@
 package day5
 
 import utils.getMultiLineInput
-import utils.addAt
+import utils.increaseAt
 
 /*
 Now, the jumps are even stranger: after each jump, if the offset was three or more, instead decrease it by 1. Otherwise, increase it by 1 as before.
@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
         ++steps
         val jump = input[index]
         val increase = if (jump >= 3) -1 else 1
-        input.addAt(index, increase)
+        input.increaseAt(index, increase)
         index += jump
     }
 
