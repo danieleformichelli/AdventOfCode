@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="118c66ef-c544-444c-afeb-984ecfaa1ba7" name="Default" comment="Added day13">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/day13/Ex1.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/day13/Ex2.kt" />
+    <list default="true" id="118c66ef-c544-444c-afeb-984ecfaa1ba7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/day1/Ex1.kt" afterPath="$PROJECT_DIR$/src/day1/Ex1_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day1/Ex2.kt" afterPath="$PROJECT_DIR$/src/day1/Ex1_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day10/Ex1.kt" afterPath="$PROJECT_DIR$/src/day10/Ex10_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day10/Ex2.kt" afterPath="$PROJECT_DIR$/src/day10/Ex10_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day11/Ex1.kt" afterPath="$PROJECT_DIR$/src/day11/Ex11_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day11/Ex2.kt" afterPath="$PROJECT_DIR$/src/day11/Ex11_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day12/Ex1.kt" afterPath="$PROJECT_DIR$/src/day12/Ex12_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day12/Ex2.kt" afterPath="$PROJECT_DIR$/src/day12/Ex12_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day13/Ex1.kt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/day13/Ex1.kt" afterPath="$PROJECT_DIR$/src/day13/Ex13_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day13/Ex2.kt" afterPath="$PROJECT_DIR$/src/day13/Ex13_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day2/Ex1.kt" afterPath="$PROJECT_DIR$/src/day2/Ex2_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day2/Ex2.kt" afterPath="$PROJECT_DIR$/src/day2/Ex2_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day3/Ex1.kt" afterPath="$PROJECT_DIR$/src/day3/Ex3_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day4/Ex1.kt" afterPath="$PROJECT_DIR$/src/day4/Ex4_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day4/Ex2.kt" afterPath="$PROJECT_DIR$/src/day4/Ex4_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day5/Ex1.kt" afterPath="$PROJECT_DIR$/src/day5/Ex5_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day5/Ex2.kt" afterPath="$PROJECT_DIR$/src/day5/Ex5_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day6/Ex1.kt" afterPath="$PROJECT_DIR$/src/day6/Ex6_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day6/Ex2.kt" afterPath="$PROJECT_DIR$/src/day6/Ex6_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day7/Ex1.kt" afterPath="$PROJECT_DIR$/src/day7/Ex7_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day7/Ex2.kt" afterPath="$PROJECT_DIR$/src/day7/Ex7_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day8/Ex1.kt" afterPath="$PROJECT_DIR$/src/day8/Ex8_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day8/Ex2.kt" afterPath="$PROJECT_DIR$/src/day8/Ex8_2.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day9/Ex1.kt" afterPath="$PROJECT_DIR$/src/day9/Ex9_1.kt" />
+      <change beforePath="$PROJECT_DIR$/src/day9/Ex2.kt" afterPath="$PROJECT_DIR$/src/day9/Ex9_2.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,20 +40,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Ex1.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day13/Ex1.kt">
+      <file leaf-file-name="Ex13_1.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/day13/Ex13_1.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
+            <state relative-caret-position="2751">
               <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="156" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ex2.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/day13/Ex2.kt">
+      <file leaf-file-name="Ex13_2.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/day13/Ex13_2.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
+            <state relative-caret-position="609">
               <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
               <folding />
             </state>
@@ -39,7 +63,7 @@
       <file leaf-file-name="Tuples.kt" pinned="false" current-in-tab="false">
         <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/util/Tuples.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
+            <state relative-caret-position="399">
               <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding />
             </state>
@@ -119,9 +143,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -471,25 +495,31 @@
       <option name="project" value="LOCAL" />
       <updated>1513722062372</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added day13">
+      <created>1513816510380</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1513816510380</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1618" height="880" extended-state="6" />
     <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21660182" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3300423" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21271077" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300423" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3568406" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3568406" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -498,6 +528,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -527,7 +558,8 @@
     <MESSAGE value="Added day10" />
     <MESSAGE value="Added day11" />
     <MESSAGE value="Added day12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added day12" />
+    <MESSAGE value="Added day13" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added day13" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -537,7 +569,7 @@
           <option name="timeStamp" value="50" />
         </breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/day8/Ex1.kt</url>
+          <url>file://$PROJECT_DIR$/src/day8/Ex8_1.kt</url>
           <line>47</line>
           <properties />
           <option name="timeStamp" value="55" />
@@ -632,21 +664,21 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day5/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day5/Ex5_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day5/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day5/Ex5_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
@@ -657,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4522">
           <caret line="266" column="17" lean-forward="false" selection-start-line="266" selection-start-column="17" selection-end-line="266" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -676,28 +707,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day6/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day6/Ex6_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day3/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day3/Ex3_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
@@ -719,35 +750,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day3/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day3/Ex3_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day1/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day1/Ex1_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="20" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day1/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day1/Ex1_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day2/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day2/Ex2_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day2/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day2/Ex2_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
@@ -755,28 +786,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/day3/Ex2.kt" />
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day5/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day5/Ex5_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day5/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day5/Ex5_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
@@ -791,14 +822,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day6/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day6/Ex6_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day6/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day6/Ex6_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
           <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
@@ -847,14 +878,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day7/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day7/Ex7_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1995">
           <caret line="96" column="1" lean-forward="false" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day9/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day9/Ex9_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
           <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
@@ -870,39 +901,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/day10/Day10.java" />
     <entry file="file://$PROJECT_DIR$/src/day10/Day10.kt" />
-    <entry file="file://$PROJECT_DIR$/src/day10/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day10/Ex10_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day10/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day10/Ex10_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day9/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day9/Ex9_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day7/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day7/Ex7_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1302">
           <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day8/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day8/Ex8_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1239">
           <caret line="59" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
@@ -910,19 +937,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day11/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day11/Ex11_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day11/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day11/Ex11_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,53 +955,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5292">
           <caret line="266" column="17" lean-forward="false" selection-start-line="266" selection-start-column="17" selection-end-line="266" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day12/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day12/Ex12_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day12/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day12/Ex12_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day8/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day8/Ex8_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/util/Tuples.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
+        <state relative-caret-position="399">
           <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day13/Ex1.kt">
+    <entry file="file://$PROJECT_DIR$/src/day13/Ex13_1.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
+        <state relative-caret-position="2751">
           <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="156" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day13/Ex2.kt">
+    <entry file="file://$PROJECT_DIR$/src/day13/Ex13_2.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
+        <state relative-caret-position="609">
           <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
           <folding />
         </state>
