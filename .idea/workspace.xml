@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="118c66ef-c544-444c-afeb-984ecfaa1ba7" name="Default" comment="Added day 14">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/day15/ex15_1.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/day15/ex15_2.kt" />
+    <list default="true" id="118c66ef-c544-444c-afeb-984ecfaa1ba7" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/day16/ex16_1.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/day16/ex16_2.kt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,7 +51,7 @@
       <file leaf-file-name="Ex14_2.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/day14/Ex14_2.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
+            <state relative-caret-position="81">
               <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
@@ -68,11 +68,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex15_2.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ex15_2.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/day15/ex15_2.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
               <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ex16_1.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/day16/ex16_1.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ex16_2.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/day16/ex16_2.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="108" lean-forward="false" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
               <folding />
             </state>
           </provider>
@@ -93,16 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="672">
               <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tuples.kt" pinned="false" current-in-tab="false">
-        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/util/Tuples.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -164,6 +174,9 @@
         <option value="$PROJECT_DIR$/src/day15/ex3_1.kt" />
         <option value="$PROJECT_DIR$/src/day15/ex15_1.kt" />
         <option value="$PROJECT_DIR$/src/day15/ex15_2.kt" />
+        <option value="$PROJECT_DIR$/src/day16/ex3_1.kt" />
+        <option value="$PROJECT_DIR$/src/day16/ex16_1.kt" />
+        <option value="$PROJECT_DIR$/src/day16/ex16_2.kt" />
       </list>
     </option>
   </component>
@@ -206,6 +219,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="day15" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AdventOfCode2017" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdventOfCode2017" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="day16" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -221,11 +240,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Daniele\IdeaProjects\AdventOfCode2017\src\day15" />
+      <recent name="C:\Users\Daniele\IdeaProjects\AdventOfCode2017\src\day16" />
       <recent name="C:\Users\Daniele\IdeaProjects\AdventOfCode2017\src" />
+      <recent name="C:\Users\Daniele\IdeaProjects\AdventOfCode2017\src\day15" />
       <recent name="C:\Users\Daniele\IdeaProjects\AdventOfCode2017\src\day14" />
       <recent name="C:\Users\Daniele\IdeaProjects\AdventOfCode2017\src\day13" />
-      <recent name="C:\Users\Daniele\IdeaProjects\AdventOfCode2017\src\day12" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -240,7 +259,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.day15.Ex15_2Kt">
+  <component name="RunManager" selected="Kotlin.day16.Ex16_1Kt">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -325,6 +344,17 @@
       <module name="AdventOfCode2017" />
       <envs />
     </configuration>
+    <configuration name="day16.Ex16_1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day16.Ex16_1Kt" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AdventOfCode2017" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -365,18 +395,20 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_1Kt" />
       <item index="1" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_2Kt" />
       <item index="2" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_1Kt" />
       <item index="3" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_2Kt" />
+      <item index="4" class="java.lang.String" itemvalue="Kotlin.day16.Ex16_1Kt" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_2Kt" />
-        <item index="1" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_1Kt" />
-        <item index="2" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_2Kt" />
-        <item index="3" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_1Kt" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Kotlin.day16.Ex16_1Kt" />
+        <item index="1" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_2Kt" />
+        <item index="2" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_1Kt" />
+        <item index="3" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_2Kt" />
+        <item index="4" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_1Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -534,18 +566,26 @@
       <option name="project" value="LOCAL" />
       <updated>1514027870118</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added day 15">
+      <created>1514471751363</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1514471751363</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1618" height="880" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300423" sideWeight="0.50259405" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3300423" sideWeight="0.49740598" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33050847" sideWeight="0.49740598" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -606,7 +646,8 @@
     <MESSAGE value="Added day13" />
     <MESSAGE value="Renamed files adding the day" />
     <MESSAGE value="Added day 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added day 14" />
+    <MESSAGE value="Added day 15" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added day 15" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,20 +757,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Collections.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37060">
-          <caret line="2180" column="0" lean-forward="false" selection-start-line="2180" selection-start-column="0" selection-end-line="2180" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Utils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/day6/Ex6_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1037,14 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day14/Ex14_2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/day15/ex15_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1057,6 +1076,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day14/Ex14_2.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day16/ex16_1.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day16/ex16_2.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="108" lean-forward="false" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
           <folding />
         </state>
       </provider>
