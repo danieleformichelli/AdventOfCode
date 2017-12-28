@@ -20,11 +20,15 @@ AoC 2017 becomes 33efeb34ea91902bb2f59c9920caa6cd.
 Treating your puzzle input as a string of ASCII characters, what is the Knot Hash of your puzzle input? Ignore any leading or trailing whitespace you might encounter.
 */
 fun main(args: Array<String>) {
+    val input = getSingleLineInput().toCharArray().map { it.toInt() }.toMutableList()
+    println(knotHash(input))
+}
+
+public fun knotHash(input: MutableList<Int>): String {
     val blockSize = 16
     val elements = 256
     val list = IntArray(elements, { it })
 
-    val input = getSingleLineInput().toCharArray().map { it.toInt() }.toMutableList()
     input.addAll(listOf(17, 31, 73, 47, 23))
 
     var index = 0
@@ -44,6 +48,5 @@ fun main(args: Array<String>) {
         }
         result += xor.toString(blockSize).padStart(2, '0')
     }
-
-    println(result)
+    return result
 }
