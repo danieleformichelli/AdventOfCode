@@ -2,13 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="118c66ef-c544-444c-afeb-984ecfaa1ba7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/day16/ex16_1.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/day16/ex16_2.kt" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdventOfCode2017.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AdventOfCode2017.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day1/Ex1_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day1/Ex1_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day1/Ex1_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day1/Ex1_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day10/Ex10_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day10/Ex10_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day10/Ex10_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day10/Ex10_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day11/Ex11_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day11/Ex11_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day11/Ex11_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day11/Ex11_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day12/Ex12_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day12/Ex12_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day12/Ex12_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day12/Ex12_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day13/Ex13_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day13/Ex13_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day13/Ex13_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day13/Ex13_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day14/Ex14_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day14/Ex14_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day14/Ex14_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day14/Ex14_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day15/ex15_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day15/ex15_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day15/ex15_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day15/ex15_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day16/ex16_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day16/ex16_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day16/ex16_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day16/ex16_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day2/Ex2_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day2/Ex2_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day2/Ex2_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day2/Ex2_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day3/Ex3_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day3/Ex3_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day4/Ex4_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day4/Ex4_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day4/Ex4_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day4/Ex4_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day5/Ex5_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day5/Ex5_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day5/Ex5_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day5/Ex5_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day6/Ex6_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day6/Ex6_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day6/Ex6_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day6/Ex6_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day7/Ex7_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day7/Ex7_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day7/Ex7_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day7/Ex7_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day8/Ex8_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day8/Ex8_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day8/Ex8_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day8/Ex8_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day9/Ex9_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day9/Ex9_1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day9/Ex9_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day9/Ex9_2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/utils/Utils.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,31 +48,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Ex13_1.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day13/Ex13_1.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day13/Ex13_2.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2751">
-              <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="156" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="527">
+              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ex13_2.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day13/Ex13_2.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day14/Ex14_1.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ex14_1.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day14/Ex14_1.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="42" column="5" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="697">
+              <caret line="42" column="5" selection-start-line="24" selection-start-column="31" selection-end-line="42" selection-end-column="5" />
               <folding>
                 <element signature="e#15#68#0" expanded="true" />
               </folding>
@@ -48,72 +69,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ex14_2.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day14/Ex14_2.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day14/Ex14_2.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1071">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex15_1.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day15/ex15_1.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day15/ex15_1.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="52" column="7" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="884">
+              <caret line="52" column="7" selection-start-line="52" selection-end-line="52" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex15_2.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day15/ex15_2.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day15/ex15_2.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="986">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex16_1.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day16/ex16_1.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day16/ex16_1.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex16_2.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/day16/ex16_2.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day16/ex16_2.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="108" lean-forward="false" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
-              <folding />
+            <state relative-caret-position="85">
+              <caret line="5" column="108" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex3_1.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day3/ex3_1.kt">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ex10_2.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/day10/Ex10_2.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day3/Ex3_1.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="306">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day10/Ex10_2.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -177,60 +200,51 @@
         <option value="$PROJECT_DIR$/src/day16/ex3_1.kt" />
         <option value="$PROJECT_DIR$/src/day16/ex16_1.kt" />
         <option value="$PROJECT_DIR$/src/day16/ex16_2.kt" />
+        <option value="$PROJECT_DIR$/src/com/formichelli/adventofcode/year_2017/day16/ex16_2.kt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="500" />
-    <option name="y" value="-12" />
-    <option name="width" value="816" />
-    <option name="height" value="870" />
+    <option name="x" value="841" />
+    <option name="width" value="768" />
+    <option name="height" value="908" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="AdventOfCode2017" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode2017" type="462c0819:PsiDirectoryNode" />
+              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AdventOfCode2017" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode2017" type="462c0819:PsiDirectoryNode" />
+              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AdventOfCode2017" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode2017" type="462c0819:PsiDirectoryNode" />
+              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="day15" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AdventOfCode2017" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode2017" type="462c0819:PsiDirectoryNode" />
+              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="day16" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
@@ -259,115 +273,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.day16.Ex16_1Kt">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="day14.Ex14_1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day14.Ex14_1Kt" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AdventOfCode2017" />
-      <envs />
-    </configuration>
-    <configuration name="day14.Ex14_2Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day14.Ex14_2Kt" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AdventOfCode2017" />
-      <envs />
-    </configuration>
-    <configuration name="day15.Ex15_1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day15.Ex15_1Kt" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AdventOfCode2017" />
-      <envs />
-    </configuration>
-    <configuration name="day15.Ex15_2Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day15.Ex15_2Kt" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AdventOfCode2017" />
-      <envs />
-    </configuration>
-    <configuration name="day16.Ex16_1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day16.Ex16_1Kt" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AdventOfCode2017" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
+  <component name="RunManager" selected="Kotlin.com.formichelli.adventofcode.year_2017.day16.Ex16_1Kt">
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -395,25 +301,116 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_1Kt" />
-      <item index="1" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_2Kt" />
-      <item index="2" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_1Kt" />
-      <item index="3" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_2Kt" />
-      <item index="4" class="java.lang.String" itemvalue="Kotlin.day16.Ex16_1Kt" />
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.formichelli.adventofcode.year_2017.day14.Ex14_1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode2017" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.formichelli.adventofcode.year_2017.day14.Ex14_1Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.formichelli.adventofcode.year_2017.day14.Ex14_2Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode2017" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.formichelli.adventofcode.year_2017.day14.Ex14_2Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.formichelli.adventofcode.year_2017.day15.Ex15_1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode2017" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.formichelli.adventofcode.year_2017.day15.Ex15_1Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.formichelli.adventofcode.year_2017.day15.Ex15_2Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode2017" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.formichelli.adventofcode.year_2017.day15.Ex15_2Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.formichelli.adventofcode.year_2017.day16.Ex16_1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode2017" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.formichelli.adventofcode.year_2017.day16.Ex16_1Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day14.Ex14_1Kt" />
+      <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day14.Ex14_2Kt" />
+      <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day15.Ex15_1Kt" />
+      <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day15.Ex15_2Kt" />
+      <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day16.Ex16_1Kt" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Kotlin.day16.Ex16_1Kt" />
-        <item index="1" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_2Kt" />
-        <item index="2" class="java.lang.String" itemvalue="Kotlin.day15.Ex15_1Kt" />
-        <item index="3" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_2Kt" />
-        <item index="4" class="java.lang.String" itemvalue="Kotlin.day14.Ex14_1Kt" />
+      <list>
+        <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day16.Ex16_1Kt" />
+        <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day15.Ex15_2Kt" />
+        <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day15.Ex15_1Kt" />
+        <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day14.Ex14_2Kt" />
+        <item itemvalue="Kotlin.com.formichelli.adventofcode.year_2017.day14.Ex14_1Kt" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -577,52 +574,36 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1618" height="880" extended-state="6" />
-    <editor active="true" />
+    <frame x="71" y="-7" width="1216" height="734" extended-state="6" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300423" sideWeight="0.50259405" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33050847" sideWeight="0.49740598" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23605707" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3568406" sideWeight="0.49740598" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3568406" sideWeight="0.50259405" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3568406" sideWeight="0.49740598" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300423" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23605707" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" order="0" visible="true" weight="0.24048443" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3300423" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49740598" visible="true" weight="0.3568406" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50259405" side_tool="true" visible="true" weight="0.3554817" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32863188" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added intellij project and exercise 1_1" />
@@ -657,18 +638,13 @@
           <option name="timeStamp" value="50" />
         </breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/day8/Ex8_1.kt</url>
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day8/Ex8_1.kt</url>
           <line>47</line>
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="80" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -757,350 +733,275 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/day6/Ex6_1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day3/ex3_1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day3/Ex2.kt" />
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Strings.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="907" column="0" lean-forward="false" selection-start-line="907" selection-start-column="0" selection-end-line="907" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Strings.kt" />
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/Console.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="66" column="1" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="1" />
+          <caret line="66" column="1" selection-start-line="66" selection-end-line="66" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day1/Ex1_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day1/Ex1_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="20" />
+          <caret line="23" column="20" lean-forward="true" selection-start-line="22" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day1/Ex1_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day1/Ex1_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day2/Ex2_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day2/Ex2_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
-          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day2/Ex2_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day2/Ex2_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/day3/Ex2.kt" />
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day4/Ex4_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="18" selection-end-column="29" />
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day4/Ex4_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day4/Ex4_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day5/Ex5_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day5/Ex5_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day5/Ex5_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day5/Ex5_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Utils.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/utils/Utils.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day6/Ex6_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day6/Ex6_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
-          <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day6/Ex6_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day6/Ex6_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/invoke/MethodHandleNatives.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/invoke/MemberName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19488">
-          <caret line="1045" column="0" lean-forward="false" selection-start-line="1045" selection-start-column="0" selection-end-line="1045" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/LinkedHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13545">
-          <caret line="683" column="0" lean-forward="false" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12831">
-          <caret line="651" column="0" lean-forward="false" selection-start-line="651" selection-start-column="0" selection-end-line="651" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/invoke/MethodHandleNatives.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/invoke/MemberName.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/LinkedHashMap.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Integer.java" />
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/jvm/internal/Intrinsics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Collections.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31122">
-          <caret line="1482" column="0" lean-forward="false" selection-start-line="1482" selection-start-column="0" selection-end-line="1482" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day7/Ex7_2.kt">
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Collections.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day7/Ex7_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1995">
-          <caret line="96" column="1" lean-forward="false" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+          <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day9/Ex9_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day9/Ex9_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
-          <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Arrays.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="98" column="18" lean-forward="false" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/day10/Day10.java" />
     <entry file="file://$PROJECT_DIR$/src/day10/Day10.kt" />
-    <entry file="file://$PROJECT_DIR$/src/day10/Ex10_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day10/Ex10_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day9/Ex9_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day9/Ex9_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day7/Ex7_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day7/Ex7_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1302">
-          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day8/Ex8_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day8/Ex8_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1239">
-          <caret line="59" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding />
+          <caret line="59" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day11/Ex11_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day11/Ex11_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day11/Ex11_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day11/Ex11_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Collections.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5292">
-          <caret line="266" column="17" lean-forward="false" selection-start-line="266" selection-start-column="17" selection-end-line="266" selection-end-column="17" />
+          <caret line="266" column="17" selection-start-line="266" selection-start-column="17" selection-end-line="266" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day12/Ex12_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day12/Ex12_1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
-          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day12/Ex12_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day12/Ex12_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day8/Ex8_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day8/Ex8_2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="45" />
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/util/Tuples.kt">
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/util/Tuples.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day13/Ex13_1.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="2227">
+          <caret line="131" selection-start-line="131" selection-end-line="156" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day13/Ex13_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day13/Ex13_2.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2751">
-          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="156" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="527">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day13/Ex13_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day14/Ex14_1.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day10/Ex10_2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day14/Ex14_1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="42" column="5" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="697">
+          <caret line="42" column="5" selection-start-line="24" selection-start-column="31" selection-end-line="42" selection-end-column="5" />
           <folding>
             <element signature="e#15#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day3/ex3_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day14/Ex14_2.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="1071">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day15/ex15_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day15/ex15_1.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="52" column="7" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="884">
+          <caret line="52" column="7" selection-start-line="52" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day15/ex15_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day15/ex15_2.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="986">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day14/Ex14_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day16/ex16_1.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day16/ex16_1.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day3/Ex3_1.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day16/ex16_2.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day10/Ex10_2.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="108" lean-forward="false" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
-          <folding />
+        <state relative-caret-position="544">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/formichelli/adventofcode/year_2017/day16/ex16_2.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="108" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
         </state>
       </provider>
     </entry>

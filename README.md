@@ -1,2 +1,2 @@
-# AdventOfCode2017
-Kotlin solutions for advent of code 2017
+# AdventOfCode201
+Kotlin solutions for the advent of code (https://adventofcode.com/) starting from 2017
