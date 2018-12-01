@@ -1,5 +1,16 @@
 package com.formichelli.adventofcode.utils
 
+import java.nio.file.Files
+import java.nio.file.Paths
+
+fun readSingleLineFromFile(filename: String): String {
+    return readLinesFromFile(filename)[0]
+}
+
+fun readLinesFromFile(filename: String): List<String> {
+    return Files.readAllLines(Paths.get(ClassLoader.getSystemResource(filename).file.substring(1)))
+}
+
 fun getSingleLineInput(): String {
     print("Insert your input: ")
     return readLine() ?: throw IllegalArgumentException()
@@ -22,7 +33,7 @@ fun getMultiLineInput(): List<String> {
 }
 
 fun getSpaceSeparatedMultiLineInput(): List<List<String>> =
-    getMultiLineInput().map { it.split(" ", "\t") }
+        getMultiLineInput().map { it.split(" ", "\t") }
 
 fun MutableList<Int>.increaseAt(index: Int, increase: Int) {
     this.add(index, this[index] + increase)
