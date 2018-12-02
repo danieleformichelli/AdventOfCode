@@ -1,24 +1,21 @@
 package com.formichelli.adventofcode.year2018
 
-import com.formichelli.adventofcode.utils.readLinesFromFile
+import com.formichelli.adventofcode.utils.readIntsFromFile
 import org.junit.Assert
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.Parameterized
 
-@RunWith(Parameterized::class)
-class Day1Test(private val result: Int, private val inputFile: String) {
-    companion object {
-        @JvmStatic
-        @Parameterized.Parameters
-        fun data(): Collection<Array<Any>> {
-            return listOf(
-                    arrayOf(486, "day1input.txt"))
-        }
+class Day1Test {
+    private val inputFile = "day1input.txt"
+    private val part1Result = 486
+    private val part2Result = 2
+
+    @Test
+    fun part1() {
+        Assert.assertEquals("Resulting frequency of part 1 should be $part1Result", part1Result, Day1.part1(readIntsFromFile(inputFile)))
     }
 
     @Test
-    fun step1() {
-        Assert.assertEquals("Resulting frequency should be $result", result, Day1.step1(readLinesFromFile(inputFile)))
+    fun part2() {
+        Assert.assertEquals("Resulting frequency of part 2 should be $part2Result", part2Result, Day1.part2(readIntsFromFile(inputFile)))
     }
 }

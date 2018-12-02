@@ -11,6 +11,10 @@ fun readLinesFromFile(filename: String): List<String> {
     return Files.readAllLines(Paths.get(ClassLoader.getSystemResource(filename).file.substring(1)))
 }
 
+fun readIntsFromFile(filename: String): List<Int> {
+    return Files.readAllLines(Paths.get(ClassLoader.getSystemResource(filename).file.substring(1))).map { it.toInt() }.toList()
+}
+
 fun getSingleLineInput(): String {
     print("Insert your input: ")
     return readLine() ?: throw IllegalArgumentException()
