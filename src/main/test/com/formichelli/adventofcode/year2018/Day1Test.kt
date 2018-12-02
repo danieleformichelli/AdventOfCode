@@ -7,7 +7,7 @@ import org.junit.Test
 class Day1Test {
     private val inputFile = "day1input.txt"
     private val part1Result = 486
-    private val part2Result = 2
+    private val part2Result = 69285
 
     @Test
     fun part1() {
