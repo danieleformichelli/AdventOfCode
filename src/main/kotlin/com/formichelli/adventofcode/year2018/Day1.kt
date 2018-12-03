@@ -28,7 +28,7 @@ object Day1 {
     -1, -2, -3 results in -6
     Starting with a frequency of zero, what is the resulting frequency after all of the changes in frequency have been applied?
      */
-    fun part1(input: List<Int>) = input.sum()
+    fun part1(frequencies: List<Int>) = frequencies.sum()
 
     /*
     --- Part Two ---
@@ -53,12 +53,12 @@ object Day1 {
     +7, +7, -2, -7, -4 first reaches 14 twice.
     What is the first frequency your device reaches twice?
      */
-    fun part2(input: List<Int>): Int {
+    fun part2(frequencies: List<Int>): Int {
         val frequenciesCount = HashMap<Int, Int>()
         var currentFrequency = 0
 
         while (true) {
-            input.forEach {
+            frequencies.forEach {
                 currentFrequency += it
                 val frequencyCount = frequenciesCount.getOrDefault(currentFrequency, 0)
                 if (frequencyCount != 0) {

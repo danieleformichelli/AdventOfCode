@@ -43,11 +43,11 @@ object Day3 {
 
     If the Elves all proceed with their own plans, none of them will have enough fabric. How many square inches of fabric are within two or more claims?
      */
-    fun part1(input: List<String>): Int {
+    fun part1(claims: List<String>): Int {
         val claimedCount = HashMap<Pair<Int, Int>, Int>()
         var claimedMoreThanOnceCount = 0
 
-        input.map { parseClaim(it) }.forEach { claim ->
+        claims.map { parseClaim(it) }.forEach { claim ->
             for (x in claim.x until claim.x + claim.width) {
                 for (y in claim.y until claim.y + claim.height) {
                     val coordinates = Pair(x, y)
@@ -71,11 +71,11 @@ object Day3 {
 
     What is the ID of the only claim that doesn't overlap?
      */
-    fun part2(input: List<String>): String {
-        val claimedPatches = HashMap<Pair<Int, Int>, String>()
-        val nonOverlappingClaims = HashSet<String>()
+    fun part2(claims: List<String>): Int {
+        val claimedPatches = HashMap<Pair<Int, Int>, Int>()
+        val nonOverlappingClaims = HashSet<Int>()
 
-        input.map { parseClaim(it) }.forEach { claim ->
+        claims.map { parseClaim(it) }.forEach { claim ->
             var overlaps = false
             for (x in claim.x until claim.x + claim.width) {
                 for (y in claim.y until claim.y + claim.height) {
@@ -98,11 +98,11 @@ object Day3 {
         return nonOverlappingClaims.iterator().next()
     }
 
-    fun parseClaim(claimStr: String): Claim {
+    private fun parseClaim(claimStr: String): Claim {
         val claimSplit = claimStr.split(" @ ", ": ", ",", "x")
-        return Claim(claimSplit[0], claimSplit[1].toInt(), claimSplit[2].toInt(), claimSplit[3].toInt(), claimSplit[4].toInt())
+        return Claim(claimSplit[0].substring(1).toInt(), claimSplit[1].toInt(), claimSplit[2].toInt(), claimSplit[3].toInt(), claimSplit[4].toInt())
     }
 
-    data class Claim(val id: String, val x: Int, val y: Int, val width: Int, val height: Int)
+    data class Claim(val id: Int, val x: Int, val y: Int, val width: Int, val height: Int)
 }
 

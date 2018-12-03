@@ -9,7 +9,7 @@ object Day2 {
 
     "Wouldn't they have had enough fabric to fill several boxes in the warehouse? They'd be stored together, so the box IDs should be similar. Too bad it would take forever to search the warehouse for two similar box IDs..." They walk too far away to hear any more.
 
-    Late at night, you sneak to the warehouse - who knows what kinds of paradoxes you could cause if you were discovered - and use your fancy wrist device to quickly scan every box and produce a list of the likely candidates (your puzzle input).
+    Late at night, you sneak to the warehouse - who knows what kinds of paradoxes you could cause if you were discovered - and use your fancy wrist device to quickly scan every box and produce a list of the likely candidates (your puzzle boxIds).
 
     To make sure you didn't miss any, you scan the likely candidate boxes again, counting the number that have an ID containing exactly two of any letter and then separately counting those with exactly three of any letter. You can multiply those two counts together to get a rudimentary checksum and compare it to what your device predicts.
 
@@ -24,11 +24,11 @@ object Day2 {
     ababab contains three a and three b, but it only counts once.
     Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which appears exactly three times. Multiplying these together produces a checksum of 4 * 3 = 12.
      */
-    fun part1(input: List<String>): Int {
+    fun part1(boxIds: List<String>): Int {
         var twoCount = 0
         var threeCount = 0
 
-        input.forEach {
+        boxIds.forEach {
             val lettersCount = HashMap<Char, Int>()
             it.forEach { char ->
                 lettersCount[char] = lettersCount.getOrDefault(char, 0) + 1
@@ -63,11 +63,11 @@ object Day2 {
 
     What letters are common between the two correct box IDs? (In the example above, this is found by removing the differing character from either ID, producing fgij.)
      */
-    fun part2(input: List<String>): String {
-        input.forEachIndexed { index, box1 ->
-            for (i in index + 1 until input.size) {
-                if (differsBy1Char(box1, input[i])) {
-                    return commonChars(box1, input[i])
+    fun part2(boxIds: List<String>): String {
+        boxIds.forEachIndexed { index, box1 ->
+            for (i in index + 1 until boxIds.size) {
+                if (differsBy1Char(box1, boxIds[i])) {
+                    return commonChars(box1, boxIds[i])
                 }
             }
         }
