@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day9
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Now, you're ready to remove the garbage.
@@ -15,7 +15,7 @@ To prove you've removed it, you need to count all of the characters within the g
 How many non-canceled characters are within the garbage in your puzzle input?
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput()
+    val input = Utils.getSingleLineInput()
 
     var result = 0
     var ignoreNext = false

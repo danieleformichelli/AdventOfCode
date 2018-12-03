@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day5
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 import com.formichelli.adventofcode.utils.increaseAt
 
 /*
@@ -23,7 +23,7 @@ In this example, the exit is reached in 5 steps.
 How many steps does it take to reach the exit?
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput().map { it.toInt() }.toMutableList()
+    val input = Utils.getMultiLineInput().map { it.toInt() }.toMutableList()
 
     var index = 0
     var steps = 0

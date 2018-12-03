@@ -1,7 +1,7 @@
 package com.formichelli.adventofcode.year2017.day6
 
+import com.formichelli.adventofcode.utils.Utils
 import com.formichelli.adventofcode.utils.increaseAt
-import com.formichelli.adventofcode.utils.getSpaceSeparatedSingleLineInput
 
 /*
 In this area, there are sixteen memory banks; each memory bank can hold any number of blocks. The goal of the reallocation routine is to balance the blocks between the memory banks.
@@ -17,7 +17,7 @@ The third bank is chosen, and the same thing happens: 2 4 1 2.
 At this point, we've reached a state we've seen before: 2 4 1 2 was already seen. The infinite loop is detected after the fifth block redistribution cycle, and so the answer in this example is 5.
 */
 fun main(args: Array<String>) {
-    val input = getSpaceSeparatedSingleLineInput().map { it.toInt() }.toMutableList()
+    val input = Utils.getSpaceSeparatedSingleLineInput().map { it.toInt() }.toMutableList()
 
     var steps = 0
     val previousConfigurations = mutableSetOf<String>()

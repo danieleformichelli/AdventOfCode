@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day2
 
-import com.formichelli.adventofcode.utils.getSpaceSeparatedMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 The spreadsheet consists of rows of apparently-random numbers. To make sure the recovery process is on the right track, they need you to calculate the spreadsheet's checksum. For each row, determine the difference between the largest value and the smallest value; the checksum is the sum of all of these differences.
@@ -14,7 +14,7 @@ The third row's difference is 6.
 In this example, the spreadsheet's checksum would be 8 + 4 + 6 = 18.
 */
 fun main(args: Array<String>) {
-    val input = getSpaceSeparatedMultiLineInput()
+    val input = Utils.getSpaceSeparatedMultiLineInput()
 
     var captcha = 0
     input.forEach { line ->

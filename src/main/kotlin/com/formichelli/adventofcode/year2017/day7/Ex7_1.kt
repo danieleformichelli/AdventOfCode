@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day7
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Wandering further through the circuits of the computer, you come upon a tower of programs that have gotten themselves into a bit of trouble. A recursive algorithm has gotten out of hand, and now they're balanced precariously in a large tower.
@@ -46,7 +46,7 @@ In this example, tknk is at the bottom of the tower (the bottom program), and is
 Before you're ready to help them, you need to make sure your information is correct. What is the name of the bottom program?
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput()
+    val input = Utils.getMultiLineInput()
 
     // put all leaf and programs that are on top of other program in the set
     val notAtBottomPrograms = mutableSetOf<String>()
@@ -54,8 +54,7 @@ fun main(args: Array<String>) {
         val split = it.split("->")
         if (split.size == 1) {
             notAtBottomPrograms.add(it.split(" ")[0])
-        }
-        else {
+        } else {
             split[1].split(",").forEach {
                 notAtBottomPrograms.add(it.trim())
             }

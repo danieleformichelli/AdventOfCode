@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day13
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Now, you need to pass through the firewall without being caught - easier said than done.
@@ -8,7 +8,7 @@ You can't control the speed of the packet, but you can delay it any number of pi
 In the example above, if you delay 10 picoseconds (picoseconds 0 - 9), you won't get caught:
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput()
+    val input = Utils.getMultiLineInput()
 
     val scannerRanges = mutableListOf<Int>()
     val scannerTripLengths = mutableListOf<Int>()

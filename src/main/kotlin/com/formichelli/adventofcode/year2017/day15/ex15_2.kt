@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day15
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 In the interest of trying to align a little better, the generators get more picky about the numbers they actually give to the judge.
@@ -43,7 +43,7 @@ This change makes the generators much slower, and the judge is getting impatient
 After 5 million pairs, but using this new generator logic, what is the judge's final count?
 */
 fun main(args: Array<String>) {
-    val previousValues = getMultiLineInput().map { it.toLong() }.toMutableList()
+    val previousValues = Utils.getMultiLineInput().map { it.toLong() }.toMutableList()
 
     var matches = 0
     for (i in 1..5_000_000) {

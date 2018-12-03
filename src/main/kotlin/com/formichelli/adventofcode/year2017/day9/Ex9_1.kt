@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day9
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 A large stream blocks your path. According to the locals, it's not safe to cross the stream at the moment because it's full of garbage. You look down at the stream; rather than water, you discover that it's a stream of characters.
@@ -37,7 +37,7 @@ Your goal is to find the total score for all groups in your input. Each group is
 What is the total score for all groups in your input?
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput()
+    val input = Utils.getSingleLineInput()
 
     var result = 0
     var groupLevel = 0

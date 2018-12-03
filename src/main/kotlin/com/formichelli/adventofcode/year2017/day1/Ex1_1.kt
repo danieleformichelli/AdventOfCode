@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day1
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 The captcha requires you to review a sequence of digits (your puzzle input) and find the sum of all digits that match the next digit in the list. The list is circular, so the digit after the last digit is the first digit in the list.
@@ -11,7 +11,7 @@ For example:
 91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput()
+    val input = Utils.getSingleLineInput()
     var previousChar = input.last()
     var captcha = 0
     input.forEach {

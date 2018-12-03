@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day1
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Now, instead of considering the next digit, it wants you to consider the digit halfway around the circular list. That is, if your list contains 10 items, only include a digit in your sum if the digit 10/2 = 5 steps forward matches it. Fortunately, your list has an even number of elements.
@@ -12,7 +12,7 @@ For example:
 12131415 produces 4.
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput()
+    val input = Utils.getSingleLineInput()
     var previousIndex = input.length / 2
     var captcha = 0
     input.forEach {

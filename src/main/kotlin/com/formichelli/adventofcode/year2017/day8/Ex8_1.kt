@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day8
 
-import com.formichelli.adventofcode.utils.getSpaceSeparatedMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Each instruction consists of several parts: the register to modify, whether to increase or decrease that register's value, the amount by which to increase or decrease it, and a condition. If the condition fails, skip the instruction without modifying the register. The registers all start at 0. The instructions look like this:
@@ -60,7 +60,7 @@ enum class Condition {
 }
 
 fun main(args: Array<String>) {
-    val input = getSpaceSeparatedMultiLineInput()
+    val input = Utils.getSpaceSeparatedMultiLineInput()
 
     val registers = mutableMapOf<String, Int>()
     input.forEach {

@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day10
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 You come across some programs that are trying to implement a software emulation of a hash based on knot-tying. The hash these programs are implementing isn't very strong, but you decide to help them anyway. You make a mental note to remind the Elves later not to invent their own cryptographic functions.
@@ -33,9 +33,9 @@ However, you should instead use the standard list size of 256 (with values 0 to 
 */
 fun main(args: Array<String>) {
     val elements = 256
-    val list = IntArray(elements, { it })
+    val list = IntArray(elements) { it }
 
-    val input = getSingleLineInput().split(",").map { it.trim().toInt() }
+    val input = Utils.getSingleLineInput().split(",").map { it.trim().toInt() }
 
     var index = 0
     var skipSize = 0

@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2018
 
-import com.formichelli.adventofcode.utils.readLinesFromFile
+import com.formichelli.adventofcode.utils.Utils
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -14,7 +14,7 @@ class Day2Test(private val part1Result: Int, private val part2Result: String, pr
         fun data(): Collection<Array<Any>> {
             return listOf(
                     arrayOf(12, "fgij", listOf("abcdef", "bababc", "abbcde", "abcccd", "aabcdd", "abcdee", "ababab"), listOf("abcde", "fghij", "klmno", "pqrst", "fguij", "axcye", "wvxyz")),
-                    arrayOf(6916, "oeylbtcxjqnzhgyylfapviusr", readLinesFromFile("day2input.txt"), readLinesFromFile("day2input.txt"))
+                    arrayOf(6916, "oeylbtcxjqnzhgyylfapviusr", Utils.readLinesFromFile("day2input.txt"), Utils.readLinesFromFile("day2input.txt"))
             )
         }
     }

@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day13
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 You need to cross a vast firewall. The firewall consists of several layers, each with a security scanner that moves back and forth across the layer. To succeed, you must not be detected by a scanner.
@@ -130,7 +130,7 @@ The severity of getting caught on a layer is equal to its depth multiplied by it
 Given the details of the firewall you've recorded, if you leave immediately, what is the severity of your whole trip?
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput()
+    val input = Utils.getMultiLineInput()
 
     val scannerRanges = mutableListOf<Int>()
     val scannerTripLengths = mutableListOf<Int>()

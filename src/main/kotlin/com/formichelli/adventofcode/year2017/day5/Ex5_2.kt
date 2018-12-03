@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day5
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 import com.formichelli.adventofcode.utils.increaseAt
 
 /*
@@ -9,7 +9,7 @@ Using this rule with the above example, the process now takes 10 steps, and the 
 How many steps does it now take to reach the exit?
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput().map { it.toInt() }.toMutableList()
+    val input = Utils.getMultiLineInput().map { it.toInt() }.toMutableList()
 
     var index = 0
     var steps = 0

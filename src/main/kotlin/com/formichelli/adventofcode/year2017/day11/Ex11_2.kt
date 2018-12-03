@@ -1,12 +1,12 @@
 package com.formichelli.adventofcode.year2017.day11
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 How many steps away is the furthest he ever got from his starting position?
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput().split(",").map { Direction.fromString(it.trim()) }
+    val input = Utils.getSingleLineInput().split(",").map { Direction.fromString(it.trim()) }
 
     var y = 0
     var x = 0

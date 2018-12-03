@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day15
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Here, you encounter a pair of dueling generators. The generators, called generator A and generator B, are trying to agree on a sequence of numbers. However, one of them is malfunctioning, and so the sequences don't always match.
@@ -34,7 +34,7 @@ To get a significant sample, the judge would like to consider 40 million pairs. 
 After 40 million pairs, what is the judge's final count?
 */
 fun main(args: Array<String>) {
-    val previousValues = getMultiLineInput().map { it.toLong() }.toMutableList()
+    val previousValues = Utils.getMultiLineInput().map { it.toLong() }.toMutableList()
 
     var matches = 0
     for (i in 1..40_000_000) {

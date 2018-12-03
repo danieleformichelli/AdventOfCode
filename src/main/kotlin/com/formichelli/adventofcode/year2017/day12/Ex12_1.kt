@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day12
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Walking along the memory banks of the stream, you find a small village that is experiencing a little confusion: some programs can't communicate with each other.
@@ -27,7 +27,7 @@ Therefore, a total of 6 programs are in this group; all but program 1, which has
 How many programs are in the group that contains program ID 0?
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput()
+    val input = Utils.getMultiLineInput()
 
     val programMap = mutableMapOf<Int,List<Int>>()
 

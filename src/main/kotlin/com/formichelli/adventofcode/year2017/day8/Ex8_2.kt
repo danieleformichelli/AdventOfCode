@@ -1,12 +1,12 @@
 package com.formichelli.adventofcode.year2017.day8
 
-import com.formichelli.adventofcode.utils.getSpaceSeparatedMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 To be safe, the CPU also needs to know the highest value held in any register during this process so that it can decide how much memory to allocate to these operations
 */
 fun main(args: Array<String>) {
-    val input = getSpaceSeparatedMultiLineInput()
+    val input = Utils.getSpaceSeparatedMultiLineInput()
 
     val registers = mutableMapOf<String, Int>()
     var allTimeMax = 0

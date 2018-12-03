@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day10
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 The logic you've constructed forms a single round of the Knot Hash algorithm; running the full thing requires many of these rounds. Some input and output processing is also required.
@@ -20,7 +20,7 @@ AoC 2017 becomes 33efeb34ea91902bb2f59c9920caa6cd.
 Treating your puzzle input as a string of ASCII characters, what is the Knot Hash of your puzzle input? Ignore any leading or trailing whitespace you might encounter.
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput().toCharArray().map { it.toInt() }.toMutableList()
+    val input = Utils.getSingleLineInput().toCharArray().map { it.toInt() }.toMutableList()
     println(knotHash(input))
 }
 

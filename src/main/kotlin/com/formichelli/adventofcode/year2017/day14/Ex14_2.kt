@@ -1,7 +1,7 @@
 package com.formichelli.adventofcode.year2017.day14
 
+import com.formichelli.adventofcode.utils.Utils
 import com.formichelli.adventofcode.year2017.day10.knotHash
-import com.formichelli.adventofcode.utils.getSingleLineInput
 
 /*
 Now, all the defragmenter needs to know is the number of regions. A region is a group of used squares that are all adjacent, not including diagonals. Every used square is in exactly one region: lone used squares form their own isolated regions, while several adjacent squares all count as a single region.
@@ -38,8 +38,8 @@ fun main(args: Array<String>) {
             'e' to listOf(-1, -1, -1, 0),
             'f' to listOf(-1, -1, -1, -1)
     )
-    val input = getSingleLineInput()
-    val rows = (0 until 128).map { input + "-" + it }
+    val input = Utils.getSingleLineInput()
+    val rows = (0 until 128).map { "$input-$it" }
 
     val charGrid = rows.map { knotHash(it.map { it.toInt() }.toMutableList()) }
     val bitsGrid = mutableListOf<MutableList<Int>>()

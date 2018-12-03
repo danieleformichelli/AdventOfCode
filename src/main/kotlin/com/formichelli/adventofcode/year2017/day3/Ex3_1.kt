@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day3
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 You come across an experimental new kind of memory stored on an infinite two-dimensional grid.
@@ -19,7 +19,7 @@ Data from square 1024 must be carried 31 steps.
 How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port?
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput().toInt()
+    val input = Utils.getSingleLineInput().toInt()
 
     var level = 0
     var lastValueForLevel = 1

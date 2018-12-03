@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day16
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 You come upon a very unusual sight; a group of programs here appear to be dancing.
@@ -17,7 +17,7 @@ After finishing their dance, the programs end up in order baedc.
 You watch the dance for a while and record their dance moves (your puzzle input). In what order are the programs standing after their dance?
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput().split(",")
+    val input = Utils.getSingleLineInput().split(",")
     var programs = "abcdefghijklmnop"
 
     input.forEach {

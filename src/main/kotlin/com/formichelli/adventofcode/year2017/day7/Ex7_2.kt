@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day7
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 import java.util.stream.Collectors
 
 /*
@@ -14,7 +14,7 @@ As you can see, tknk's disc is unbalanced: ugml's stack is heavier than the othe
 Given that exactly one program is the wrong weight, what would its weight need to be to balance the entire tower?
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput()
+    val input = Utils.getMultiLineInput()
 
     val programToChildren = mutableMapOf<String, Set<String>>()
     val programToWeight = mutableMapOf<String, Int>()
@@ -72,7 +72,8 @@ fun getOrComputeTowerWeight(program: String, programToChildren: MutableMap<Strin
         return precomputedWeight
     }
 
-    val towerWeight = (programToWeight[program] ?: 0) + programToChildren[program]!!.sumBy { getOrComputeTowerWeight(it, programToChildren, programToWeight, programToTowerWeight) }
+    val towerWeight = (programToWeight[program]
+            ?: 0) + programToChildren[program]!!.sumBy { getOrComputeTowerWeight(it, programToChildren, programToWeight, programToTowerWeight) }
     programToTowerWeight[program] = towerWeight
     return towerWeight
 }

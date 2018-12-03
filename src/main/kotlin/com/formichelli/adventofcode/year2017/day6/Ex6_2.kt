@@ -1,7 +1,7 @@
 package com.formichelli.adventofcode.year2017.day6
 
+import com.formichelli.adventofcode.utils.Utils
 import com.formichelli.adventofcode.utils.increaseAt
-import com.formichelli.adventofcode.utils.getSpaceSeparatedSingleLineInput
 
 /*
 Out of curiosity, the debugger would also like to know the size of the loop: starting from a state that has already been seen, how many block redistribution cycles must be performed before that same state is seen again?
@@ -9,11 +9,11 @@ In the example above, 2 4 1 2 is seen again after four cycles, and so the answer
 How many cycles are in the infinite loop that arises from the configuration in your puzzle input?
 */
 fun main(args: Array<String>) {
-    val input = getSpaceSeparatedSingleLineInput().map { it.toInt() }.toMutableList()
+    val input = Utils.getSpaceSeparatedSingleLineInput().map { it.toInt() }.toMutableList()
 
     var steps = 0
     val previousConfigurations = mutableMapOf<String, Int>()
-    var previousIndex : Int?
+    var previousIndex: Int?
     do {
         steps++
 
@@ -36,8 +36,7 @@ fun main(args: Array<String>) {
         }
 
         previousIndex = previousConfigurations.put(combinationToString(input), steps)
-    }
-    while (previousIndex == null)
+    } while (previousIndex == null)
 
     println(steps - previousIndex)
 }

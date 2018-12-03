@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day12
 
-import com.formichelli.adventofcode.utils.getMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 There are more programs than just the ones in the group containing program ID 0. The rest of them have no way of reaching that group, and still might have no way of reaching each other.
@@ -8,7 +8,7 @@ A group is a collection of programs that can all communicate via pipes either di
 In the example above, there were 2 groups: one consisting of programs 0,2,3,4,5,6, and the other consisting solely of program 1.
 */
 fun main(args: Array<String>) {
-    val input = getMultiLineInput()
+    val input = Utils.getMultiLineInput()
 
     val programMap = mutableMapOf<Int,List<Int>>()
 

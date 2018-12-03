@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2018
 
-import com.formichelli.adventofcode.utils.readIntsFromFile
+import com.formichelli.adventofcode.utils.Utils
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,7 +16,7 @@ class Day1Test(private val part1Result: Int, private val part2Result: Int, priva
                     arrayOf(3, 10, listOf(+1, +1, +1), listOf(+3, +3, +4, -2, -4)),
                     arrayOf(0, 5, listOf(+1, +1, -2), listOf(-6, +3, +8, +5, -6)),
                     arrayOf(-6, 14, listOf(-1, -2, -3), listOf(+7, +7, -2, -7, -4)),
-                    arrayOf(486, 69285, readIntsFromFile("day1input.txt"), readIntsFromFile("day1input.txt"))
+                    arrayOf(486, 69285, Utils.readIntsFromFile("day1input.txt"), Utils.readIntsFromFile("day1input.txt"))
             )
         }
     }

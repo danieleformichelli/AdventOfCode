@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day16
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Now that you're starting to get a feel for the dance moves, you turn your attention to the dance as a whole.
@@ -12,7 +12,7 @@ pe/b, swapping programs e and b: ceadb.
 In what order are the programs standing after their billion dances?
 */
 fun main(args: Array<String>) {
-    val input = getSingleLineInput().split(",")
+    val input = Utils.getSingleLineInput().split(",")
     var programs = "abcdefghijklmnop"
     val previousMoves = mutableSetOf<String>()
 

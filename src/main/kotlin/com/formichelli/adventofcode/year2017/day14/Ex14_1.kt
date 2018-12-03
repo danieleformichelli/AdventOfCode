@@ -1,7 +1,7 @@
 package com.formichelli.adventofcode.year2017.day14
 
+import com.formichelli.adventofcode.utils.Utils
 import com.formichelli.adventofcode.year2017.day10.knotHash
-import com.formichelli.adventofcode.utils.getSingleLineInput
 
 /*
 The disk in question consists of a 128x128 grid; each square of the grid is either free or used. On this disk, the state of the grid is tracked by the bits in a sequence of knot hashes.
@@ -42,7 +42,7 @@ fun main(args: Array<String>) {
             'f' to 4
     )
 
-    val input = getSingleLineInput()
+    val input = Utils.getSingleLineInput()
     val rows = (0 until 128).map { input + "-" + it }
 
     val grid = rows.map { knotHash(it.map { it.toInt() }.toMutableList()) }

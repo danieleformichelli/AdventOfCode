@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day4
 
-import com.formichelli.adventofcode.utils.getSpaceSeparatedMultiLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 For added security, yet another system policy has been put in place. Now, a valid passphrase must contain no two words that are anagrams of each other - that is, a passphrase is invalid if any word's letters can be rearranged to form any other word in the passphrase.
@@ -13,7 +13,7 @@ oiii ioii iioi iiio is not valid - any of these words can be rearranged to form 
 Under this new system policy, how many passphrases are valid?
 */
 fun main(args: Array<String>) {
-    val input = getSpaceSeparatedMultiLineInput()
+    val input = Utils.getSpaceSeparatedMultiLineInput()
 
     // rewrite each word by ordering chars alphabetically
     val reorderedInput = input.map {

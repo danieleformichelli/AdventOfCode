@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2017.day11
 
-import com.formichelli.adventofcode.utils.getSingleLineInput
+import com.formichelli.adventofcode.utils.Utils
 
 /*
 Crossing the bridge, you've barely reached the other side of the stream when a program comes up to you, clearly in distress. "It's my child process," she says, "he's gotten lost in an infinite grid!"
@@ -38,7 +38,7 @@ enum class Direction(val y: Int, val x: Int) {
 }
 
 fun main(args: Array<String>) {
-    val input = getSingleLineInput().split(",").map { Direction.fromString(it.trim()) }
+    val input = Utils.getSingleLineInput().split(",").map { Direction.fromString(it.trim()) }
 
     var y = 0
     var x = 0
