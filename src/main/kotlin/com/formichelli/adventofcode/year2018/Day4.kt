@@ -172,4 +172,3 @@ object Day4 {
         return guardSchedules
     }
 }
-

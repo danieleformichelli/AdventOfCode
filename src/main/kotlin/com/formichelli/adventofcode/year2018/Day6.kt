@@ -175,4 +175,3 @@ object Day6 {
         return regionSize
     }
 }
-

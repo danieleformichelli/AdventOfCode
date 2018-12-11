@@ -250,4 +250,3 @@ object Day10 {
         return points
     }
 }
-

@@ -85,4 +85,3 @@ object Day5 {
         return maxRemovingUnit.values.min()!!
     }
 }
-

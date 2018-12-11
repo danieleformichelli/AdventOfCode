@@ -109,4 +109,3 @@ object Day8 {
         return Pair(nodeValue, nextIndex)
     }
 }
-

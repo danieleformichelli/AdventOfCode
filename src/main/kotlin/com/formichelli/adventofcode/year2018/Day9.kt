@@ -120,4 +120,3 @@ object Day9 {
         return nextNode
     }
 }
-
