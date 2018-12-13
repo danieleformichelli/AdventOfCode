@@ -25,6 +25,6 @@ class Day12Test(private val part1Result: Long, private val part2Result: Long, pr
 
     @Test
     fun part2() {
-        Assert.assertEquals("The square with the larger power is at $part2Result", part2Result, Day12.part2(generationAndRules))
+        Assert.assertEquals("After 50B iterations the sum of the pot containing plantsIndexes is $part2Result", part2Result, Day12.part2(generationAndRules))
     }
 }
