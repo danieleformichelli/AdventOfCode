@@ -298,110 +298,110 @@ object Day13 {
             nextCarts = tmp
         }
     }
-}
 
-enum class Direction {
-    UP, DOWN, LEFT, RIGHT;
+    enum class Direction {
+        UP, DOWN, LEFT, RIGHT;
 
-    fun calculate(trackPath: TrackPath, intersectionsCount: Int) = when (trackPath) {
-        TrackPath.DIAG_NW_SE -> {
-            when (this) {
-                UP -> LEFT
-                DOWN -> RIGHT
-                LEFT -> UP
-                RIGHT -> DOWN
-            }
-        }
-        TrackPath.DIAG_SW_NE -> {
-            when (this) {
-                UP -> RIGHT
-                DOWN -> LEFT
-                LEFT -> DOWN
-                RIGHT -> UP
-            }
-        }
-
-        TrackPath.INTERSECTION -> {
-            when (intersectionsCount % 3) {
-                0 -> this.turn(LEFT)
-                1 -> this
-                2 -> this.turn(RIGHT)
-                else -> throw Exception()
-            }
-        }
-
-        else -> this
-    }
-
-    private fun turn(turnDirection: Direction) = when (this) {
-        UP -> if (turnDirection == LEFT) LEFT else RIGHT
-        DOWN -> if (turnDirection == LEFT) RIGHT else LEFT
-        LEFT -> if (turnDirection == LEFT) DOWN else UP
-        RIGHT -> if (turnDirection == LEFT) UP else DOWN
-    }
-
-    companion object {
-        fun fromChar(c: Char) =
-                when (c) {
-                    '^' -> UP
-                    '<' -> LEFT
-                    '>' -> RIGHT
-                    'v' -> DOWN
-                    else -> throw IllegalArgumentException("Direction must be one of ^,<,>,v")
+        fun calculate(trackPath: TrackPath, intersectionsCount: Int) = when (trackPath) {
+            TrackPath.DIAG_NW_SE -> {
+                when (this) {
+                    UP -> LEFT
+                    DOWN -> RIGHT
+                    LEFT -> UP
+                    RIGHT -> DOWN
                 }
-    }
-}
-
-enum class TrackPath {
-    VERTICAL, HORIZONTAL, DIAG_SW_NE, DIAG_NW_SE, INTERSECTION;
-
-    companion object {
-        fun fromChar(c: Char) =
-                when (c) {
-                    '|', 'v', '^' -> VERTICAL
-                    '-', '<', '>' -> HORIZONTAL
-                    '/' -> DIAG_SW_NE
-                    '\\' -> DIAG_NW_SE
-                    '+' -> INTERSECTION
-                    else -> throw IllegalArgumentException("Track path must be one of |,-,\\,/,+")
+            }
+            TrackPath.DIAG_SW_NE -> {
+                when (this) {
+                    UP -> RIGHT
+                    DOWN -> LEFT
+                    LEFT -> DOWN
+                    RIGHT -> UP
                 }
+            }
 
-        fun isTrackPath(c: Char) = c == '|' || c == '-' || c == '\\' || c == '/' || c == '+'
-    }
-}
+            TrackPath.INTERSECTION -> {
+                when (intersectionsCount % 3) {
+                    0 -> this.turn(LEFT)
+                    1 -> this
+                    2 -> this.turn(RIGHT)
+                    else -> throw Exception()
+                }
+            }
 
-data class Cart(var direction: Direction, var intersectionsCount: Int) {
-    fun move(coordinates: Pair<Int, Int>, track: Map<Pair<Int, Int>, TrackPath>): Pair<Int, Int> {
-        var newX = coordinates.first
-        var newY = coordinates.second
-        when (direction) {
-            Direction.UP -> newY -= 1
-            Direction.DOWN -> newY += 1
-            Direction.LEFT -> newX -= 1
-            Direction.RIGHT -> newX += 1
+            else -> this
         }
 
-        val nextTrackPath = track[Pair(newX, newY)]!!
-        direction = direction.calculate(nextTrackPath, intersectionsCount)
-        if (nextTrackPath == TrackPath.INTERSECTION) {
-            ++intersectionsCount
+        private fun turn(turnDirection: Direction) = when (this) {
+            UP -> if (turnDirection == LEFT) LEFT else RIGHT
+            DOWN -> if (turnDirection == LEFT) RIGHT else LEFT
+            LEFT -> if (turnDirection == LEFT) DOWN else UP
+            RIGHT -> if (turnDirection == LEFT) UP else DOWN
         }
 
-        return Pair(newX, newY)
+        companion object {
+            fun fromChar(c: Char) =
+                    when (c) {
+                        '^' -> UP
+                        '<' -> LEFT
+                        '>' -> RIGHT
+                        'v' -> DOWN
+                        else -> throw IllegalArgumentException("Direction must be one of ^,<,>,v")
+                    }
+        }
     }
 
-    override fun equals(other: Any?) = this === other
+    enum class TrackPath {
+        VERTICAL, HORIZONTAL, DIAG_SW_NE, DIAG_NW_SE, INTERSECTION;
 
-    override fun hashCode() = super.hashCode()
+        companion object {
+            fun fromChar(c: Char) =
+                    when (c) {
+                        '|', 'v', '^' -> VERTICAL
+                        '-', '<', '>' -> HORIZONTAL
+                        '/' -> DIAG_SW_NE
+                        '\\' -> DIAG_NW_SE
+                        '+' -> INTERSECTION
+                        else -> throw IllegalArgumentException("Track path must be one of |,-,\\,/,+")
+                    }
 
-    companion object {
-        fun isCart(c: Char) = c == '^' || c == '<' || c == '>' || c == 'v'
-        val coordinatesComparator = { c0: Pair<Int, Int>, c1: Pair<Int, Int> ->
-            val xComparison = Integer.compare(c0.first, c1.first)
-            if (xComparison != 0) {
-                xComparison
-            } else {
-                Integer.compare(c0.second, c1.second)
+            fun isTrackPath(c: Char) = c == '|' || c == '-' || c == '\\' || c == '/' || c == '+'
+        }
+    }
+
+    data class Cart(var direction: Direction, var intersectionsCount: Int) {
+        fun move(coordinates: Pair<Int, Int>, track: Map<Pair<Int, Int>, TrackPath>): Pair<Int, Int> {
+            var newX = coordinates.first
+            var newY = coordinates.second
+            when (direction) {
+                Direction.UP -> newY -= 1
+                Direction.DOWN -> newY += 1
+                Direction.LEFT -> newX -= 1
+                Direction.RIGHT -> newX += 1
+            }
+
+            val nextTrackPath = track[Pair(newX, newY)]!!
+            direction = direction.calculate(nextTrackPath, intersectionsCount)
+            if (nextTrackPath == TrackPath.INTERSECTION) {
+                ++intersectionsCount
+            }
+
+            return Pair(newX, newY)
+        }
+
+        override fun equals(other: Any?) = this === other
+
+        override fun hashCode() = super.hashCode()
+
+        companion object {
+            fun isCart(c: Char) = c == '^' || c == '<' || c == '>' || c == 'v'
+            val coordinatesComparator = { c0: Pair<Int, Int>, c1: Pair<Int, Int> ->
+                val xComparison = Integer.compare(c0.first, c1.first)
+                if (xComparison != 0) {
+                    xComparison
+                } else {
+                    Integer.compare(c0.second, c1.second)
+                }
             }
         }
     }
