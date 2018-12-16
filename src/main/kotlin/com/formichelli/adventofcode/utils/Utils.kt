@@ -43,7 +43,14 @@ class Utils {
     }
 }
 
-public fun MutableList<Int>.increaseAt(index: Int, increase: Int) {
+data class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
+    override fun compareTo(other: Coordinate): Int {
+        val compareY = Integer.compare(y, other.y)
+        return if (compareY != 0) compareY else Integer.compare(x, other.x)
+    }
+}
+
+fun MutableList<Int>.increaseAt(index: Int, increase: Int) {
     this.add(index, this[index] + increase)
     this.removeAt(index + 1)
 }
