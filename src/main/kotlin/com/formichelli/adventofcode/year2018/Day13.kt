@@ -1,5 +1,6 @@
 package com.formichelli.adventofcode.year2018
 
+import com.formichelli.adventofcode.utils.Coordinate
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -162,7 +163,7 @@ object Day13 {
     5  \------/
     In this example, the location of the first crash is 7,3.
      */
-    fun part1(trackAndCarts: List<String>): Pair<Int, Int> {
+    fun part1(trackAndCarts: List<String>): Coordinate {
         return day13Helper(trackAndCarts, true)
     }
 
@@ -209,23 +210,22 @@ object Day13 {
 
     What is the location of the last cart at the end of the first tick where it is the only cart left?
     */
-    fun part2(trackAndCarts: List<String>): Pair<Int, Int> {
+    fun part2(trackAndCarts: List<String>): Coordinate {
         return day13Helper(trackAndCarts, false)
     }
 
-    private fun parseInput(trackAndCarts: List<String>): Pair<Map<Pair<Int, Int>, TrackPath>, TreeMap<Pair<Int, Int>, Cart>> {
-        val carts = TreeMap<Pair<Int, Int>, Cart>(Cart.coordinatesComparator)
-
-        val track = HashMap<Pair<Int, Int>, TrackPath>()
+    private fun parseInput(trackAndCarts: List<String>): Pair<Map<Coordinate, TrackPath>, TreeMap<Coordinate, Cart>> {
+        val carts = TreeMap<Coordinate, Cart>()
+        val track = HashMap<Coordinate, TrackPath>()
         for (y in 0 until trackAndCarts.size) {
             for (x in 0 until trackAndCarts[y].length) {
                 val charAtPosition = trackAndCarts[y][x]
                 when {
                     Cart.isCart(charAtPosition) -> {
-                        carts[Pair(x, y)] = Cart(Direction.fromChar(charAtPosition), 0)
-                        track[Pair(x, y)] = TrackPath.fromChar(charAtPosition)
+                        carts[Coordinate(x, y)] = Cart(Direction.fromChar(charAtPosition), 0)
+                        track[Coordinate(x, y)] = TrackPath.fromChar(charAtPosition)
                     }
-                    TrackPath.isTrackPath(charAtPosition) -> track[Pair(x, y)] = TrackPath.fromChar(charAtPosition)
+                    TrackPath.isTrackPath(charAtPosition) -> track[Coordinate(x, y)] = TrackPath.fromChar(charAtPosition)
                 }
             }
         }
@@ -233,10 +233,10 @@ object Day13 {
         return Pair(track, carts)
     }
 
-    private fun day13Helper(trackAndCarts: List<String>, returnOnCollision: Boolean): Pair<Int, Int> {
+    private fun day13Helper(trackAndCarts: List<String>, returnOnCollision: Boolean): Coordinate {
         var (track, carts) = parseInput(trackAndCarts)
 
-        var nextCarts = TreeMap<Pair<Int, Int>, Cart>(Cart.coordinatesComparator)
+        var nextCarts = TreeMap<Coordinate, Cart>()
         val movedCarts = HashSet<Cart>()
         val removedCarts = HashSet<Cart>()
         while (true) {
@@ -370,9 +370,9 @@ object Day13 {
     }
 
     data class Cart(var direction: Direction, var intersectionsCount: Int) {
-        fun move(coordinates: Pair<Int, Int>, track: Map<Pair<Int, Int>, TrackPath>): Pair<Int, Int> {
-            var newX = coordinates.first
-            var newY = coordinates.second
+        fun move(coordinate: Coordinate, track: Map<Coordinate, TrackPath>): Coordinate {
+            var newX = coordinate.x
+            var newY = coordinate.y
             when (direction) {
                 Direction.UP -> newY -= 1
                 Direction.DOWN -> newY += 1
@@ -380,13 +380,13 @@ object Day13 {
                 Direction.RIGHT -> newX += 1
             }
 
-            val nextTrackPath = track[Pair(newX, newY)]!!
+            val nextTrackPath = track[Coordinate(newX, newY)]!!
             direction = direction.calculate(nextTrackPath, intersectionsCount)
             if (nextTrackPath == TrackPath.INTERSECTION) {
                 ++intersectionsCount
             }
 
-            return Pair(newX, newY)
+            return Coordinate(newX, newY)
         }
 
         override fun equals(other: Any?) = this === other
@@ -395,14 +395,6 @@ object Day13 {
 
         companion object {
             fun isCart(c: Char) = c == '^' || c == '<' || c == '>' || c == 'v'
-            val coordinatesComparator = { c0: Pair<Int, Int>, c1: Pair<Int, Int> ->
-                val xComparison = Integer.compare(c0.first, c1.first)
-                if (xComparison != 0) {
-                    xComparison
-                } else {
-                    Integer.compare(c0.second, c1.second)
-                }
-            }
         }
     }
 }
