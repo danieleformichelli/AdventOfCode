@@ -48,6 +48,12 @@ data class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
         val compareY = Integer.compare(y, other.y)
         return if (compareY != 0) compareY else Integer.compare(x, other.x)
     }
+
+    fun adjacents(): Set<Coordinate> {
+        return setOf(Coordinate(x - 1, y - 1), Coordinate(x, y - 1), Coordinate(x + 1, y - 1),
+                Coordinate(x - 1, y), Coordinate(x + 1, y),
+                Coordinate(x - 1, y + 1), Coordinate(x, y + 1), Coordinate(x + 1, y + 1))
+    }
 }
 
 fun MutableList<Int>.increaseAt(index: Int, increase: Int) {
