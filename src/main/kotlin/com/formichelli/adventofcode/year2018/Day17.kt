@@ -190,6 +190,10 @@ object Day17 {
             }
         }
 
+        return countWaterTiles(waterAtY, minAndMaxY)
+    }
+
+    private fun printMap(waterAtY: HashMap<Int, MutableSet<Int>>, clayMap: Set<Coordinate>, minAndMaxY: Pair<Int, Int>) {
         var minX = Int.MAX_VALUE
         var maxX = Int.MIN_VALUE
         for (waterAtLevel in waterAtY.values) {
@@ -214,8 +218,6 @@ object Day17 {
             }
             System.out.println()
         }
-
-        return countWaterTiles(waterAtY, minAndMaxY)
     }
 
     private fun day17Helper(minAndMaxY: Pair<Int, Int>, clayMap: Set<Coordinate>): HashMap<Int, MutableSet<Int>> {

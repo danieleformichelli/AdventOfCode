@@ -26,6 +26,6 @@ class Day17Test(private val part1Result: Int, private val part2Result: Int, priv
 
     @Test
     fun part2() {
-        Assert.assertEquals("$part2Result tiles are reached by the water", part2Result, Day17.part2(clayCoordinates))
+        Assert.assertEquals("$part2Result tiles are reached by still water", part2Result, Day17.part2(clayCoordinates))
     }
 }

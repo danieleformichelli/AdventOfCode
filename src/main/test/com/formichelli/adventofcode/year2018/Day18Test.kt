@@ -14,8 +14,7 @@ class Day18Test(private val part1Result: Int, private val part2Result: Int, priv
         fun data(): Collection<Array<Any>> {
 
             return listOf(
-                    //arrayOf(1147, 554, listOf(".#.#...|#.", ".....#|##|", ".|..|...#.", "..|#.....#", "#.#|||#|#|", "...#.||...", ".|....|...", "||...#|.#|", "|.||||..|.", "...#.|..|.")),
-                    arrayOf(486878, 554, Utils.readLinesFromFile("year2018/day18input.txt"))
+                    arrayOf(486878, 190836, Utils.readLinesFromFile("year2018/day18input.txt"))
             )
         }
     }
@@ -27,6 +26,6 @@ class Day18Test(private val part1Result: Int, private val part2Result: Int, priv
 
     @Test
     fun part2() {
-        Assert.assertEquals("$part2Result tiles are reached by the water $part2Result", part2Result, Day18.part2(lumberMapStr))
+        Assert.assertEquals("After 1000000000 minutes, number of trees multiplied by number of lumberyards is $part2Result", part2Result, Day18.part2(lumberMapStr))
     }
 }
