@@ -12,7 +12,7 @@ class Day14Test(private val part1Result: Long, private val part2Result: Long, pr
         @Parameterized.Parameters
         fun data(): Collection<Array<Any>> {
             return listOf<Array<Any>>(
-                    arrayOf(5158916779L, 20279772L, 864801)
+                    arrayOf(1611732174L, 20279772L, 864801)
             )
         }
     }

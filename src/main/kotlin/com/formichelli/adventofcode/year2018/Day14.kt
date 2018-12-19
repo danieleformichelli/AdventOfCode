@@ -67,7 +67,7 @@ object Day14 {
         var targetScoreStarts = -1
         while (true) {
             if (stopAfterInputOrAtScore) {
-                if (recipes.size < input + 10) {
+                if (recipes.size >= input + 10) {
                     var score = 0L
                     for (i in 0 until 10) {
                         score = score * 10 + recipes[input + i]
