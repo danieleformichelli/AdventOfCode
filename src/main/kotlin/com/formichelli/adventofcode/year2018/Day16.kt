@@ -169,14 +169,42 @@ object Day16 {
 
     private fun parseOpCodeAndInputs(line: String) = OpCodeAndInputs(line.split(" ").map { it.toInt() }.toIntArray())
 
+    @Suppress("ArrayInDataClass")
     data class OpCodeSample(val registersBefore: IntArray, val opCodeAndInputs: OpCodeAndInputs, val registersAfter: IntArray)
 
     data class OpCodeAndInputs(val opCodeNum: Int, val a: Int, val b: Int, val c: Int) {
+        private var opCode: OpCode? = null
+
         constructor(opCodeAndInputs: IntArray) : this(opCodeAndInputs[0], opCodeAndInputs[1], opCodeAndInputs[2], opCodeAndInputs[3])
+        constructor(opCodeStr: OpCode, a: Int, b: Int, c: Int) : this(0, a, b, c) {
+            this.opCode = opCodeStr
+        }
+
+        fun execute(registers: IntArray) {
+            if (opCode == null) {
+                throw IllegalStateException("Unknown op code")
+            }
+
+            opCode!!.execute(a, b, c, registers)
+        }
     }
+
 
     enum class OpCode {
         ADDR, ADDI, MULR, MULI, BANR, BANI, BORR, BORI, SETR, SETI, GTIR, GTRI, GTRR, EQIR, EQRI, EQRR;
+
+        companion object {
+            fun fromString(opCodeStr: String): OpCode {
+                val opCodeUpperCase = opCodeStr.toUpperCase()
+                for (value in OpCode.values()) {
+                    if (opCodeUpperCase == value.toString()) {
+                        return value
+                    }
+                }
+
+                throw IllegalArgumentException("$opCodeStr is not a valid op code")
+            }
+        }
 
         fun behavesLike(sample: OpCodeSample) = behavesLike(sample.registersBefore, sample.opCodeAndInputs.a, sample.opCodeAndInputs.b, sample.opCodeAndInputs.c, sample.registersAfter)
 
