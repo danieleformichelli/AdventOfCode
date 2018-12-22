@@ -187,8 +187,11 @@ object Day16 {
 
             opCode!!.execute(a, b, c, registers)
         }
-    }
 
+        override fun toString(): String {
+            return "${if (opCode != null) opCode.toString() else opCodeNum.toString()}($a,$b,$c)"
+        }
+    }
 
     enum class OpCode {
         ADDR, ADDI, MULR, MULI, BANR, BANI, BORR, BORI, SETR, SETI, GTIR, GTRI, GTRR, EQIR, EQRI, EQRR;

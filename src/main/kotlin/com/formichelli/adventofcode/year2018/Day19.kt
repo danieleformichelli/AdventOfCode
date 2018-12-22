@@ -63,18 +63,39 @@ object Day19 {
     private fun day19Helper(opCodes: List<String>, registers: IntArray): Int {
         val (ipRegister, opCodesAndInputs) = parseInput(opCodes)
 
-        var ip = 0
+        var ip = registers[ipRegister]
         while (ip < opCodesAndInputs.size) {
-            opCodesAndInputs[ip].execute(registers)
+            val operation = opCodesAndInputs[ip]
+            operation.execute(registers)
 
             ++registers[ipRegister]
+
+            magicTrick(ipRegister, registers)
+
             ip = registers[ipRegister]
         }
 
         return registers[0]
     }
 
-    private fun parseInput(opCodes: List<String>): Pair<Int, List<Day16.OpCodeAndInputs>> {
+    private fun magicTrick(ipRegister: Int, registers: IntArray) {
+        val ip = registers[ipRegister]
+        if (ip != 3) {
+            return
+        }
+
+        return if (registers[2] % registers[3] == 0) {
+            registers[5] = registers[2]
+            registers[4] = 1
+            registers[ipRegister] = 7
+        } else {
+            registers[5] = registers[2] + 1
+            registers[4] = 1
+            registers[ipRegister] = 12
+        }
+    }
+
+    fun parseInput(opCodes: List<String>): Pair<Int, List<Day16.OpCodeAndInputs>> {
         val opCodesAndInputs = ArrayList<Day16.OpCodeAndInputs>()
         val ipRegister = opCodes[0].replace("#ip ", "").toInt()
         for (i in 1 until opCodes.size) {

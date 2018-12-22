@@ -12,7 +12,6 @@ class Day18Test(private val part1Result: Int, private val part2Result: Int, priv
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Collection<Array<Any>> {
-
             return listOf(
                     arrayOf(486878, 190836, Utils.readLinesFromFile("year2018/day18input.txt"))
             )
