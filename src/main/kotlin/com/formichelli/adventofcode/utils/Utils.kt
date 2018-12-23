@@ -43,7 +43,7 @@ class Utils {
     }
 }
 
-data class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
+open class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
     override fun compareTo(other: Coordinate): Int {
         val compareY = Integer.compare(y, other.y)
         return if (compareY != 0) compareY else Integer.compare(x, other.x)
@@ -54,6 +54,12 @@ data class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
                 Coordinate(x - 1, y), Coordinate(x + 1, y),
                 Coordinate(x - 1, y + 1), Coordinate(x, y + 1), Coordinate(x + 1, y + 1))
     }
+
+    fun manhattanDistance(other: Coordinate) = Math.abs(x - other.x) + Math.abs(y - other.y)
+}
+
+class Coordinate3D(x: Int, y: Int, val z: Int) : Coordinate(x, y) {
+    fun manhattanDistance(other: Coordinate3D) = super.manhattanDistance(other) + Math.abs(z - other.z)
 }
 
 fun MutableList<Int>.increaseAt(index: Int, increase: Int) {
