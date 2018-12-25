@@ -44,6 +44,13 @@ class Utils {
 }
 
 open class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
+    override fun equals(other: Any?) = other is Coordinate && x == other.x && y == other.y
+    override fun hashCode(): Int {
+        var result = x
+        result = 31 * result + y
+        return result
+    }
+
     override fun compareTo(other: Coordinate): Int {
         val compareY = Integer.compare(y, other.y)
         return if (compareY != 0) compareY else Integer.compare(x, other.x)
@@ -58,7 +65,14 @@ open class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
     fun manhattanDistance(other: Coordinate) = Math.abs(x - other.x) + Math.abs(y - other.y)
 }
 
-class Coordinate3D(x: Int, y: Int, val z: Int) : Coordinate(x, y) {
+open class Coordinate3D(x: Int, y: Int, val z: Int) : Coordinate(x, y) {
+    override fun equals(other: Any?) = other is Coordinate3D && super.equals(other) && z == other.z
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + z
+        return result
+    }
+
     fun manhattanDistance(other: Coordinate3D) = super.manhattanDistance(other) + Math.abs(z - other.z)
 }
 

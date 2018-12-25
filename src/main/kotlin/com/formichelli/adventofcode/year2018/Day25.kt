@@ -1,6 +1,6 @@
 package com.formichelli.adventofcode.year2018
 
-import com.formichelli.adventofcode.utils.Coordinate
+import com.formichelli.adventofcode.utils.Coordinate3D
 
 object Day25 {
     /*
@@ -140,8 +140,14 @@ object Day25 {
         return stars
     }
 
-    class Coordinate4D(x: Int, y: Int, val z: Int, val w: Int) : Coordinate(x, y) {
-        fun manhattanDistance(other: Coordinate4D) = super.manhattanDistance(other) + Math.abs(z - other.z) + Math.abs(w - other.w)
-    }
+    class Coordinate4D(x: Int, y: Int, z: Int, val w: Int) : Coordinate3D(x, y, z) {
+        override fun equals(other: Any?) = other is Coordinate4D && super.equals(other) && w == other.w
+        override fun hashCode(): Int {
+            var result = super.hashCode()
+            result = 31 * result + w
+            return result
+        }
 
+        fun manhattanDistance(other: Coordinate4D) = super.manhattanDistance(other) + Math.abs(w - other.w)
+    }
 }
