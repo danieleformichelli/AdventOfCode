@@ -44,6 +44,10 @@ class Utils {
 }
 
 open class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
+    override fun toString(): String {
+        return "($x,$y)"
+    }
+
     override fun equals(other: Any?) = other is Coordinate && x == other.x && y == other.y
     override fun hashCode(): Int {
         var result = x
@@ -60,6 +64,11 @@ open class Coordinate(val x: Int, val y: Int) : Comparable<Coordinate> {
         return setOf(Coordinate(x - 1, y - 1), Coordinate(x, y - 1), Coordinate(x + 1, y - 1),
                 Coordinate(x - 1, y), Coordinate(x + 1, y),
                 Coordinate(x - 1, y + 1), Coordinate(x, y + 1), Coordinate(x + 1, y + 1))
+    }
+
+    fun adjacentsWihoutDiagonals(): Set<Coordinate> {
+        return setOf(Coordinate(x, y - 1),
+                Coordinate(x - 1, y), Coordinate(x + 1, y), Coordinate(x, y + 1))
     }
 
     fun manhattanDistance(other: Coordinate) = Math.abs(x - other.x) + Math.abs(y - other.y)
