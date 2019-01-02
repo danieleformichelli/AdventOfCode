@@ -14,7 +14,7 @@ class Day23Test(private val part1Result: Int, private val part2Result: Int, priv
         fun data(): Collection<Array<Any>> {
             return listOf(
                     arrayOf(7, 36, listOf("pos=<0,0,0>, r=4", "pos=<1,0,0>, r=1", "pos=<4,0,0>, r=3", "pos=<0,2,0>, r=1", "pos=<0,5,0>, r=3", "pos=<0,0,3>, r=1", "pos=<1,1,1>, r=1", "pos=<1,1,2>, r=1", "pos=<1,3,1>, r=1"), listOf("pos=<10,12,12>, r=2", "pos=<12,14,12>, r=2", "pos=<16,12,12>, r=4", "pos=<14,14,14>, r=6", "pos=<50,50,50>, r=200", "pos=<10,10,10>, r=5")),
-                    arrayOf(588, 7, Utils.readLinesFromFile("year2018/day23input.txt"), Utils.readLinesFromFile("year2018/day23input.txt"))
+                    arrayOf(588, 111227643, Utils.readLinesFromFile("year2018/day23input.txt"), Utils.readLinesFromFile("year2018/day23input.txt"))
             )
         }
     }

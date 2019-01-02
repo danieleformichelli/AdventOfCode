@@ -1,6 +1,7 @@
 package com.formichelli.adventofcode.year2018
 
 import com.formichelli.adventofcode.utils.Coordinate3D
+import java.util.*
 
 object Day23 {
     /*
@@ -76,44 +77,28 @@ object Day23 {
     Find the coordinates that are in range of the largest number of nanobots. What is the shortest manhattan distance between any of those points and 0,0,0?
     */
     fun part2(nanobots: List<String>): Int {
+        // copied from https://www.reddit.com/r/adventofcode/comments/a8s17l/2018_day_23_solutions/ecdqzdg
         val nanobotsMap = parseInput(nanobots)
 
-        var minX = Int.MAX_VALUE
-        var minY = Int.MAX_VALUE
-        var minZ = Int.MAX_VALUE
-        var maxX = Int.MIN_VALUE
-        var maxY = Int.MIN_VALUE
-        var maxZ = Int.MIN_VALUE
-        nanobotsMap.keys.forEach {
-            minX = Math.min(minX, it.x)
-            maxX = Math.max(maxX, it.x)
-            minY = Math.min(minY, it.y)
-            maxY = Math.max(maxY, it.y)
-            minZ = Math.min(minZ, it.z)
-            maxZ = Math.max(maxZ, it.z)
+        val queue = TreeMap<Int, Int>()
+        nanobotsMap.forEach {
+            val d = Coordinate3D(0, 0, 0).manhattanDistance(it.key)
+            queue[Math.max(0, d - it.value)] = queue.getOrDefault(Math.max(0, d - it.value), 0) + 1
+            queue[d + it.value] = queue.getOrDefault(d + it.value, 0) - 1
         }
 
-        // TODO complexity is too high to compute resultm
-        var maxInRangeCount = 0
-        val maxInRangeCountSet = HashSet<Coordinate3D>()
-        for (x in minX..maxX) {
-            for (y in minY..maxY) {
-                for (z in minZ..maxZ) {
-                    val currentCoordinate = Coordinate3D(x, y, z)
-                    val inRangeCount = nanobotsMap.count { it.key.manhattanDistance(currentCoordinate) <= it.value }
-                    if (inRangeCount > maxInRangeCount) {
-                        maxInRangeCount = inRangeCount
-                        maxInRangeCountSet.clear()
-                        maxInRangeCountSet.add(currentCoordinate)
-                    } else if (inRangeCount == maxInRangeCount) {
-                        maxInRangeCountSet.add(currentCoordinate)
-                    }
-                }
+        var count = 0
+        var maxCount = 0
+        var result = 0
+        for (point in queue) {
+            count += point.value
+            if (count > maxCount) {
+                result = point.key
+                maxCount = count
             }
         }
 
-        val zeroCoordinate = Coordinate3D(0, 0, 0)
-        return maxInRangeCountSet.map { it.manhattanDistance(zeroCoordinate) }.min()!!
+        return result
     }
 
     private fun parseInput(nanobots: List<String>): Map<Coordinate3D, Int> {

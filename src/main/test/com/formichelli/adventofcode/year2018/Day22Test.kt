@@ -14,7 +14,7 @@ class Day22Test(private val part1Result: Int, private val part2Result: Int, priv
         fun data(): Collection<Array<Any>> {
             return listOf(
                     arrayOf(114, 45, listOf("depth: 510", "target: 10,10")),
-                    arrayOf(5400, 190836, Utils.readLinesFromFile("year2018/day22input.txt"))
+                    arrayOf(5400, 1048, Utils.readLinesFromFile("year2018/day22input.txt"))
             )
         }
     }
