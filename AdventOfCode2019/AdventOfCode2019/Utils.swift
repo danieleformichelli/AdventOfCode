@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  Utils.swift
+//  AdventOfCode2019
 //
-//  Created by Daniele Formichelli on 17/11/2019.
+//  Created by Daniele Formichelli on 30/11/2019.
+//  Copyright © 2019 Daniele Formichelli. All rights reserved.
 //
 
 import Foundation

@@ -1,0 +1,12 @@
+//
+//  main.swift
+//  AdventOfCode2019
+//
+//  Created by Daniele Formichelli on 30/11/2019.
+//  Copyright © 2019 Daniele Formichelli. All rights reserved.
+//
+
+let day = Day1()
+let part: Part = .part1
+
+print(day.run(part))
