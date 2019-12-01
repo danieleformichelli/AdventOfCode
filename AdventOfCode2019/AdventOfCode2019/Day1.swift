@@ -46,23 +46,23 @@ Your puzzle answer was 4982961.
 **/
 struct Day1: DayBase {
   func part1(_ input: String) -> Any {
-    let masses = Utils.readLinesAsInt(from: input)
-    let requiredFuel = masses.map { $0 / 3 - 2 }.reduce(0, +)
-    return requiredFuel
+    self.inputNumbers.map { $0.requiredFuelMass }.reduce(0, +)
   }
 
   func part2(_ input: String) -> Any {
-    let masses = Utils.readLinesAsInt(from: input)
-    let requiredFuel = masses.map { $0.requiredFuelMass }.reduce(0, +)
-    return requiredFuel
+    self.inputNumbers.map { $0.requiredFuelMassRecursive }.reduce(0, +)
   }
 }
 
 fileprivate extension Int {
   var requiredFuelMass: Int {
-    let partialRequiredFuelMass = self / 3 - 2
+    self / 3 - 2
+  }
+
+  var requiredFuelMassRecursive: Int {
+    let partialRequiredFuelMass = self.requiredFuelMass
     guard partialRequiredFuelMass > 0 else { return 0 }
-    return partialRequiredFuelMass + partialRequiredFuelMass.requiredFuelMass
+    return partialRequiredFuelMass + partialRequiredFuelMass.requiredFuelMassRecursive
   }
 }
 

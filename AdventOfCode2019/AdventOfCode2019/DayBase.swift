@@ -6,38 +6,36 @@
 //  Copyright © 2019 Daniele Formichelli. All rights reserved.
 //
 
+import Foundation
+
 enum Part {
   case part1
   case part2
 }
 
 protocol DayBase {
+  var input: String { get }
+
   func part1(_ input: String) -> Any
 
   func part2(_ input: String) -> Any
-
-  var input: String { get }
-
-  var part1Input: String { get }
-
-  var part2Input: String { get }
 }
 
 extension DayBase {
   func run(_ part: Part) -> Any {
     switch part {
     case .part1:
-      return self.part1(self.part1Input)
+      return self.part1(self.input)
     case .part2:
-      return self.part2(self.part2Input)
+      return self.part2(self.input)
     }
   }
 
-  var part1Input: String {
-    return self.input
+  var inputLines: [String] {
+    input.components(separatedBy: "\n")
   }
 
-  var part2Input: String {
-    return self.input
+  var inputNumbers: [Int] {
+    input.components(separatedBy: "\n").compactMap { Int($0) }
   }
 }
