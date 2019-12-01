@@ -12,9 +12,9 @@ enum Part {
 }
 
 protocol DayBase {
-  func part1(_ input: String) -> String
+  func part1(_ input: String) -> Any
 
-  func part2(_ input: String) -> String
+  func part2(_ input: String) -> Any
 
   var input: String { get }
 
@@ -24,7 +24,7 @@ protocol DayBase {
 }
 
 extension DayBase {
-  func run(_ part: Part) -> String {
+  func run(_ part: Part) -> Any {
     switch part {
     case .part1:
       return self.part1(self.part1Input)

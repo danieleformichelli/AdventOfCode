@@ -7,6 +7,6 @@
 //
 
 let day = Day1()
-let part: Part = .part1
+let part: Part = .part2
 
 print(day.run(part))
