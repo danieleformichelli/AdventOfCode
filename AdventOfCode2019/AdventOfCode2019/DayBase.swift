@@ -2,7 +2,7 @@
 //  DayBase.swift
 //  AdventOfCode2019
 //
-//  Created by Daniele Formichelli on 30/11/2019.
+//  Created by Daniele Formichelli on 01/12/2019.
 //  Copyright © 2019 Daniele Formichelli. All rights reserved.
 //
 
@@ -37,5 +37,9 @@ extension DayBase {
 
   var inputNumbers: [Int] {
     input.components(separatedBy: "\n").compactMap { Int($0) }
+  }
+
+  var inputCommaSeparatedNumbers: [Int] {
+    input.components(separatedBy: ",").compactMap { Int($0) }
   }
 }
