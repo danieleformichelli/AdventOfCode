@@ -42,4 +42,8 @@ extension DayBase {
   var inputCommaSeparatedNumbers: [Int] {
     input.components(separatedBy: ",").compactMap { Int($0) }
   }
+
+  var inputCommaSeparatedLines: [[String]] {
+    input.components(separatedBy: "\n").compactMap { $0.components(separatedBy: ",") }
+  }
 }
