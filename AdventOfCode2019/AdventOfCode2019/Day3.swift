@@ -83,11 +83,7 @@ Your puzzle answer was 25676.
 **/
 struct Day3: DayBase {
   func part1(_ input: String) -> Any {
-    let wiresSegments = self.inputCommaSeparatedLines.map {
-      wire in wire.map {
-        segmentString in Segment(string: segmentString)
-      }
-    }
+    let wiresSegments = self.wiresSegments
     var path: [Point: Int] = [:]
     let origin = Point(x: 0, y: 0)
     var nearestIntersectionDistance: Int = .max
@@ -109,11 +105,7 @@ struct Day3: DayBase {
   }
 
   func part2(_ input: String) -> Any {
-    let wiresSegments = self.inputCommaSeparatedLines.map {
-      wire in wire.map {
-        segmentString in Segment(string: segmentString)
-      }
-    }
+    let wiresSegments = self.wiresSegments
     var distanceTo: [Point: (wireIndex: Int, distance: Int)] = [:]
     let origin = Point(x: 0, y: 0)
     var nearestIntersectionDistance: Int = .max
@@ -193,6 +185,14 @@ struct Segment {
 }
 
 extension Day3 {
+  var wiresSegments: [[Segment]] {
+    self.inputCommaSeparatedLines.map {
+      wire in wire.map {
+        segmentString in Segment(string: segmentString)
+      }
+    }
+  }
+
   var input: String {
     """
     R1000,U564,L752,D449,R783,D938,L106,U130,R452,U462,R861,U654,L532,D485,R761,U336,L648,U671,L618,U429,R122,D183,L395,U662,R900,U644,L168,D778,L268,U896,L691,D852,L987,U462,R346,U103,R688,U926,R374,D543,R688,D682,R992,D140,L379,D245,L423,D504,R957,U937,L67,D560,L962,U275,R688,D617,L778,U581,R672,D402,R3,U251,R593,U897,L866,U189,L8,D5,R761,U546,R594,D880,L318,U410,L325,U564,L889,U688,L472,D146,R317,D314,L229,U259,R449,D630,L431,U4,R328,D727,R298,D558,R81,D508,L160,U113,L994,U263,L193,D631,R881,D608,L924,U447,R231,U885,L157,D739,R656,D121,R704,U437,L710,D207,R150,U406,R816,U683,R496,D715,L899,U757,L579,D684,L85,D354,R198,D411,R818,U772,L910,U493,R38,D130,L955,U741,R744,D224,L485,U201,L903,D904,R748,U288,R34,U673,R503,D931,L190,U547,L83,D341,R459,U114,L758,U220,L506,U444,L472,D941,L68,D910,R415,U668,L957,U709,R817,U116,R699,D424,R548,D285,R347,U396,R791,U62,L785,D360,L628,U415,L568,D429,R154,D840,L865,U181,L106,D564,L452,U156,L967,D421,R41,U500,L316,D747,R585,D858,L809,U402,L484,U752,R319,D563,R273,U84,R53,U874,L849,U90,R194,D969,R907,D625,L298,D984,R744,U172,R537,D177,L14,D921,L156,U133,R429,D787,R688,U894,L154,U192,R663,D225,L781,U426,R623,D60,L723,D995,R814,D195,L951,D594,R994,D543,L893,U781,R899,U85,R270,U303,R256,U977,R894,U948,R270,D301,L874,D388,R290,U986,L660,D741,L25,U381,R814,D150,R578,D529,R550,D176,R221,D653,R529,U83,R351,D462,R492,U338,R611,D5,L137,D547,R305,U356,R83,D880,R522,U681,R353,D54,R910,U774,L462,U48,L511,U750,R98,U455,R585,D579,L594
