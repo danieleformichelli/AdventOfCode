@@ -99,39 +99,17 @@ struct Day2: DayBase {
 
   private func executeProgram(memory: [Int], noun: Int, verb: Int) -> Int {
     var memory = memory
+    var inputProvider = NoInputProvider()
     memory[1] = noun
     memory[2] = verb
-    var currentAddress = 0
-    while currentAddress != -1 {
-      currentAddress = executeOpCode(on: &memory, at: currentAddress)
+
+    var address = 0
+    while address >= 0 {
+      let opCode = OpCode(from: memory, at: address)
+      opCode.execute(on: &memory, address: &address, inputProvider: &inputProvider)
     }
 
     return memory[0]
-  }
-  
-  private func executeOpCode(on memory: inout [Int], at address: Int) -> Int {
-    let opCode = memory[address]
-    switch opCode {
-    case 1:
-      let firstNumberIndex = memory[address + 1]
-      let secondNumberIndex = memory[address + 2]
-      let destinationIndex = memory[address + 3]
-      memory[destinationIndex] = memory[firstNumberIndex] + memory[secondNumberIndex]
-      return address + 4
-
-    case 2:
-      let firstNumberIndex = memory[address + 1]
-      let secondNumberIndex = memory[address + 2]
-      let destinationIndex = memory[address + 3]
-      memory[destinationIndex] = memory[firstNumberIndex] * memory[secondNumberIndex]
-      return address + 4
-
-    case 99:
-      return -1
-
-    default:
-      fatalError("Invalid opCode \(opCode)")
-    }
   }
 }
 
