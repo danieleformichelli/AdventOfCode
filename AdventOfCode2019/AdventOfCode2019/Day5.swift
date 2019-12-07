@@ -96,23 +96,19 @@ Your puzzle answer was 9168267.
 **/
 struct Day5: DayBase {
   func part1(_ input: String) -> Any {
-    var memory = self.inputCommaSeparatedNumbers
-    var inputProvider = SingleValueInputProvider(value: 1)
-    return self.executeProgram(memory: &memory, inputProvider: &inputProvider)
+    return self.executeProgram(memory: self.inputCommaSeparatedNumbers, inputProvider: SingleValueInputProvider(value: 1))
   }
 
   func part2(_ input: String) -> Any {
-    var memory = self.inputCommaSeparatedNumbers
-    var inputProvider = SingleValueInputProvider(value: 5)
-    return self.executeProgram(memory: &memory, inputProvider: &inputProvider)
+    return self.executeProgram(memory: self.inputCommaSeparatedNumbers, inputProvider: SingleValueInputProvider(value: 5))
   }
 
-  private func executeProgram<T: InputProvider>(memory: inout [Int], inputProvider: inout T) -> Int {
+  private func executeProgram<T: InputProvider>(memory: [Int], inputProvider: T) -> Int {
+    var memory = memory
     var address = 0
     var lastReturnValue: Int? = nil
     while address >= 0 {
-      let opCode = OpCode(from: memory, at: address)
-      let returnValue = opCode.execute(on: &memory, address: &address, inputProvider: &inputProvider)
+      let returnValue = IntCode.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: true)
       if let returnValue = returnValue {
         lastReturnValue = returnValue
       }

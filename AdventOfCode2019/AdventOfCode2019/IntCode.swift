@@ -1,5 +1,5 @@
 //
-//  OpCode.swift
+//  IntCode.swift
 //  AdventOfCode2019
 //
 //  Created by Daniele Formichelli on 05/12/2019.
@@ -7,6 +7,30 @@
 //
 
 import Foundation
+
+enum IntCode {
+  static func executeProgram<T: InputProvider>(memory: inout [Int], inputProvider: T) {
+    var address = 0
+    Self.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: false)
+  }
+
+  @discardableResult
+  static func executeProgram<T: InputProvider>(
+    memory: inout [Int],
+    from address: inout Int,
+    inputProvider: T,
+    stopOnWrite: Bool) -> Int? {
+    while address >= 0 {
+      let opCode = OpCode(from: memory, at: address)
+      let output = opCode.execute(on: &memory, address: &address, inputProvider: inputProvider)
+      if stopOnWrite && output != nil {
+        return output
+      }
+    }
+
+    return nil
+  }
+}
 
 enum OpCode: Equatable {
   case sum(firstOperand: Parameter, secondOperand: Parameter, result: Parameter)
@@ -43,7 +67,7 @@ enum OpCode: Equatable {
   }
 
   @discardableResult
-  func execute<T: InputProvider>(on memory: inout [Int], address: inout Int, inputProvider: inout T) -> Int? {
+  func execute<T: InputProvider>(on memory: inout [Int], address: inout Int, inputProvider: T) -> Int? {
     var returnValue: Int? = nil
     switch self {
     case .sum(let firstOperand, let secondOperand, let result):

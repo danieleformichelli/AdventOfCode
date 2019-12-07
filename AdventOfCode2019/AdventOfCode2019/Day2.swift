@@ -78,8 +78,12 @@ Your puzzle answer was 5335.
 **/
 struct Day2: DayBase {
   func part1(_ input: String) -> Any {
-    let memory = self.inputCommaSeparatedNumbers
-    return executeProgram(memory: memory, noun: 12, verb: 2)
+    var memory = self.inputCommaSeparatedNumbers
+    memory[1] = 12
+    memory[2] = 2
+    IntCode.executeProgram(memory: &memory, inputProvider: NoInputProvider())
+
+    return memory[0]
   }
 
   func part2(_ input: String) -> Any {
@@ -87,29 +91,18 @@ struct Day2: DayBase {
     let memory = self.inputCommaSeparatedNumbers
     for noun in 0...99 {
       for verb in 0...99 {
-        let result = self.executeProgram(memory: memory, noun: noun, verb: verb)
+        var memory = memory
+        memory[1] = noun
+        memory[2] = verb
+        IntCode.executeProgram(memory: &memory, inputProvider: NoInputProvider())
+        let result = memory[0]
         if result == expectedResult {
           return noun * 100 + verb
         }
       }
     }
 
-    fatalError("Cannot find noun and verb which results in 19690720")
-  }
-
-  private func executeProgram(memory: [Int], noun: Int, verb: Int) -> Int {
-    var memory = memory
-    var inputProvider = NoInputProvider()
-    memory[1] = noun
-    memory[2] = verb
-
-    var address = 0
-    while address >= 0 {
-      let opCode = OpCode(from: memory, at: address)
-      opCode.execute(on: &memory, address: &address, inputProvider: &inputProvider)
-    }
-
-    return memory[0]
+    fatalError("Cannot find noun and verb which results in \(expectedResult)")
   }
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Daniele Formichelli. All rights reserved.
 //
 
-let day = Day6()
+let day = Day7()
 let part: Part = .part2
 
 print(day.run(part))
