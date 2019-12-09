@@ -9,9 +9,11 @@
 import Foundation
 
 enum IntCode {
-  static func executeProgram<T: InputProvider>(memory: inout [Int64: Int64], inputProvider: T) {
+  static let debug = false
+  static let relativeBaseAddress: Int64 = -1
+  static func executeProgram<T: InputProvider>(memory: inout [Int64: Int64], inputProvider: T) -> Int64? {
     var address: Int64 = 0
-    Self.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: false)
+    return Self.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: false)
   }
 
   @discardableResult
@@ -21,15 +23,19 @@ enum IntCode {
     inputProvider: T,
     stopOnWrite: Bool
   ) -> Int64? {
+    var lastOutput: Int64?
     while address >= 0 {
       let opCode = OpCode(from: memory, at: address)
       let output = opCode.execute(on: &memory, address: &address, inputProvider: inputProvider)
-      if stopOnWrite && output != nil {
-        return output
+      if let output = output {
+        lastOutput = output
+        if stopOnWrite {
+          return output
+        }
       }
     }
 
-    return nil
+    return lastOutput
   }
 }
 
@@ -42,6 +48,7 @@ enum OpCode: Equatable {
   case jumpIfFalse(condition: Parameter, target: Parameter)
   case less(firstOperand: Parameter, secondOperand: Parameter, result: Parameter)
   case equal(firstOperand: Parameter, secondOperand: Parameter, result: Parameter)
+  case adjustRelativeBase(firstOperand: Parameter)
   case done
 
   var opCodeLength: Int64 {
@@ -62,6 +69,8 @@ enum OpCode: Equatable {
       return 4
     case .equal:
       return 4
+    case .adjustRelativeBase:
+      return 2
     case .done:
       return 1
     }
@@ -69,31 +78,97 @@ enum OpCode: Equatable {
 
   @discardableResult
   func execute<T: InputProvider>(on memory: inout [Int64: Int64], address: inout Int64, inputProvider: T) -> Int64? {
+    if IntCode.debug {
+      print("")
+    }
+
     var returnValue: Int64? = nil
     switch self {
     case .sum(let firstOperand, let secondOperand, let result):
-      memory[result.addressOrValue] = firstOperand.value(from: memory) + secondOperand.value(from: memory)
+      let sumResult = firstOperand.value(from: memory) + secondOperand.value(from: memory)
+      if IntCode.debug {
+        print("\(memory[address]!)(sum),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
+        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) + \(secondOperand.value(from: memory)) = \(sumResult)")
+      }
+      memory[result.targetAddress(from: memory)] = sumResult
+
     case .multiply(let firstOperand, let secondOperand, let result):
-      memory[result.addressOrValue] = firstOperand.value(from: memory) * secondOperand.value(from: memory)
+      let multiplyResult = firstOperand.value(from: memory) * secondOperand.value(from: memory)
+      if IntCode.debug {
+        print("\(memory[address]!)(mul),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
+        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) * \(secondOperand.value(from: memory)) = \(multiplyResult)")
+      }
+      memory[result.targetAddress(from: memory)] = multiplyResult
+
     case .read(let to):
-      memory[to.addressOrValue] = inputProvider.next
+      let value = inputProvider.next
+      if IntCode.debug {
+        print("\(memory[address]!)(read),\(memory[address + 1]!)")
+        print("memory[\(to.targetAddress(from: memory))] = \(value)")
+      }
+      memory[to.targetAddress(from: memory)] = value
+
     case .write(let from):
+      if IntCode.debug {
+        print("\(memory[address]!)(write),\(memory[address + 1]!)")
+        print("return \(from.value(from: memory))")
+      }
       returnValue = from.value(from: memory)
+
     case .jumpIfTrue(let condition, let target):
+      if IntCode.debug {
+        print("\(memory[address]!)(jt),\(memory[address + 1]!),\(memory[address + 2]!)")
+      }
       if condition.value(from: memory) != 0 {
-        address = target.value(from: memory)
+        let targetAddress = target.value(from: memory)
+        if IntCode.debug {
+          print("jump to= \(targetAddress)")
+        }
+        address = targetAddress
         return nil
       }
+
     case .jumpIfFalse(let condition, let target):
+      if IntCode.debug {
+        print("\(memory[address]!)(jf),\(memory[address + 1]!),\(memory[address + 2]!)")
+      }
       if condition.value(from: memory) == 0 {
-        address = target.value(from: memory)
+        let targetAddress = target.value(from: memory)
+        if IntCode.debug {
+          print("address = \(targetAddress)")
+        }
+        address = targetAddress
         return nil
       }
+
     case .less(let firstOperand, let secondOperand, let result):
-      memory[result.addressOrValue] = firstOperand.value(from: memory) < secondOperand.value(from: memory) ? 1 : 0
+      let isLess: Int64 = firstOperand.value(from: memory) < secondOperand.value(from: memory) ? 1 : 0
+      if IntCode.debug {
+        print("\(memory[address]!)(<),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
+        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) < \(secondOperand.value(from: memory)) = \(isLess)")
+      }
+      memory[result.targetAddress(from: memory)] = isLess
+
     case .equal(let firstOperand, let secondOperand, let result):
-      memory[result.addressOrValue] = firstOperand.value(from: memory) == secondOperand.value(from: memory) ? 1 : 0
+      let isEqual: Int64 = firstOperand.value(from: memory) == secondOperand.value(from: memory) ? 1 : 0
+      if IntCode.debug {
+        print("\(memory[address]!)(==),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
+        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) == \(secondOperand.value(from: memory)) = \(isEqual)")
+      }
+      memory[result.targetAddress(from: memory)] = isEqual
+
+    case .adjustRelativeBase(let firstOperand):
+      let resultAddress = memory[IntCode.relativeBaseAddress]! + firstOperand.value(from: memory)
+      if IntCode.debug {
+        print("\(memory[address]!)(adj),\(memory[address + 1]!)")
+        print("memory[\(IntCode.relativeBaseAddress)] = \(memory[IntCode.relativeBaseAddress]!) + \(firstOperand.value(from: memory)) = \(resultAddress)")
+      }
+      memory[IntCode.relativeBaseAddress] = resultAddress
+
     case .done:
+      if IntCode.debug {
+        print("\(memory[address]!)(done)")
+      }
       address = -1
       return nil
     }
@@ -117,9 +192,13 @@ extension OpCode {
     var parameters: [Parameter] = []
     for parameterOffset in 0..<parametersMode.count {
       let parameterAddress = address + Int64(parameterOffset + 1)
-      guard parameterAddress < memory.count else { break }
-      let addressOrValue = memory[parameterAddress]!
-      let mode = Parameter.Mode(rawValue: Int(parametersMode[parameterOffset]))!
+      guard
+        let addressOrValue = memory[parameterAddress],
+        let mode = Parameter.Mode(rawValue: Int(parametersMode[parameterOffset]))
+      else {
+        break
+      }
+
       parameters.append(Parameter(addressOrValue: addressOrValue, mode: mode))
     }
 
@@ -140,6 +219,8 @@ extension OpCode {
       self = .less(firstOperand: parameters[0], secondOperand: parameters[1], result: parameters[2])
     case 8:
       self = .equal(firstOperand: parameters[0], secondOperand: parameters[1], result: parameters[2])
+    case 9:
+      self = .adjustRelativeBase(firstOperand: parameters[0])
     case 99:
       self = .done
     default:
@@ -151,17 +232,36 @@ extension OpCode {
     enum Mode: Int {
       case position = 0
       case immediate = 1
+      case relative = 2
     }
 
-    let addressOrValue: Int64
-    let mode: Mode
+    private let addressOrValue: Int64
+    private let mode: Mode
 
-    func value(from memory: [Int64: Int64]) -> Int64! {
+    init(addressOrValue: Int64, mode: Mode) {
+      self.addressOrValue = addressOrValue
+      self.mode = mode
+    }
+
+    func value(from memory: [Int64: Int64]) -> Int64 {
       switch self.mode {
       case .position:
-        return memory[self.addressOrValue]
+        return memory[self.addressOrValue] ?? 0
       case .immediate:
         return self.addressOrValue
+      case .relative:
+        let relativeBase = memory[IntCode.relativeBaseAddress]!
+        return memory[relativeBase + self.addressOrValue] ?? 0
+      }
+    }
+
+    func targetAddress(from memory: [Int64: Int64]) -> Int64 {
+      switch self.mode {
+      case .position, .immediate:
+        return self.addressOrValue
+      case .relative:
+        let relativeBase = memory[IntCode.relativeBaseAddress]!
+        return relativeBase + self.addressOrValue
       }
     }
   }

@@ -48,7 +48,9 @@ extension DayBase {
   }
 
   var inputAsIntCodeMemory: [Int64: Int64] {
-    let pairs = Array(inputCommaSeparatedNumbers.enumerated().map { (Int64($0.offset), Int64($0.element)) })
+    var pairs = Array(inputCommaSeparatedNumbers.enumerated().map { (Int64($0.offset), Int64($0.element)) })
+    // store relative base at address -1
+    pairs.append((IntCode.relativeBaseAddress, 0))
     return Dictionary(uniqueKeysWithValues: pairs)
   }
 
