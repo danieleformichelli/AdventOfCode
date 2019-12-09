@@ -88,14 +88,15 @@ Your puzzle answer was 33660560.
 struct Day7: DayBase {
   func part1(_ input: String) -> Any {
     let amplifiersCount = 5
-    let amplifierControllerSoftware = self.inputCommaSeparatedNumbers
-    var maxOutput = Int.min
+    let amplifierControllerSoftware = self.inputAsIntCodeMemory
+    var maxOutput = Int64.min
     for configuration in self.permutations(of: Array(0..<amplifiersCount)) {
-      var previousOutput = 0
+      var previousOutput: Int64 = 0
       for amplifierIndex in 0..<amplifiersCount {
         var memory = amplifierControllerSoftware
-        var address = 0
-        let inputProvider = AmplifiersInputProvider(configuration: configuration[amplifierIndex], previousOutput: previousOutput)
+        var address: Int64 = 0
+        let configuration = Int64(configuration[amplifierIndex])
+        let inputProvider = AmplifiersInputProvider(configuration: configuration, previousOutput: previousOutput)
         previousOutput = IntCode.executeProgram(
           memory: &memory,
           from: &address,
@@ -112,18 +113,18 @@ struct Day7: DayBase {
 
   func part2(_ input: String) -> Any {
     let amplifiersCount = 5
-    let amplifierControllerSoftware = self.inputCommaSeparatedNumbers
+    let amplifierControllerSoftware = self.inputAsIntCodeMemory
 
-    var maxOutput = Int.min
+    var maxOutput = Int64.min
     for configuration in self.permutations(of: Array(5..<(5+amplifiersCount))) {
-      var previousOutput: Int? = 0
+      var previousOutput: Int64? = 0
       var memories = Array(repeating: amplifierControllerSoftware, count: amplifiersCount)
-      var addresses = Array(repeating: 0, count: amplifiersCount)
+      var addresses = Array(repeating: Int64(0), count: amplifiersCount)
       var inputProviders: [AmplifiersInputProvider] = []
       for amplifierIndex in 0..<amplifiersCount {
-        inputProviders.append(AmplifiersInputProvider(configuration: configuration[amplifierIndex]))
+        inputProviders.append(AmplifiersInputProvider(configuration: Int64(configuration[amplifierIndex])))
       }
-      var lastAmplifierOutput = Int.min
+      var lastAmplifierOutput = Int64.min
 
       while previousOutput != nil {
         for amplifierIndex in 0..<amplifiersCount {
@@ -164,16 +165,16 @@ struct Day7: DayBase {
   }
 
   class AmplifiersInputProvider: InputProvider {
-    let configuration: Int
-    var previousOutput: Int?
+    let configuration: Int64
+    var previousOutput: Int64?
     private var isFirstNext = true
 
-    init(configuration: Int, previousOutput: Int = 0) {
+    init(configuration: Int64, previousOutput: Int64 = 0) {
       self.configuration = configuration
       self.previousOutput = previousOutput
     }
 
-    var next: Int {
+    var next: Int64 {
       let returnValue = self.isFirstNext ? self.configuration : self.previousOutput
       isFirstNext = false
       return returnValue ?? 0

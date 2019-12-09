@@ -78,22 +78,22 @@ Your puzzle answer was 5335.
 **/
 struct Day2: DayBase {
   func part1(_ input: String) -> Any {
-    var memory = self.inputCommaSeparatedNumbers
+    var memory = self.inputAsIntCodeMemory
     memory[1] = 12
     memory[2] = 2
     IntCode.executeProgram(memory: &memory, inputProvider: NoInputProvider())
 
-    return memory[0]
+    return memory[0]!
   }
 
   func part2(_ input: String) -> Any {
-    let expectedResult = 19690720
-    let memory = self.inputCommaSeparatedNumbers
+    let expectedResult: Int64 = 19690720
+    let memory = self.inputAsIntCodeMemory
     for noun in 0...99 {
       for verb in 0...99 {
         var memory = memory
-        memory[1] = noun
-        memory[2] = verb
+        memory[1] = Int64(noun)
+        memory[2] = Int64(verb)
         IntCode.executeProgram(memory: &memory, inputProvider: NoInputProvider())
         let result = memory[0]
         if result == expectedResult {

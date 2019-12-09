@@ -46,4 +46,10 @@ extension DayBase {
   var inputCommaSeparatedLines: [[String]] {
     input.components(separatedBy: "\n").compactMap { $0.components(separatedBy: ",") }
   }
+
+  var inputAsIntCodeMemory: [Int64: Int64] {
+    let pairs = Array(inputCommaSeparatedNumbers.enumerated().map { (Int64($0.offset), Int64($0.element)) })
+    return Dictionary(uniqueKeysWithValues: pairs)
+  }
+
 }

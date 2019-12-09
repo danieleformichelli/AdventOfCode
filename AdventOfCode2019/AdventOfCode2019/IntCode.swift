@@ -9,17 +9,18 @@
 import Foundation
 
 enum IntCode {
-  static func executeProgram<T: InputProvider>(memory: inout [Int], inputProvider: T) {
-    var address = 0
+  static func executeProgram<T: InputProvider>(memory: inout [Int64: Int64], inputProvider: T) {
+    var address: Int64 = 0
     Self.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: false)
   }
 
   @discardableResult
   static func executeProgram<T: InputProvider>(
-    memory: inout [Int],
-    from address: inout Int,
+    memory: inout [Int64: Int64],
+    from address: inout Int64,
     inputProvider: T,
-    stopOnWrite: Bool) -> Int? {
+    stopOnWrite: Bool
+  ) -> Int64? {
     while address >= 0 {
       let opCode = OpCode(from: memory, at: address)
       let output = opCode.execute(on: &memory, address: &address, inputProvider: inputProvider)
@@ -43,7 +44,7 @@ enum OpCode: Equatable {
   case equal(firstOperand: Parameter, secondOperand: Parameter, result: Parameter)
   case done
 
-  var opCodeLength: Int {
+  var opCodeLength: Int64 {
     switch self {
     case .sum:
       return 4
@@ -67,8 +68,8 @@ enum OpCode: Equatable {
   }
 
   @discardableResult
-  func execute<T: InputProvider>(on memory: inout [Int], address: inout Int, inputProvider: T) -> Int? {
-    var returnValue: Int? = nil
+  func execute<T: InputProvider>(on memory: inout [Int64: Int64], address: inout Int64, inputProvider: T) -> Int64? {
+    var returnValue: Int64? = nil
     switch self {
     case .sum(let firstOperand, let secondOperand, let result):
       memory[result.addressOrValue] = firstOperand.value(from: memory) + secondOperand.value(from: memory)
@@ -103,10 +104,10 @@ enum OpCode: Equatable {
 }
 
 extension OpCode {
-  init(from memory: [Int], at address: Int) {
-    var opCodeValue = memory[address]
-    let instructionInt: Int
-    var parametersMode: [Int] = [0, 0, 0]
+  init(from memory: [Int64: Int64], at address: Int64) {
+    var opCodeValue = memory[address]!
+    let instructionInt: Int64
+    var parametersMode: [Int64] = [0, 0, 0]
 
     (opCodeValue, instructionInt) = opCodeValue.quotientAndRemainder(dividingBy: 100)
     (opCodeValue, parametersMode[0]) = opCodeValue.quotientAndRemainder(dividingBy: 10)
@@ -115,10 +116,10 @@ extension OpCode {
 
     var parameters: [Parameter] = []
     for parameterOffset in 0..<parametersMode.count {
-      let parameterAddress = address + parameterOffset + 1
+      let parameterAddress = address + Int64(parameterOffset + 1)
       guard parameterAddress < memory.count else { break }
-      let addressOrValue = memory[parameterAddress]
-      let mode = Parameter.Mode(rawValue: parametersMode[parameterOffset])!
+      let addressOrValue = memory[parameterAddress]!
+      let mode = Parameter.Mode(rawValue: Int(parametersMode[parameterOffset]))!
       parameters.append(Parameter(addressOrValue: addressOrValue, mode: mode))
     }
 
@@ -152,34 +153,34 @@ extension OpCode {
       case immediate = 1
     }
 
-    let addressOrValue: Int
+    let addressOrValue: Int64
     let mode: Mode
 
-    func value(from memory: [Int]) -> Int {
+    func value(from memory: [Int64: Int64]) -> Int64! {
       switch self.mode {
       case .position:
-        return memory[addressOrValue]
+        return memory[self.addressOrValue]
       case .immediate:
-        return addressOrValue
+        return self.addressOrValue
       }
     }
   }
 }
 
 protocol InputProvider {
-  var next: Int { get }
+  var next: Int64 { get }
 }
 
 struct NoInputProvider: InputProvider {
-  var next: Int {
+  var next: Int64 {
     fatalError("not implemented")
   }
 }
 
 struct SingleValueInputProvider: InputProvider {
-  private(set) var next: Int
+  private(set) var next: Int64
 
-  init(value: Int) {
+  init(value: Int64) {
     self.next = value
   }
 }
