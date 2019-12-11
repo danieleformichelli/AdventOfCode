@@ -138,31 +138,6 @@ struct Point: Hashable {
   }
 }
 
-enum Direction: String {
-  case up = "U"
-  case right = "R"
-  case down = "D"
-  case left = "L"
-
-  var dx: Int {
-    switch self {
-    case .up: return 0
-    case .right: return 1
-    case .down: return 0
-    case .left: return -1
-    }
-  }
-
-  var dy: Int {
-    switch self {
-    case .up: return 1
-    case .right: return 0
-    case .down: return -1
-    case .left: return 0
-    }
-  }
-}
-
 struct Segment {
   let direction: Direction
   let length: Int
