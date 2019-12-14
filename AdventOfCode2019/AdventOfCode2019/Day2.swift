@@ -81,7 +81,7 @@ struct Day2: DayBase {
     var memory = self.inputAsIntCodeMemory
     memory[1] = 12
     memory[2] = 2
-    IntCode.executeProgram(memory: &memory, inputProvider: NoInputProvider())
+    IntCode.executeProgram(memory: &memory, input: nil)
 
     return memory[0]!
   }
@@ -94,7 +94,7 @@ struct Day2: DayBase {
         var memory = memory
         memory[1] = Int64(noun)
         memory[2] = Int64(verb)
-        IntCode.executeProgram(memory: &memory, inputProvider: NoInputProvider())
+        IntCode.executeProgram(memory: &memory, input: nil)
         let result = memory[0]
         if result == expectedResult {
           return noun * 100 + verb

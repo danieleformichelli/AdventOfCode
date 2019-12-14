@@ -112,12 +112,11 @@ struct Day11: DayBase {
     var address: Int64 = 0
     while address >= 0 {
       let currentColor = paintedPanels[currentPosition] ?? .black
-      let inputProvider = SingleValueInputProvider(value: currentColor.rawValue)
-      let paintColor = IntCode.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: true)
+      let paintColor = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: { currentColor.rawValue })
       if let paintColor = paintColor {
         paintedPanels[currentPosition] = Color(rawValue: paintColor)
       }
-      let turnDirection = IntCode.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: true)
+      let turnDirection = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: { currentColor.rawValue })
       switch turnDirection {
       case 0:
         currentDirection = currentDirection.turnLeft

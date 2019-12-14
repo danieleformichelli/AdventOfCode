@@ -53,5 +53,4 @@ extension DayBase {
     pairs.append((IntCode.relativeBaseAddress, 0))
     return Dictionary(uniqueKeysWithValues: pairs)
   }
-
 }

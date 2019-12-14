@@ -100,8 +100,8 @@ struct Day7: DayBase {
         previousOutput = IntCode.executeProgram(
           memory: &memory,
           from: &address,
-          inputProvider: inputProvider,
-          stopOnWrite: true
+          stopOnWrite: true,
+          input: { inputProvider.next }
         )!
       }
 
@@ -133,8 +133,8 @@ struct Day7: DayBase {
           previousOutput = IntCode.executeProgram(
             memory: &memories[amplifierIndex],
             from: &addresses[amplifierIndex],
-            inputProvider: inputProvider,
-            stopOnWrite: true
+            stopOnWrite: true,
+            input: { inputProvider.next }
           )
         }
 
@@ -164,7 +164,7 @@ struct Day7: DayBase {
     return permutations
   }
 
-  class AmplifiersInputProvider: InputProvider {
+  class AmplifiersInputProvider {
     let configuration: Int64
     var previousOutput: Int64?
     private var isFirstNext = true

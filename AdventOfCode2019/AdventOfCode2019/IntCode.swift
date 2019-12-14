@@ -11,22 +11,22 @@ import Foundation
 enum IntCode {
   static let debug = false
   static let relativeBaseAddress: Int64 = -1
-  static func executeProgram<T: InputProvider>(memory: inout [Int64: Int64], inputProvider: T) -> Int64? {
+  static func executeProgram(memory: inout [Int64: Int64], input: (() -> Int64)?) -> Int64? {
     var address: Int64 = 0
-    return Self.executeProgram(memory: &memory, from: &address, inputProvider: inputProvider, stopOnWrite: false)
+    return Self.executeProgram(memory: &memory, from: &address, stopOnWrite: false, input: input)
   }
 
   @discardableResult
-  static func executeProgram<T: InputProvider>(
+  static func executeProgram(
     memory: inout [Int64: Int64],
     from address: inout Int64,
-    inputProvider: T,
-    stopOnWrite: Bool
+    stopOnWrite: Bool,
+    input: (() -> Int64)?
   ) -> Int64? {
     var lastOutput: Int64?
     while address >= 0 {
       let opCode = OpCode(from: memory, at: address)
-      let output = opCode.execute(on: &memory, address: &address, inputProvider: inputProvider)
+      let output = opCode.execute(on: &memory, address: &address, input: input)
       if let output = output {
         lastOutput = output
         if stopOnWrite {
@@ -77,7 +77,7 @@ enum OpCode: Equatable {
   }
 
   @discardableResult
-  func execute<T: InputProvider>(on memory: inout [Int64: Int64], address: inout Int64, inputProvider: T) -> Int64? {
+  func execute(on memory: inout [Int64: Int64], address: inout Int64, input: (() -> Int64)?) -> Int64? {
     if IntCode.debug {
       print("")
     }
@@ -101,7 +101,7 @@ enum OpCode: Equatable {
       memory[result.targetAddress(from: memory)] = multiplyResult
 
     case .read(let to):
-      let value = inputProvider.next
+      let value = input!()
       if IntCode.debug {
         print("\(memory[address]!)(read),\(memory[address + 1]!)")
         print("memory[\(to.targetAddress(from: memory))] = \(value)")
@@ -264,23 +264,5 @@ extension OpCode {
         return relativeBase + self.addressOrValue
       }
     }
-  }
-}
-
-protocol InputProvider {
-  var next: Int64 { get }
-}
-
-struct NoInputProvider: InputProvider {
-  var next: Int64 {
-    fatalError("not implemented")
-  }
-}
-
-struct SingleValueInputProvider: InputProvider {
-  private(set) var next: Int64
-
-  init(value: Int64) {
-    self.next = value
   }
 }

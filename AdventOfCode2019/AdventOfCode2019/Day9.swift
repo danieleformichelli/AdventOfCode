@@ -58,12 +58,12 @@ Your puzzle answer was 88231.
 struct Day9: DayBase {
   func part1(_ input: String) -> Any {
     var memory = self.inputAsIntCodeMemory
-    return IntCode.executeProgram(memory: &memory, inputProvider: SingleValueInputProvider(value: 1))!
+    return IntCode.executeProgram(memory: &memory, input: { 1 })!
   }
 
   func part2(_ input: String) -> Any {
     var memory = self.inputAsIntCodeMemory
-    return IntCode.executeProgram(memory: &memory, inputProvider: SingleValueInputProvider(value: 2))!
+    return IntCode.executeProgram(memory: &memory, input: { 2 })!
   }
 }
 
