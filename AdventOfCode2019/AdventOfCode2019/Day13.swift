@@ -39,7 +39,6 @@ Beat the game by breaking all the blocks. What is your score after the last bloc
 
 Your puzzle answer was 18371.
 **/
-import Foundation
 
 struct Day13: DayBase {
   func part1(_ input: String) -> Any {
@@ -66,8 +65,8 @@ struct Day13: DayBase {
 
     var address: Int64 = 0
     while address >= 0 {
-      //let inputProvider = SingleValueInputProvider(value: 0)
       let output = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: {
+        // print(map.print(invertedY: true, clearElement: .empty))
         return Self.calculateInput(paddlePosition: currentPaddlePosition, ballPosition: currentBallPosition).rawValue
       })
       if let output = output {
@@ -112,26 +111,6 @@ struct Day13: DayBase {
       return .neutral
     }
   }
-
-  private static func mapToString(_ map: [Point: Tile]) -> String {
-    let minX = map.keys.min { (lhs, rhs) in lhs.x < rhs.x }!.x
-    let maxX = map.keys.min { (lhs, rhs) in lhs.x > rhs.x }!.x
-    let minY = map.keys.min { (lhs, rhs) in lhs.y < rhs.y }!.y
-    let maxY = map.keys.min { (lhs, rhs) in lhs.y > rhs.y }!.y
-
-    var result = ""
-    for y in minY...maxY {
-      for x in minX...maxX {
-        let panelColor = map[Point(x: x, y: y)] ?? .empty
-        result += panelColor.representation
-      }
-
-      result += "\n"
-    }
-
-    return result
-  }
-
 }
 
 fileprivate enum Input: Int64 {
@@ -146,7 +125,7 @@ fileprivate enum Output {
   case tile
 }
 
-fileprivate enum Tile: Int64 {
+fileprivate enum Tile: Int64, MapElement {
   case empty = 0
   case wall = 1
   case block = 2

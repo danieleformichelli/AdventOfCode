@@ -6,9 +6,7 @@
 //  Copyright © 2019 Daniele Formichelli. All rights reserved.
 //
 
-import Foundation
-
-enum Direction: String {
+enum Direction: String, CaseIterable {
   case up = "U"
   case right = "R"
   case down = "D"

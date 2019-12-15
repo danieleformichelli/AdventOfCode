@@ -82,24 +82,7 @@ struct Day11: DayBase {
   }
 
   func part2(_ input: String) -> Any {
-    let paintedPanels = paint(startingColor: .white)
-
-    let minX = paintedPanels.keys.min { (lhs, rhs) in lhs.x < rhs.x }!.x
-    let maxX = paintedPanels.keys.min { (lhs, rhs) in lhs.x > rhs.x }!.x
-    let minY = paintedPanels.keys.min { (lhs, rhs) in lhs.y < rhs.y }!.y
-    let maxY = paintedPanels.keys.min { (lhs, rhs) in lhs.y > rhs.y }!.y
-
-    var hull = ""
-    for y in stride(from: maxY, through: minY, by: -1) {
-      for x in minX...maxX {
-        let panelColor = paintedPanels[Point(x: x, y: y)] ?? .black
-        hull += panelColor.representation
-      }
-
-      hull += "\n"
-    }
-
-    return hull
+    return paint(startingColor: .white).print(invertedY: false, clearElement: .black)
   }
 
   private func paint(startingColor: Color) -> [Point: Color] {
@@ -133,7 +116,7 @@ struct Day11: DayBase {
   }
 }
 
-fileprivate enum Color: Int64 {
+fileprivate enum Color: Int64, MapElement {
   case black = 0
   case white = 1
 
