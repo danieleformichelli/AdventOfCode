@@ -136,7 +136,7 @@ struct Day17: DayBase {
       }
     }
 
-    print(map.print(invertedY: true, clearElement: .empty))
+//    print(map.print(invertedY: true, clearElement: .empty))
     return alignmentParametersSum
   }
 
@@ -154,9 +154,9 @@ struct Day17: DayBase {
         return Int64(input.asciiValue!)
       })
       if let output = output {
-        if output < 255 {
-          print(Character(UnicodeScalar(Int(output))!), terminator: "")
-        }
+//        if output < 255 {
+//          print(Character(UnicodeScalar(Int(output))!), terminator: "")
+//        }
         returnValue = output
       }
     }
