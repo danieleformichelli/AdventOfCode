@@ -29,8 +29,6 @@ public enum IntCode {
       let opCode = OpCode(from: memory, at: address)
       let output = opCode.execute(on: &memory, address: &address, input: input)
       switch opCode {
-      case .read:
-        return nil
       case .write:
         if let output = output {
           lastOutput = output
