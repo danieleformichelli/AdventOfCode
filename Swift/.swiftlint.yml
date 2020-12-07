@@ -1,0 +1,16 @@
+included:
+  - Sources
+  - Tests
+
+opt_in_rules:
+  - explicit_self
+
+disabled_rules:
+  - cyclomatic_complexity
+  - file_length
+  - function_body_length
+  - identifier_name
+  - line_length
+  - nesting
+  - opening_brace
+  - type_body_length

@@ -1,0 +1,141 @@
+//
+//  Utils.swift
+//  AdventOfCode2019
+//
+//  Created by Daniele Formichelli on 15/12/2019.
+//  Copyright © 2019 Daniele Formichelli. All rights reserved.
+//
+
+extension Int: CustomDebugStringConvertible {
+  public var debugDescription: String {
+    String(self)
+  }
+}
+
+extension Int64: CustomDebugStringConvertible {
+  public var debugDescription: String {
+    String(self)
+  }
+}
+
+public extension String {
+  var lines: [String] {
+    components(separatedBy: "\n")
+  }
+
+  var numbers: [Int] {
+    components(separatedBy: "\n").compactMap { Int($0) }
+  }
+
+  var commaSeparatedNumbers: [Int] {
+    components(separatedBy: ",").compactMap { Int($0) }
+  }
+
+  var commaSeparatedLines: [[String]] {
+    components(separatedBy: "\n").compactMap { $0.components(separatedBy: ",") }
+  }
+
+  var intCodeMemory: [Int64: Int64] {
+    var pairs = Array(commaSeparatedNumbers.enumerated().map { (Int64($0.offset), Int64($0.element)) })
+    // store relative base at address -1
+    pairs.append((IntCode.relativeBaseAddress, 0))
+    return Dictionary(uniqueKeysWithValues: pairs)
+  }
+}
+
+public protocol MapElement {
+  var representation: String { get }
+}
+
+public struct Point: Hashable {
+  public let x: Int
+  public let y: Int
+
+  public init(x: Int, y: Int) {
+    self.x = x
+    self.y = y
+  }
+
+  public func manhattanDistance(from other: Point) -> Int {
+    abs(self.x - other.x) + abs(self.y - other.y)
+  }
+
+  public static let zero: Point = .zero
+}
+
+public extension Dictionary where Key == Point, Value: MapElement {
+  func print(invertedY: Bool, clearElement: Value) -> String {
+    let minX = keys.min { lhs, rhs in lhs.x < rhs.x }!.x
+    let maxX = keys.min { lhs, rhs in lhs.x > rhs.x }!.x
+    let minY = keys.min { lhs, rhs in lhs.y < rhs.y }!.y
+    let maxY = keys.min { lhs, rhs in lhs.y > rhs.y }!.y
+
+    let yStride = invertedY ? stride(from: minY, through: maxY, by: 1) : stride(from: maxY, through: minY, by: -1)
+
+    var result = ""
+    for y in yStride {
+      for x in minX ... maxX {
+        let element = self[Point(x: x, y: y)]
+        result += element?.representation ?? clearElement.representation
+      }
+
+      result += "\n"
+    }
+
+    return result
+  }
+}
+
+public enum Utils {
+  public static func gcd(_ m: Int64, _ n: Int64) -> Int64 {
+    if m == n {
+      return m
+    } else if m == 0 {
+      return n
+    } else if n == 0 {
+      return m
+    }
+
+    if (m & 1) == 0 {
+      // m is even
+      if (n & 1) == 1 {
+        // and n is odd
+        return self.gcd(m >> 1, n)
+      } else {
+        // both m and n are even
+        return self.gcd(m >> 1, n >> 1) << 1
+      }
+    } else if (n & 1) == 0 {
+      // m is odd, n is even
+      return self.gcd(m, n >> 1)
+    } else if m > n {
+      // reduce larger argument
+      return self.gcd((m - n) >> 1, n)
+    } else {
+      // reduce larger argument
+      return self.gcd((n - m) >> 1, m)
+    }
+  }
+
+  public static func lcm(_ m: Int64, _ n: Int64) -> Int64 {
+    m / self.gcd(m, n) * n
+  }
+}
+
+public extension Collection where Element: Numeric {
+  var sum: Element {
+    reduce(0, +)
+  }
+}
+
+public extension Collection {
+  var asArray: [Element] {
+    Array(self)
+  }
+}
+
+public extension Collection where Element: Hashable {
+  var asSet: Set<Element> {
+    Set(self)
+  }
+}
