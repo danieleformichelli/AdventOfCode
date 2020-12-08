@@ -41,6 +41,10 @@ public extension String {
     pairs.append((IntCode.relativeBaseAddress, 0))
     return Dictionary(uniqueKeysWithValues: pairs)
   }
+
+  var operations: [Operation] {
+    return self.split(separator: "\n").map { .init(from: String($0)) }
+  }
 }
 
 public protocol MapElement {
@@ -96,16 +100,16 @@ public enum Utils {
       return m
     }
 
-    if (m & 1) == 0 {
+    if m & 1 == 0 {
       // m is even
-      if (n & 1) == 1 {
+      if n & 1 == 1 {
         // and n is odd
         return self.gcd(m >> 1, n)
       } else {
         // both m and n are even
         return self.gcd(m >> 1, n >> 1) << 1
       }
-    } else if (n & 1) == 0 {
+    } else if n & 1 == 0 {
       // m is odd, n is even
       return self.gcd(m, n >> 1)
     } else if m > n {
