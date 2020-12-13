@@ -91,7 +91,7 @@ public extension Dictionary where Key == Point, Value: MapElement {
 }
 
 public enum Utils {
-  public static func gcd(_ m: Int64, _ n: Int64) -> Int64 {
+  public static func gcd<T: FixedWidthInteger>(_ m: T, _ n: T) -> T {
     if m == n {
       return m
     } else if m == 0 {
@@ -121,8 +121,14 @@ public enum Utils {
     }
   }
 
-  public static func lcm(_ m: Int64, _ n: Int64) -> Int64 {
+  public static func lcm<T: FixedWidthInteger>(_ m: T, _ n: T) -> T {
     m / self.gcd(m, n) * n
+  }
+
+  public static func lcm<T: FixedWidthInteger>(_ numbers: [T]) -> T {
+    var lcmPartial: T = 1
+    numbers.forEach { lcmPartial = Self.lcm(lcmPartial, $0) }
+    return lcmPartial
   }
 }
 
