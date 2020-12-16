@@ -138,6 +138,12 @@ public extension Collection where Element: Numeric {
   }
 }
 
+public extension Collection where Element: Numeric {
+  var multiply: Element {
+    reduce(1, *)
+  }
+}
+
 public extension Collection {
   var asArray: [Element] {
     Array(self)
