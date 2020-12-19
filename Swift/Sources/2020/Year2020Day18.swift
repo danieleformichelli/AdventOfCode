@@ -18,45 +18,45 @@ public struct Year2020Day18: DayBase {
     return input.lines.map { self.solve($0, precedence: .sumFirst).result }.sum
   }
 
-private func solve(_ input: String, from startIndex: Int = 0, precedence: Precedence) -> (result: Int, endIndex: Int) {
-  var operators: [Operator] = []
-  var numbers: [Int] = []
-  var index = startIndex
-  while index < input.count {
-    let character = input[input.index(input.startIndex, offsetBy: index)]
-    switch character {
-    case " ":
-      break
-    case "+":
-      operators.append(.sum)
-    case "*":
-      operators.append(.product)
-    case "(":
-      let (partialResult, endIndex) = self.solve(input, from: index + 1, precedence: precedence)
-      numbers.append(partialResult)
-      index = endIndex
-    case ")":
-      return (result: compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
-    default:
-      numbers.append(Int(String(character))!)
+  private func solve(_ input: String, from startIndex: Int = 0, precedence: Precedence) -> (result: Int, endIndex: Int) {
+    var operators: [Operator] = []
+    var numbers: [Int] = []
+    var index = startIndex
+    while index < input.count {
+      let character = input[input.index(input.startIndex, offsetBy: index)]
+      switch character {
+      case " ":
+        break
+      case "+":
+        operators.append(.sum)
+      case "*":
+        operators.append(.product)
+      case "(":
+        let (partialResult, endIndex) = self.solve(input, from: index + 1, precedence: precedence)
+        numbers.append(partialResult)
+        index = endIndex
+      case ")":
+        return (result: compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
+      default:
+        numbers.append(Int(String(character))!)
+      }
+      index += 1
     }
-    index += 1
+    return (result: compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
   }
-  return (result: compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
-}
 
-private func compute(numbers: [Int], operators: [Operator], precedence: Precedence) -> Int {
-  var numbers = numbers
-  var operators = operators
-  while !operators.isEmpty {
-    let nextOperatorIndex = precedence.nextOperatorIndex(in: operators)
-    let nextOperator = operators.remove(at: nextOperatorIndex)
-    let left = numbers.remove(at: nextOperatorIndex)
-    let right = numbers.remove(at: nextOperatorIndex)
-    numbers.insert(nextOperator.compute(left, right), at: nextOperatorIndex)
+  private func compute(numbers: [Int], operators: [Operator], precedence: Precedence) -> Int {
+    var numbers = numbers
+    var operators = operators
+    while !operators.isEmpty {
+      let nextOperatorIndex = precedence.nextOperatorIndex(in: operators)
+      let nextOperator = operators.remove(at: nextOperatorIndex)
+      let left = numbers.remove(at: nextOperatorIndex)
+      let right = numbers.remove(at: nextOperatorIndex)
+      numbers.insert(nextOperator.compute(left, right), at: nextOperatorIndex)
+    }
+    return numbers[0]
   }
-  return numbers[0]
-}
 }
 
 extension Year2020Day18 {
