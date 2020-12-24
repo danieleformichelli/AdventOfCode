@@ -50,7 +50,7 @@ public struct Year2020Day23: DayBase {
 }
 
 extension String {
-  var cups: [Int] {
+  fileprivate var cups: [Int] {
     return self.compactMap { Int(String($0)) }
   }
 }
