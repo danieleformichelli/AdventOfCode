@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ListNode<T> {
+public class ListNode<T>: Collection {
   public let value: T
   public var next: ListNode<T>?
   public var prev: ListNode<T>?
@@ -17,6 +17,24 @@ public class ListNode<T> {
     self.value = value
     self.next = next
     self.prev = prev
+  }
+
+  public var startIndex: Int {
+    return 0
+  }
+
+  public var endIndex: Int {
+    return self.length
+  }
+
+  public subscript(position: Int) -> T {
+    var current = self
+    (0 ..< position).forEach { _ in current = current.next! }
+    return current.value
+  }
+
+  public func index(after i: Int) -> Int {
+    return i + 1
   }
 }
 

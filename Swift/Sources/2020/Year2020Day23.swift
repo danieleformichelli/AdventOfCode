@@ -12,7 +12,7 @@ import Utils
 /// https://adventofcode.com/2020/day/23
 public struct Year2020Day23: DayBase {
   public func part1(_ input: String) -> CustomDebugStringConvertible {
-    let cups = self.run(cups: input.cups, moves: 100)
+    let cups = self.run(cups: input.cups, moves: 100).asArray
     let indexOfOne = cups.firstIndex(of: 1)!
     return (cups[(indexOfOne + 1)...] + cups[..<indexOfOne]).map(String.init).joined()
   }
@@ -20,32 +20,54 @@ public struct Year2020Day23: DayBase {
   public func part2(_ input: String) -> CustomDebugStringConvertible {
     let firstCups = input.cups
     let allCups = (1 ... 1000000).map { index in index <= firstCups.count ? firstCups[index - 1] : index }
-    let cups = self.run(cups: allCups, moves: 10000000)
-    let indexOfOne = cups.firstIndex(of: 1)!
-    return cups[indexOfOne + 1] * cups[indexOfOne + 2]
+    var cups = self.run(cups: allCups, moves: 10000000)
+    while cups.value != 1 {
+      cups = cups.next!
+    }
+    return cups.next!.value * cups.next!.next!.value
   }
 
-  private func run(cups: [Int], moves: Int) -> [Int] {
-    var cache: [[Int]: Int] = [:]
-    var cups = cups
+  private func run(cups: [Int], moves: Int) -> ListNode<Int> {
     let maxCup = cups.count
-    (1 ... moves).forEach { index in
-      guard cache[cups] == nil else {
-        // TODO handle this
-        fatalError()
-      }
-      cache[cups] = index - 1
-      let currentCup = cups[0]
-      let picked = cups[1...3]
-      let remaining = cups[4...]
-      var destinationCup = currentCup
+    var currentCup = cups.toList!
+    var hash: [Int: ListNode<Int>] = [:]
+    var head: ListNode<Int>? = currentCup
+    var tail: ListNode<Int>?
+    repeat {
+      tail = head
+      hash[head!.value] = head
+      head = head?.next
+    } while head != nil
+    tail?.next = currentCup
+
+    (1 ... moves).forEach { _ in
+      let firstPicked = currentCup.next!
+      let lastPicked = currentCup.next!.next!.next!
+      let nextCurrent = lastPicked.next!
+      var destinationCup = currentCup.value
       repeat {
         destinationCup = (destinationCup - 2 + maxCup) % maxCup + 1
-      } while picked.contains(destinationCup)
-      let destinationIndex = remaining.firstIndex(of: destinationCup)!
-      cups = remaining[..<destinationIndex] + [destinationCup] + picked + remaining[(destinationIndex + 1)...] + [currentCup]
+      } while currentCup.next!.value == destinationCup || currentCup.next!.next!.value == destinationCup || currentCup.next!.next!.next!.value == destinationCup
+
+      // Remove picked ones
+      currentCup.next = nextCurrent
+      nextCurrent.prev = currentCup
+
+      // …until the destination, then the picked ones
+      let destinationCupNode = hash[destinationCup]!
+      lastPicked.next = destinationCupNode.next
+      destinationCupNode.next?.prev = lastPicked.next
+      destinationCupNode.next = firstPicked
+      firstPicked.prev = destinationCupNode
+
+      // Move the current cup
+      currentCup = nextCurrent
     }
-    return cups
+
+    // break the circle
+    currentCup.prev?.next = nil
+
+    return currentCup
   }
 }
 
