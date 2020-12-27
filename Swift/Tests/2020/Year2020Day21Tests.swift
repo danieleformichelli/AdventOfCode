@@ -15,7 +15,7 @@ class Year2020Day21Tests: XCTestCase {
   }
 
   func testPart2() {
-    XCTAssertEqual(Year2020Day21().part2(Self.input).debugDescription, "gbt,rpj,vdxb,dtb,bqmhk,vqzbq,zqjm,nhjrzzj")
+    XCTAssertEqual(Year2020Day21().part2(Self.input).debugDescription, "gbt,rpj,vdxb,dtb,bqmhk,vqzbq,zqjm,nhjrzzj".debugDescription)
   }
 
   static var input: String {

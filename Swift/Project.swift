@@ -27,19 +27,7 @@ let project = Project(
       bundleId: "df.AdventOfCode.Utils",
       infoPlist: .default,
       sources: ["Sources/Utils/**"]
-    ),
-    .init(
-      name: "Tests",
-      platform: .macOS,
-      product: .unitTests,
-      bundleId: "df.AdventOfCode.Tests",
-      infoPlist: .default,
-      sources: ["Tests/**"],
-      dependencies: [
-        .target(name: yearName(2019)),
-        .target(name: yearName(2020)),
-      ]
-    ),
+    )
   ] +
     year(2019) +
     year(2020)
@@ -59,5 +47,16 @@ func year(_ year: Int) -> [ProjectDescription.Target] {
         .target(name: "Utils"),
       ]
     ),
+    .init(
+      name: "\(name)Tests",
+      platform: .macOS,
+      product: .unitTests,
+      bundleId: "df.AdventOfCode.\(name)Tests",
+      infoPlist: .default,
+      sources: ["Tests/\(year)/**"],
+      dependencies: [
+        .target(name: name)
+      ]
+    )
   ]
 }

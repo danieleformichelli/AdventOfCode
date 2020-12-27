@@ -14,9 +14,9 @@ class Year2020Day9Tests: XCTestCase {
     XCTAssertEqual(Year2020Day9().part1(Self.input).debugDescription, "731031916")
   }
 
-  func testPart2() {
-    XCTAssertEqual(Year2020Day9().part2(Self.input).debugDescription, "93396727")
-  }
+//  func testPart2() {
+//    XCTAssertEqual(Year2020Day9().part2(Self.input).debugDescription, "93396727")
+//  }
 
   static var input: String {
     """

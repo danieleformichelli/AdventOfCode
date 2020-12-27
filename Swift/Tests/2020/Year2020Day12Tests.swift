@@ -11,11 +11,11 @@ import XCTest
 
 class Year2020Day12Tests: XCTestCase {
   func testPart1() {
-    XCTAssertEqual(Year2020Day12().part1(Self.input).debugDescription, "2346")
+    XCTAssertEqual(Year2020Day12().part1(Self.input).debugDescription, "1956")
   }
 
   func testPart2() {
-    XCTAssertEqual(Year2020Day12().part2(Self.input).debugDescription, "2111")
+    XCTAssertEqual(Year2020Day12().part2(Self.input).debugDescription, "126797")
   }
 
   static var input: String {
