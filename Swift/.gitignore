@@ -65,3 +65,5 @@ DerivedData/
 ### Tuist derived files ###
 graph.dot
 Derived/
+.build/
+.package.resolved

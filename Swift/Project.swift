@@ -2,7 +2,7 @@ import ProjectDescription
 
 // MARK: - Project
 
-let years = [2019, 2020]
+let years = [2015, 2019, 2020]
 
 func yearName(_ year: Int) -> String {
   "AdventOfCode\(year)"
@@ -10,6 +10,9 @@ func yearName(_ year: Int) -> String {
 
 let project = Project(
   name: "AdventOfCode",
+  packages: [
+    .package(url: "https://github.com/pointfreeco/swift-parsing", .upToNextMajor(from: "0.1.0")),
+  ],
   targets: [
     .init(
       name: "AdventOfCode",
@@ -28,9 +31,7 @@ let project = Project(
       infoPlist: .default,
       sources: ["Sources/Utils/**"]
     )
-  ] +
-    year(2019) +
-    year(2020)
+  ] + years.flatMap { year($0) }
 )
 
 func year(_ year: Int) -> [ProjectDescription.Target] {
@@ -44,6 +45,7 @@ func year(_ year: Int) -> [ProjectDescription.Target] {
       infoPlist: .default,
       sources: ["Sources/\(year)/**"],
       dependencies: [
+        .package(product: "Parsing"),
         .target(name: "Utils"),
       ]
     ),
