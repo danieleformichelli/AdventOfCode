@@ -23,7 +23,7 @@ public struct Year2020Day25: DayBase {
   }
 
   public func part2(_ input: String) -> CustomDebugStringConvertible {
-    return input
+    return ""
   }
 
   private func transform(subject: Int, loopSize: Int) -> Int {
