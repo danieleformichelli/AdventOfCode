@@ -47,6 +47,8 @@ extension Year2015Day1 {
 
 extension String {
   fileprivate var directions: [Year2015Day1.Direction] {
-    return self.compactMap { Year2015Day1.Direction(rawValue: String($0)) }
+    let direction = StartsWith<Substring>("(").map { Year2015Day1.Direction.up }
+      .orElse(StartsWith(")").map { Year2015Day1.Direction.down })
+    return Many(direction).parse(self)!
   }
 }

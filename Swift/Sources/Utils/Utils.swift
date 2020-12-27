@@ -64,6 +64,10 @@ public struct Point: Hashable {
     abs(self.x - other.x) + abs(self.y - other.y)
   }
 
+  public func move(_ direction: Direction) -> Point {
+    return Point(x: self.x + direction.dx, y: self.y + direction.dy)
+  }
+
   public static let zero: Point = .zero
 }
 

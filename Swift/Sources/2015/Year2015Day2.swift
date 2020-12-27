@@ -41,6 +41,7 @@ extension Year2015Day2 {
     }
   }
 }
+
 extension String {
   fileprivate var dimensions: [Year2015Day2.Dimensions] {
     let dimension = Int.parser()
