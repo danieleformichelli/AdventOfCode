@@ -163,6 +163,12 @@ public extension Collection where Element: Hashable {
   }
 }
 
+public extension Substring {
+  var asString: String {
+    return String(self)
+  }
+}
+
 public extension String {
   var md5: String {
     let data = Data(self.utf8)
