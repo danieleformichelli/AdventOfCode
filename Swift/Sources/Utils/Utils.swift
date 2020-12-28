@@ -181,3 +181,20 @@ public extension String {
       .map { String(format: "%02x", $0) }.joined()
   }
 }
+
+public extension Array {
+  var headAndTail: (Element, [Element])? {
+    guard let x = self.first else { return nil }
+    return (x, self.suffix(from: 1).asArray)
+  }
+
+  func interleaved(_ element: Element) -> [[Element]] {
+    guard let (head, rest) = self.headAndTail else { return [[element]] }
+    return [[element] + self] + rest.interleaved(element).map { [head] + $0 }
+  }
+
+  var permutations: [[Element]] {
+    guard let (head, rest) = self.headAndTail else { return [[]] }
+    return rest.permutations.flatMap { $0.interleaved(head) }
+  }
+}
