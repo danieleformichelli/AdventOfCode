@@ -6,6 +6,9 @@
 //  Copyright © 2019 Daniele Formichelli. All rights reserved.
 //
 
+import CommonCrypto
+import Foundation
+
 extension Int: CustomDebugStringConvertible {
   public var debugDescription: String {
     String(self)
@@ -157,5 +160,18 @@ public extension Collection {
 public extension Collection where Element: Hashable {
   var asSet: Set<Element> {
     Set(self)
+  }
+}
+
+public extension String {
+  var md5: String {
+    let data = Data(self.utf8)
+    return data
+      .withUnsafeBytes { bytes -> [UInt8] in
+        var hash: [UInt8] = .init(repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+        CC_MD5(bytes.baseAddress, CC_LONG(data.count), &hash)
+        return hash
+      }
+      .map { String(format: "%02x", $0) }.joined()
   }
 }
