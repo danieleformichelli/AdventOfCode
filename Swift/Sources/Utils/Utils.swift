@@ -211,3 +211,47 @@ public extension Array {
     return rest.permutations.flatMap { $0.interleaved(head) }
   }
 }
+
+public extension String {
+  func allIndexes(of substring: String) -> [Int] {
+    var indices = [Int]()
+    var searchStartIndex = self.startIndex
+    while
+      searchStartIndex < self.endIndex,
+      let range = self.range(of: substring, range: searchStartIndex..<self.endIndex),
+      !range.isEmpty
+    {
+      let index = distance(from: self.startIndex, to: range.lowerBound)
+      indices.append(index)
+      searchStartIndex = range.upperBound
+    }
+
+    return indices
+  }
+}
+
+public extension Int {
+  static var divisorsCache: [Int: Set<Int>] = [1: [1]]
+
+  func divisors() -> Set<Int> {
+    if let cached = Self.divisorsCache[self] {
+      return cached
+    }
+
+    var result: Set<Int> = [1]
+    let maxFactor = Int(Double(self).squareRoot())
+    var i = 2
+    while i <= maxFactor {
+      guard !self.isMultiple(of: i) else {
+        result = (self / i).divisors()
+        result.formUnion(result.map { i * $0 }.asSet)
+        break
+      }
+      i += 1
+    }
+    result.insert(self)
+
+    Self.divisorsCache[self] = result
+    return result
+  }
+}
