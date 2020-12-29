@@ -71,6 +71,19 @@ public struct Point: Hashable {
     return Point(x: self.x + direction.dx, y: self.y + direction.dy)
   }
 
+  public var neighbors: Set<Point> {
+    return [
+      .init(x: self.x - 1, y: self.y - 1),
+      .init(x: self.x, y: self.y - 1),
+      .init(x: self.x + 1, y: self.y - 1),
+      .init(x: self.x - 1, y: self.y),
+      .init(x: self.x + 1, y: self.y),
+      .init(x: self.x - 1, y: self.y + 1),
+      .init(x: self.x, y: self.y + 1),
+      .init(x: self.x + 1, y: self.y + 1),
+    ]
+  }
+
   public static let zero: Point = .zero
 }
 
