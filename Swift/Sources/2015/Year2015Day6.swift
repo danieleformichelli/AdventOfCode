@@ -50,13 +50,13 @@ struct Year2015Day6: DayBase {
   }
 }
 
-fileprivate enum Action {
+private enum Action {
   case toggle
   case on
   case off
 }
 
-fileprivate struct Instruction {
+private struct Instruction {
   let action: Action
   let from: Point
   let to: Point

@@ -27,29 +27,27 @@ struct Year2015Day2: DayBase {
   }
 }
 
-extension Year2015Day2 {
-  fileprivate struct Dimensions {
-    let length: Int
-    let width: Int
-    let height: Int
+private struct Dimensions {
+  let length: Int
+  let width: Int
+  let height: Int
 
-    var surface: Int {
-      let lengthByWidth = self.length * self.width
-      let lengthByHeight = self.length * self.height
-      let widthByHeight = self.width * self.height
-      return 2 * lengthByWidth + 2 * lengthByHeight + 2 * widthByHeight + min(lengthByWidth, lengthByHeight, widthByHeight)
-    }
+  var surface: Int {
+    let lengthByWidth = self.length * self.width
+    let lengthByHeight = self.length * self.height
+    let widthByHeight = self.width * self.height
+    return 2 * lengthByWidth + 2 * lengthByHeight + 2 * widthByHeight + min(lengthByWidth, lengthByHeight, widthByHeight)
   }
 }
 
 extension String {
-  fileprivate var dimensions: [Year2015Day2.Dimensions] {
+  fileprivate var dimensions: [Dimensions] {
     let dimension = Int.parser()
       .skip(StartsWith("x"))
       .take(Int.parser())
       .skip(StartsWith("x"))
       .take(Int.parser())
-      .map { Year2015Day2.Dimensions(length: $0, width: $1, height: $2) }
+      .map { Dimensions(length: $0, width: $1, height: $2) }
 
     return Many(dimension, separator: StartsWith("\n")).parse(self)!
   }

@@ -63,7 +63,7 @@ struct Year2015Day7: DayBase {
   }
 }
 
-fileprivate enum Instruction {
+private enum Instruction {
   case value(String)
   case and(String, String)
   case or(String, String)

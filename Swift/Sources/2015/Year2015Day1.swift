@@ -38,17 +38,15 @@ struct Year2015Day1: DayBase {
   }
 }
 
-extension Year2015Day1 {
-  fileprivate enum Direction: String {
-    case up = "("
-    case down = ")"
-  }
+private enum Direction: String {
+  case up = "("
+  case down = ")"
 }
 
 extension String {
-  fileprivate var directions: [Year2015Day1.Direction] {
-    let direction = StartsWith<Substring>("(").map { Year2015Day1.Direction.up }
-      .orElse(StartsWith(")").map { Year2015Day1.Direction.down })
+  fileprivate var directions: [Direction] {
+    let direction = StartsWith<Substring>("(").map { Direction.up }
+      .orElse(StartsWith(")").map { Direction.down })
     return Many(direction).parse(self)!
   }
 }

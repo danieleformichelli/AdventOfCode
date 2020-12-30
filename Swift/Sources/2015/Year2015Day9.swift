@@ -46,7 +46,7 @@ struct Year2015Day9: DayBase {
   }
 }
 
-fileprivate struct Route: Hashable {
+private struct Route: Hashable {
   let locations: Set<String>
 
   init(_ location: String, _ otherLocation: String) {

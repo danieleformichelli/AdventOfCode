@@ -10,21 +10,22 @@ import Utils
 /// https://adventofcode.com/2015/day/15
 struct Year2015Day15: DayBase {
   func part1(_ input: String) -> CustomDebugStringConvertible {
-    return Self.maxScore(ingredients: input.ingredients)
+    return Self.maxScore(ingredients: input.ingredients, requiredCalories: nil)
   }
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
-    return input
+    return Self.maxScore(ingredients: input.ingredients, requiredCalories: 500)
   }
 
   private static func maxScore(
     ingredients: [Properties],
+    requiredCalories: Int?,
     teaspoons: Int = 100,
     properties: Properties = .init(capacity: 0, durability: 0, flavor: 0, texture: 0, calories: 0)
   ) -> Int {
     guard ingredients.count > 1 else {
       let ingredient = ingredients.first!
-      return properties.add(teaspoons, of: ingredient).score
+      return properties.add(teaspoons, of: ingredient).score(requiredCalories: requiredCalories)
     }
 
     let firstIngredient = ingredients.first!
@@ -33,6 +34,7 @@ struct Year2015Day15: DayBase {
       .map { i in
         Self.maxScore(
           ingredients: remainingIngredients,
+          requiredCalories: requiredCalories,
           teaspoons: teaspoons - i,
           properties: properties.add(i, of: firstIngredient)
         )
@@ -41,7 +43,7 @@ struct Year2015Day15: DayBase {
   }
 }
 
-fileprivate struct Properties {
+private struct Properties {
   let capacity: Int
   let durability: Int
   let flavor: Int
@@ -58,8 +60,8 @@ fileprivate struct Properties {
     )
   }
 
-  var score: Int {
-    guard self.calories == 500 else {
+  func score(requiredCalories: Int?) -> Int {
+    if let requiredCalories = requiredCalories, self.calories != requiredCalories {
       return 0
     }
     return max(0, self.capacity) * max(0, self.durability) * max(0, self.flavor) * max(0, self.texture)

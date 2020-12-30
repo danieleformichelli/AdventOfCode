@@ -27,7 +27,7 @@ struct Year2015Day14: DayBase {
   }
 }
 
-fileprivate struct Reindeer {
+private struct Reindeer {
   let name: String
   let speed: Int
   let duration: Int
