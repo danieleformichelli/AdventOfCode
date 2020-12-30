@@ -255,3 +255,23 @@ public extension Int {
     return result
   }
 }
+
+extension Set {
+  public func combinations(of count: Int) -> Set<Set<Element>> {
+    guard count > 0 else {
+      return [[]]
+    }
+
+    guard self.count >= count else {
+      return []
+    }
+
+    let firstWeight = self.first!
+    let remainingWeights = self.dropFirst().asSet
+
+    var result: Set<Set<Element>> = []
+    result.formUnion(remainingWeights.combinations(of: count - 1).map { $0.union([firstWeight]) })
+    result.formUnion(remainingWeights.combinations(of: count))
+    return result
+  }
+}
