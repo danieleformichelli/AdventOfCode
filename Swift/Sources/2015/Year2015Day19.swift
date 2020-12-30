@@ -24,7 +24,31 @@ struct Year2015Day19: DayBase {
   }
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
-    return input
+    var (molecule, replacements) = input.moleculeAndReplacements
+
+    var target = molecule
+    var steps = 0
+    while target != "e" {
+      let targetBeforeCycle = target
+      for (from, to) in replacements {
+        guard let replaceRange = target.range(of: to) else {
+          continue
+        }
+
+        target = target.replacingCharacters(in: replaceRange, with: from)
+        steps += 1
+      }
+
+      guard targetBeforeCycle != target else {
+        // randomly search for a solution
+        target = molecule
+        steps = 0
+        replacements.shuffle()
+        continue
+      }
+    }
+
+    return steps
   }
 }
 
