@@ -2,7 +2,7 @@ import ProjectDescription
 
 // MARK: - Project
 
-let years = [2015, 2019, 2020]
+let years = [2015, 2016, 2019, 2020]
 
 func yearName(_ year: Int) -> String {
   "AdventOfCode\(year)"
