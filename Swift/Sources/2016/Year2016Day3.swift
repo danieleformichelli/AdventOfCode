@@ -40,6 +40,7 @@ private struct Triangle {
     return self.a + self.b > self.c && self.a + self.c > self.b && self.b + self.c > self.a
   }
 }
+
 extension String {
   fileprivate var triangles: [Triangle] {
     let space = Prefix<Substring> { $0 == " "}

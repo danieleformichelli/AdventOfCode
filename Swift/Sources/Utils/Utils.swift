@@ -182,6 +182,12 @@ public extension Substring {
   }
 }
 
+public extension Collection where Element == Character {
+  var asString: String {
+    String(self)
+  }
+}
+
 public extension String {
   var md5: String {
     let data = Data(self.utf8)
