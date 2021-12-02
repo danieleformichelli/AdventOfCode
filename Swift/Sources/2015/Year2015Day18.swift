@@ -1,8 +1,4 @@
-//
-//  Year2015Day18.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -17,7 +13,7 @@ struct Year2015Day18: DayBase {
     Self.run(input: input, alwaysOn: [.init(x: 0, y: 0), .init(x: 99, y: 0), .init(x: 0, y: 99), .init(x: 99, y: 99)])
   }
 
-  static private func run(input: String, alwaysOn: Set<Point>) -> Int {
+  private static func run(input: String, alwaysOn: Set<Point>) -> Int {
     var lightsOn = input.lightsOn.union(alwaysOn)
     (1 ... 100).forEach { _ in
       var neighborsOn: [Point: Int] = [:]
@@ -33,7 +29,7 @@ struct Year2015Day18: DayBase {
           guard !alwaysOn.contains(point) else { continue }
 
           if lightsOn.contains(point) {
-            if neighborsOn[point] != 2 && neighborsOn[point] != 3 {
+            if neighborsOn[point] != 2, neighborsOn[point] != 3 {
               lightsOn.remove(point)
             }
           } else {

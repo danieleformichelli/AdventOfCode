@@ -1,10 +1,4 @@
-//
-//  DayBase.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 01/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 
@@ -18,8 +12,8 @@ public protocol DayBase {
   func part2(_ input: String) -> CustomDebugStringConvertible
 }
 
-public extension DayBase {
-  func run(part: Part, input: String) -> CustomDebugStringConvertible {
+extension DayBase {
+  public func run(part: Part, input: String) -> CustomDebugStringConvertible {
     switch part {
     case .part1:
       return part1(input)

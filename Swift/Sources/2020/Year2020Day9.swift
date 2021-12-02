@@ -1,10 +1,4 @@
-//
-//  Year2020Day9.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 09/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -30,12 +24,12 @@ public struct Year2020Day9: DayBase {
       }
     }
 
-    let sequence = numbers[minSequenceIndex...maxSequenceIndex]
+    let sequence = numbers[minSequenceIndex ... maxSequenceIndex]
     return sequence.min()! + sequence.max()!
   }
 
   private func findInvalidElement(in numbers: [Int]) -> Int {
-    for index in 25..<numbers.count where !self.hasAddends(at: index, in: numbers) {
+    for index in 25 ..< numbers.count where !self.hasAddends(at: index, in: numbers) {
       return numbers[index]
     }
     fatalError()

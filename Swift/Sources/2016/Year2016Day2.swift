@@ -1,8 +1,4 @@
-//
-//  Year2016Day2.swift
-//
-//  Copyright © 2021 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -17,7 +13,7 @@ struct Year2016Day2: DayBase {
     return Self.run(input: input, code: \.advancedCode)
   }
 
-  static private func run(input: String, code: (Point) -> Character?) -> String {
+  private static func run(input: String, code: (Point) -> Character?) -> String {
     var position = Point.zero
     var resultCode = ""
     for codeDirections in input.directions {

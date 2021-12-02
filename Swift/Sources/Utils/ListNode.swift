@@ -1,10 +1,4 @@
-//
-//  ListNode.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 30/11/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 
@@ -38,8 +32,8 @@ public class ListNode<T>: Collection {
   }
 }
 
-public extension ListNode {
-  var length: Int {
+extension ListNode {
+  public var length: Int {
     var currentLength = 0
     var current: ListNode? = self
     while current != nil {
@@ -50,7 +44,7 @@ public extension ListNode {
     return currentLength
   }
 
-  var array: [T] {
+  public var array: [T] {
     var array: [T] = []
     var current: ListNode? = self
     while current != nil {
@@ -61,8 +55,8 @@ public extension ListNode {
   }
 }
 
-public extension Array {
-  var toList: ListNode<Element>? {
+extension Array {
+  public var toList: ListNode<Element>? {
     guard !isEmpty else { return nil }
 
     let head = ListNode<Element>(value: self[0])

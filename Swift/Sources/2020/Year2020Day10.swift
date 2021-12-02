@@ -1,10 +1,4 @@
-//
-//  Year2020Day10.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 10/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -44,8 +38,8 @@ public struct Year2020Day10: DayBase {
 
     var count = 0
     var j = index + 1
-    while j < adaptersJolts.count && adaptersJolts[j] <= adaptersJolts[index] + 3 {
-      count += countArrangements(for: j, in: adaptersJolts, cache: &cache)
+    while j < adaptersJolts.count, adaptersJolts[j] <= adaptersJolts[index] + 3 {
+      count += self.countArrangements(for: j, in: adaptersJolts, cache: &cache)
       j += 1
     }
     count = max(1, count)

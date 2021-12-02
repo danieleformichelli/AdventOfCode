@@ -1,8 +1,4 @@
-//
-//  Operations.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 
@@ -39,7 +35,6 @@ public enum Operation: CustomDebugStringConvertible {
 
   public enum Error: Swift.Error {
     case loop(at: Int, currentResult: Int)
-
   }
 }
 

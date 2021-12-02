@@ -1,7 +1,4 @@
-//
-//  Year2015Day4.swift
-//  AdventOfCode2015
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -30,7 +27,7 @@ struct Year2015Day4: DayBase {
 }
 
 extension String {
-  fileprivate var directions: [Direction] {
+  private var directions: [Direction] {
     let direction = StartsWith<Substring>("^").map { Direction.up }
       .orElse(StartsWith("v").map { Direction.down })
       .orElse(StartsWith(">").map { Direction.right })

@@ -1,10 +1,4 @@
-//
-//  Year2020Day21.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 21/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Utils
@@ -23,25 +17,26 @@ public struct Year2020Day21: DayBase {
   public func part2(_ input: String) -> CustomDebugStringConvertible {
     let allIngredientsAndAllergens = input.ingredientsAndAllergens
     let allergenToIngredient = self.run(allIngredientsAndAllergens).allergenToIngredient
-    return allergenToIngredient.sorted { $0.key < $1.key }.map { $0.value }.joined(separator: ",")
+    return allergenToIngredient.sorted { $0.key < $1.key }.map(\.value).joined(separator: ",")
   }
 
   private func run(
     _ allIngredientsAndAllergens: [IngredientsAndAllergens]
   ) -> (allergenToIngredient: [String: String], ingredientsWithoutAllergens: Set<String>) {
-    let allIngredients: Set<String> = allIngredientsAndAllergens.flatMap { $0.ingredients }.asSet
+    let allIngredients: Set<String> = allIngredientsAndAllergens.flatMap(\.ingredients).asSet
 
     var ingredientsWithoutAllergens = allIngredients
     var allergenToIngredient: [String: String] = [:]
-    var allergensToIngredients: [String: Set<String>] = allIngredientsAndAllergens.reduce(into: [:]) { result, ingredientsAndAllergens in
-      for allergen in ingredientsAndAllergens.allergens {
-        if let currentIngredients = result[allergen] {
-          result[allergen] = currentIngredients.intersection(ingredientsAndAllergens.ingredients)
-        } else {
-          result[allergen] = ingredientsAndAllergens.ingredients
+    var allergensToIngredients: [String: Set<String>] = allIngredientsAndAllergens
+      .reduce(into: [:]) { result, ingredientsAndAllergens in
+        for allergen in ingredientsAndAllergens.allergens {
+          if let currentIngredients = result[allergen] {
+            result[allergen] = currentIngredients.intersection(ingredientsAndAllergens.ingredients)
+          } else {
+            result[allergen] = ingredientsAndAllergens.ingredients
+          }
         }
       }
-    }
 
     while !allergensToIngredients.isEmpty {
       let assignedIngredients = allergensToIngredients

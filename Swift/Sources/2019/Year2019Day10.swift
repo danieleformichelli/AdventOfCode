@@ -1,10 +1,4 @@
-//
-//  Year2019Day10.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 10/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -54,38 +48,38 @@ struct Year2019Day10: DayBase {
   }
 }
 
-private extension Point {
-  func translated(to center: Point) -> Point {
+extension Point {
+  fileprivate func translated(to center: Point) -> Point {
     Point(x: x - center.x, y: center.y - y)
   }
 
-  var clockwiseDegrees: Double {
+  fileprivate var clockwiseDegrees: Double {
     switch (x, y) {
-    case let (x, y) where x == 0 && y > 0:
+    case (let x, let y) where x == 0 && y > 0:
       // positive y axis
       return 0
-    case let (x, y) where x == 0 && y < 0:
+    case (let x, let y) where x == 0 && y < 0:
       // negative y axis
       return 180
-    case let (x, y) where x > 0 && y == 0:
+    case (let x, let y) where x > 0 && y == 0:
       // positive x axis
       return 90
-    case let (x, y) where x < 0 && y == 0:
+    case (let x, let y) where x < 0 && y == 0:
       // negative x axis
       return 270
-    case let (x, y) where x > 0 && y < 0:
+    case (let x, let y) where x > 0 && y < 0:
       // second quadrant
       let portedToFirstQuadrant = Point(x: -y, y: x)
       return 90 + portedToFirstQuadrant.clockwiseDegrees
-    case let (x, y) where x < 0 && y < 0:
+    case (let x, let y) where x < 0 && y < 0:
       // third quadrant
       let portedToFirstQuadrant = Point(x: -x, y: -y)
       return 180 + portedToFirstQuadrant.clockwiseDegrees
-    case let (x, y) where x < 0 && y > 0:
+    case (let x, let y) where x < 0 && y > 0:
       // fourth quadrant
       let portedToFirstQuadrant = Point(x: y, y: -x)
       return 270 + portedToFirstQuadrant.clockwiseDegrees
-    case let (x, y):
+    case (let x, let y):
       // first quadrant
       if y > x {
         // first half of the quadrant
@@ -97,7 +91,7 @@ private extension Point {
     }
   }
 
-  func detectableAsteroids(asteroids: Set<Point>) -> Set<Point> {
+  fileprivate func detectableAsteroids(asteroids: Set<Point>) -> Set<Point> {
     asteroids.filter { self.canDetect($0, asteroids: asteroids) }
   }
 
@@ -122,8 +116,8 @@ private extension Point {
   }
 }
 
-private extension String {
-  var asteroids: Set<Point> {
+extension String {
+  fileprivate var asteroids: Set<Point> {
     var asteroids: Set<Point> = []
     let mapLines = lines
     for (y, line) in mapLines.enumerated() {

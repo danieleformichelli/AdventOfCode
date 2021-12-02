@@ -1,10 +1,4 @@
-//
-//  Year2020Day17.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 17/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -39,12 +33,12 @@ public struct Year2020Day17: DayBase {
 
       var activated: Set<Coordinate> = []
       for x in minX - 1 ... maxX + 1 {
-        for y in minY - 1...maxY + 1 {
-          for z in minZ - 1...maxZ + 1 {
-            for w in minW - 1...maxW + 1 {
+        for y in minY - 1 ... maxY + 1 {
+          for z in minZ - 1 ... maxZ + 1 {
+            for w in minW - 1 ... maxW + 1 {
               guard fourDimensional || w == 0 else { continue }
               let coordinate = Coordinate(x: x, y: y, z: z, w: w)
-              if !activeCoordinates.contains(coordinate) && self.activeNeighbors(for: coordinate, in: activeCoordinates) == 3 {
+              if !activeCoordinates.contains(coordinate), self.activeNeighbors(for: coordinate, in: activeCoordinates) == 3 {
                 activated.insert(coordinate)
               }
             }
@@ -96,17 +90,17 @@ public struct Year2020Day17: DayBase {
 
     return activeCoordinates.count
   }
+
   private func activeNeighbors(for activeCoordinate: Coordinate, in activeCoordinates: Set<Coordinate>) -> Int {
     var activeNeighbors = 0
     for x in activeCoordinate.x - 1 ... activeCoordinate.x + 1 {
       for y in activeCoordinate.y - 1 ... activeCoordinate.y + 1 {
         for z in activeCoordinate.z - 1 ... activeCoordinate.z + 1 {
-          for w in activeCoordinate.w - 1...activeCoordinate.w + 1 {
+          for w in activeCoordinate.w - 1 ... activeCoordinate.w + 1 {
             let coordinate = Coordinate(x: x, y: y, z: z, w: w)
-            guard
-              coordinate != activeCoordinate,
-              activeCoordinates.contains(coordinate)
-              else {
+            guard coordinate != activeCoordinate,
+                  activeCoordinates.contains(coordinate)
+            else {
               continue
             }
             activeNeighbors += 1

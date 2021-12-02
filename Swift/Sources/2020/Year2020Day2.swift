@@ -1,10 +1,4 @@
-//
-//  Year2020Day2.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 02/12/20.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Utils
@@ -23,15 +17,14 @@ struct Year2020Day2: DayBase {
 extension String {
   var policyAndPasswords: [Year2020Day2.PolicyAndPassword] {
     lines.compactMap { line in
-      guard
-        let inputRegex = try? NSRegularExpression(pattern: "^(\\d+)-(\\d+) (.+): (.*)$"),
-        let match = inputRegex.firstMatch(in: line, range: NSRange(location: 0, length: line.count)),
-        let minCountRange = Range(match.range(at: 1), in: line),
-        let minCount = Int(line[minCountRange]),
-        let maxCountRange = Range(match.range(at: 2), in: line),
-        let maxCount = Int(line[maxCountRange]),
-        let letterRange = Range(match.range(at: 3), in: line),
-        let passwordRange = Range(match.range(at: 4), in: line)
+      guard let inputRegex = try? NSRegularExpression(pattern: "^(\\d+)-(\\d+) (.+): (.*)$"),
+            let match = inputRegex.firstMatch(in: line, range: NSRange(location: 0, length: line.count)),
+            let minCountRange = Range(match.range(at: 1), in: line),
+            let minCount = Int(line[minCountRange]),
+            let maxCountRange = Range(match.range(at: 2), in: line),
+            let maxCount = Int(line[maxCountRange]),
+            let letterRange = Range(match.range(at: 3), in: line),
+            let passwordRange = Range(match.range(at: 4), in: line)
       else {
         return nil
       }

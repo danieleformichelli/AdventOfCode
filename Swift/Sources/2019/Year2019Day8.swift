@@ -1,10 +1,4 @@
-//
-//  Year2019Day8.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 08/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -20,8 +14,8 @@ struct Year2019Day8: DayBase {
   }
 }
 
-private extension Year2019Day8 {
-  struct SpecialImageFormat {
+extension Year2019Day8 {
+  fileprivate struct SpecialImageFormat {
     enum PixelColor: Character {
       case black = "0"
       case white = "1"
@@ -94,8 +88,8 @@ private extension Year2019Day8 {
   }
 }
 
-private extension String {
-  var image: Year2019Day8.SpecialImageFormat {
+extension String {
+  fileprivate var image: Year2019Day8.SpecialImageFormat {
     .init(from: self)
   }
 }

@@ -1,8 +1,4 @@
-//
-//  Year2016Day3.swift
-//
-//  Copyright © 2021 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -43,7 +39,7 @@ private struct Triangle {
 
 extension String {
   fileprivate var triangles: [Triangle] {
-    let space = Prefix<Substring> { $0 == " "}
+    let space = Prefix<Substring> { $0 == " " }
     let triangle = Skip(space)
       .take(Int.parser())
       .skip(space)

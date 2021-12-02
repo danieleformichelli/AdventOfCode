@@ -1,10 +1,4 @@
-//
-//  ListNode.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 30/11/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 
@@ -32,12 +26,12 @@ public class TreeNode<T: Comparable> {
   }
 }
 
-public extension TreeNode {
-  var size: Int {
+extension TreeNode {
+  public var size: Int {
     1 + (self.left?.size ?? 0) + (self.right?.size ?? 0)
   }
 
-  func insert(_ value: T) {
+  public func insert(_ value: T) {
     if self.value < value {
       if let left = self.left {
         left.insert(value)

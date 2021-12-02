@@ -1,11 +1,7 @@
-//
-//  Year2015Day8Tests.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
-@testable import AdventOfCode2015
 import XCTest
+@testable import AdventOfCode2015
 
 class Year2015Day8Tests: XCTestCase {
   func testPart1() {
@@ -15,7 +11,6 @@ class Year2015Day8Tests: XCTestCase {
   func testPart2() {
     XCTAssertEqual(Year2015Day8().part2(Self.input).debugDescription, "2046")
   }
-
 
   static var input: String {
     """

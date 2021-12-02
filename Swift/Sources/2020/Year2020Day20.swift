@@ -1,10 +1,4 @@
-//
-//  Year2020Day20.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 20/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Utils
@@ -50,10 +44,10 @@ public struct Year2020Day20: DayBase {
       Point(x: 7, y: 2),
       Point(x: 10, y: 2),
       Point(x: 13, y: 2),
-      Point(x: 16, y: 2)
+      Point(x: 16, y: 2),
     ]
     let seaMonsterWidth = seaMonster.max { $0.x < $1.x }!.x + 1
-    let seaMonsterHeight = seaMonster.max { $0.y < $1.y}!.y + 1
+    let seaMonsterHeight = seaMonster.max { $0.y < $1.y }!.y + 1
 
     for orientation in content.allOrientations {
       var seaMonstersCount = 0
@@ -64,7 +58,7 @@ public struct Year2020Day20: DayBase {
             let row = row + seaMonsterPoint.y
             let column = column + seaMonsterPoint.x
             let line = orientation[row]
-            let element = line[line.index(line.startIndex, offsetBy: column )]
+            let element = line[line.index(line.startIndex, offsetBy: column)]
             guard element == "#" else {
               matched = false
               break
@@ -140,7 +134,7 @@ public struct Year2020Day20: DayBase {
         if newOriented == nil {
           continue
         }
-        if oriented != nil && newOriented != oriented {
+        if oriented != nil, newOriented != oriented {
           continue
         }
         oriented = newOriented
@@ -198,7 +192,7 @@ extension Year2020Day20 {
         .up: self.content.first!.asArray.int,
         .down: self.content.last!.asArray.int,
         .left: self.content.map { $0.first! }.int,
-        .right: self.content.map { $0.last! }.int
+        .right: self.content.map { $0.last! }.int,
       ]
     }
 
@@ -234,19 +228,20 @@ extension Int {
 
 extension String {
   fileprivate var tiles: [Int: Year2020Day20.Tile] {
-    return Dictionary(uniqueKeysWithValues: self
-      .components(separatedBy: "\n\n")
-      .map { tile in
-        let idAndContent = tile.dropFirst(5).components(separatedBy: ":\n")
-        let id = Int(idAndContent[0])!
-        let content = idAndContent[1].split(separator: "\n").map(String.init)
-        let tile = Year2020Day20.Tile(
-          id: id,
-          content: content
-        )
-        return tile
-      }
-      .map { ($0.id, $0) }
+    return Dictionary(
+      uniqueKeysWithValues: self
+        .components(separatedBy: "\n\n")
+        .map { tile in
+          let idAndContent = tile.dropFirst(5).components(separatedBy: ":\n")
+          let id = Int(idAndContent[0])!
+          let content = idAndContent[1].split(separator: "\n").map(String.init)
+          let tile = Year2020Day20.Tile(
+            id: id,
+            content: content
+          )
+          return tile
+        }
+        .map { ($0.id, $0) }
     )
   }
 }

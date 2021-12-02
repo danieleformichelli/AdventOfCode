@@ -1,10 +1,4 @@
-//
-//  Year2019Day17.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 17/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -112,12 +106,11 @@ struct Year2019Day17: DayBase {
 
 extension Dictionary where Key == Point, Value == Year2019Day17.Output {
   func isInterception(_ point: Point) -> Bool {
-    guard
-      let current = self[Point(x: point.x, y: point.y)],
-      let up = self[Point(x: point.x, y: point.y - 1)],
-      let right = self[Point(x: point.x + 1, y: point.y)],
-      let down = self[Point(x: point.x, y: point.y + 1)],
-      let left = self[Point(x: point.x - 1, y: point.y)]
+    guard let current = self[Point(x: point.x, y: point.y)],
+          let up = self[Point(x: point.x, y: point.y - 1)],
+          let right = self[Point(x: point.x + 1, y: point.y)],
+          let down = self[Point(x: point.x, y: point.y + 1)],
+          let left = self[Point(x: point.x - 1, y: point.y)]
     else {
       return false
     }
@@ -126,8 +119,8 @@ extension Dictionary where Key == Point, Value == Year2019Day17.Output {
   }
 }
 
-private extension Year2019Day17 {
-  enum Output: Int64, MapElement {
+extension Year2019Day17 {
+  fileprivate enum Output: Int64, MapElement {
     case scaffold = 35
     case empty = 46
     case newLine = 10
@@ -175,8 +168,8 @@ private extension Year2019Day17 {
   }
 }
 
-private extension String {
-  var asMap: (robot: Point, map: [Point: Year2019Day17.Output]) {
+extension String {
+  fileprivate var asMap: (robot: Point, map: [Point: Year2019Day17.Output]) {
     var memory = self.intCodeMemory
     var address: Int64 = 0
 
@@ -185,10 +178,8 @@ private extension String {
     var map: [Point: Year2019Day17.Output] = [:]
     while address >= 0 {
       let output = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: nil)
-      if
-        let output = output,
-        let outputValue = Year2019Day17.Output(rawValue: output)
-      {
+      if let output = output,
+         let outputValue = Year2019Day17.Output(rawValue: output) {
         if outputValue.direction != nil {
           robotPosition = currentPosition
         }

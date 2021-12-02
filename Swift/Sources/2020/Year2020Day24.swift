@@ -1,10 +1,4 @@
-//
-//  Year2020Day24.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 24/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Utils
@@ -35,7 +29,7 @@ public struct Year2020Day24: DayBase {
         }
       }
 
-      let whiteToBlack = whiteBlackAdjacents.filter { $0.value == 2}.keys
+      let whiteToBlack = whiteBlackAdjacents.filter { $0.value == 2 }.keys
       black.formSymmetricDifference(blackToWhite)
       black.formSymmetricDifference(whiteToBlack)
     }
@@ -51,7 +45,7 @@ extension Point {
       .init(x: self.x - 1, y: self.y - 1),
       .init(x: self.x + 1, y: self.y - 1),
       .init(x: self.x - 2, y: self.y),
-      .init(x: self.x + 2, y: self.y)
+      .init(x: self.x + 2, y: self.y),
     ]
   }
 }

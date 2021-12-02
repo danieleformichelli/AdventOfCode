@@ -1,8 +1,4 @@
-//
-//  Year2015Day22.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -39,12 +35,11 @@ struct Year2015Day22: DayBase {
     var ownArmor = 0
     var updatedRemainingMana = remainingMana
 
-    if hard && ownTurn {
+    if hard, ownTurn {
       remainingOwnHitPoints -= 1
       guard remainingOwnHitPoints > 0 else {
         return Int.max
       }
-
     }
 
     activeEffects.filter { $0.value >= currentTurn }.keys.forEach { spell in
@@ -118,7 +113,7 @@ struct Year2015Day22: DayBase {
       .init(cost: 73, damage: 2, heal: 2, effectDuration: 0, effectDamage: 0, effectArmor: 0, effectMana: 0),
       .init(cost: 113, damage: 0, heal: 0, effectDuration: 6, effectDamage: 0, effectArmor: 7, effectMana: 0),
       .init(cost: 173, damage: 0, heal: 0, effectDuration: 6, effectDamage: 3, effectArmor: 0, effectMana: 0),
-      .init(cost: 229, damage: 0, heal: 0, effectDuration: 5, effectDamage: 0, effectArmor: 0, effectMana: 101)
+      .init(cost: 229, damage: 0, heal: 0, effectDuration: 5, effectDamage: 0, effectArmor: 0, effectMana: 101),
     ]
   }
 }

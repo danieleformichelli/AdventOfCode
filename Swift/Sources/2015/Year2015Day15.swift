@@ -1,8 +1,4 @@
-//
-//  Year2015Day15.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -70,7 +66,7 @@ private struct Properties {
 
 extension String {
   fileprivate var ingredients: [Properties] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map { $0.asString }
+    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
     let properties = Skip(name)
       .skip(StartsWith(": capacity "))
       .take(Int.parser())

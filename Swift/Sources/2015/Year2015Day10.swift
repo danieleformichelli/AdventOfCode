@@ -1,8 +1,4 @@
-//
-//  Year2015Day10.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -17,7 +13,7 @@ struct Year2015Day10: DayBase {
     return Self.run(input: input, times: 50)
   }
 
-  static private func run(input: String, times: Int) -> Int {
+  private static func run(input: String, times: Int) -> Int {
     var result = input
     (1 ... times).forEach { _ in
       result = Self.lookAndSay(result)
@@ -25,7 +21,7 @@ struct Year2015Day10: DayBase {
     return result.count
   }
 
-  static private func lookAndSay(_ input: String) -> String {
+  private static func lookAndSay(_ input: String) -> String {
     var current = input.first!
     var count = 1
     var index = input.index(after: input.startIndex)

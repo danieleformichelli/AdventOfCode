@@ -1,10 +1,4 @@
-//
-//  Year2020Day3.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 03/12/20.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -40,8 +34,8 @@ struct Year2020Day3: DayBase {
   }
 }
 
-private extension String {
-  var asMap: Year2020Day3.Map {
+extension String {
+  fileprivate var asMap: Year2020Day3.Map {
     var trees: Set<Point> = []
     let lines = split(separator: "\n")
     for (y, line) in lines.enumerated() {

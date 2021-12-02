@@ -1,10 +1,4 @@
-//
-//  Year2019Day11.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 11/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -28,11 +22,21 @@ struct Year2019Day11: DayBase {
     var address: Int64 = 0
     while address >= 0 {
       let currentColor = paintedPanels[currentPosition] ?? .black
-      let paintColor = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: { currentColor.rawValue })
+      let paintColor = IntCode.executeProgram(
+        memory: &memory,
+        from: &address,
+        stopOnWrite: true,
+        input: { currentColor.rawValue }
+      )
       if let paintColor = paintColor {
         paintedPanels[currentPosition] = Color(rawValue: paintColor)
       }
-      let turnDirection = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: { currentColor.rawValue })
+      let turnDirection = IntCode.executeProgram(
+        memory: &memory,
+        from: &address,
+        stopOnWrite: true,
+        input: { currentColor.rawValue }
+      )
       switch turnDirection {
       case 0:
         currentDirection = currentDirection.turnLeft
@@ -49,8 +53,8 @@ struct Year2019Day11: DayBase {
   }
 }
 
-private extension Year2019Day11 {
-  enum Color: Int64, MapElement {
+extension Year2019Day11 {
+  fileprivate enum Color: Int64, MapElement {
     case black = 0
     case white = 1
 

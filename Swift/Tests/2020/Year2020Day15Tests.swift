@@ -1,3 +1,5 @@
+// Created by Daniele Formichelli.
+
 ////
 ////  Year2020Day15Tests.swift
 ////  Tests
@@ -6,10 +8,10 @@
 ////  Copyright © 2020 Daniele Formichelli. All rights reserved.
 ////
 //
-//@testable import AdventOfCode2020
-//import XCTest
+// @testable import AdventOfCode2020
+// import XCTest
 //
-//class Year2020Day15Tests: XCTestCase {
+// class Year2020Day15Tests: XCTestCase {
 //  func testPart1() {
 //    XCTAssertEqual(Year2020Day15().part1(Self.input).debugDescription, "758")
 //  }
@@ -284,4 +286,4 @@
 //    244,274,430,751,814,675,676,276,97,913,294,454,72,513,533,773,301,360,336,308
 //    """
 //  }
-//}
+// }

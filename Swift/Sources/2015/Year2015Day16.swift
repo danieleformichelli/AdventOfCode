@@ -1,8 +1,4 @@
-//
-//  Year2015Day16.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -11,7 +7,7 @@ import Utils
 struct Year2015Day16: DayBase {
   func part1(_ input: String) -> CustomDebugStringConvertible {
     return input.auntAndCompounds
-      .filter { aunt, compounds in
+      .filter { _, compounds in
         return compounds.allSatisfy { compound, amount in
           Self.mfcsam[compound] == amount
         }
@@ -22,7 +18,7 @@ struct Year2015Day16: DayBase {
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
     return input.auntAndCompounds
-      .filter { aunt, compounds in
+      .filter { _, compounds in
         return compounds.allSatisfy { compound, amount in
           switch compound {
           case "cats", "trees":
@@ -49,14 +45,14 @@ struct Year2015Day16: DayBase {
       "goldfish": 5,
       "trees": 3,
       "cars": 2,
-      "perfumes": 1
+      "perfumes": 1,
     ]
   }
 }
 
 extension String {
   fileprivate var auntAndCompounds: [Int: [String: Int]] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map { $0.asString }
+    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
     let compounds = name.skip(StartsWith(": ")).take(Int.parser()).map { ($0, $1) }
 
     let auntAndCompounds = Skip(StartsWith("Sue "))

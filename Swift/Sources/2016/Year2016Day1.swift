@@ -1,7 +1,4 @@
-//
-//  Year2016Day1.swift
-//  AdventOfCode2015
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -16,7 +13,7 @@ struct Year2016Day1: DayBase {
     Self.run(input: input, stopOnRevisit: true)
   }
 
-  static private func run(input: String, stopOnRevisit: Bool) -> Int {
+  private static func run(input: String, stopOnRevisit: Bool) -> Int {
     var direction = Direction.up
     var position = Point.zero
     var visited: Set<Point> = []
@@ -29,7 +26,7 @@ struct Year2016Day1: DayBase {
       }
 
       for _ in 1 ... instruction.distance {
-        if visited.contains(position) && stopOnRevisit {
+        if visited.contains(position), stopOnRevisit {
           break outer
         }
         visited.insert(position)
@@ -53,7 +50,7 @@ private struct Instruction {
 extension String {
   fileprivate var instructions: [Instruction] {
     let instruction = Prefix<Substring>(minLength: 1, maxLength: 1).take(Int.parser()).map {
-      return Instruction(rotation: $0 == "R" ? .right: .left, distance: $1)
+      return Instruction(rotation: $0 == "R" ? .right : .left, distance: $1)
     }
     return Many(instruction, separator: StartsWith(", ")).parse(self)!
   }

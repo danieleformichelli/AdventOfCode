@@ -1,10 +1,4 @@
-//
-//  Year2019Day20.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 20/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -169,7 +163,7 @@ extension Year2019Day20 {
         switch element {
         case .empty, .wall:
           break
-        case let .portal(name):
+        case .portal(let name):
           remainingPortals.insert(point)
           if name == "AA" {
             entrance = point

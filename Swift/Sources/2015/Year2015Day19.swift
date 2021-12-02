@@ -1,8 +1,4 @@
-//
-//  Year2015Day19.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -54,7 +50,7 @@ struct Year2015Day19: DayBase {
 
 extension String {
   fileprivate var moleculeAndReplacements: (String, [(String, String)]) {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map { $0.asString }
+    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
     let replacement = name.skip(StartsWith(" => ")).take(name).map { ($0, $1) }
     let replacements = Many(replacement, separator: StartsWith("\n"))
     let moleculeAndReplacements = replacements

@@ -1,10 +1,4 @@
-//
-//  Year2019Day14.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 14/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -27,16 +21,31 @@ struct Year2019Day14: DayBase {
     return Self.findMaxFuel(minimumFuel: minimumFuel, maximumFuel: maximumFuel, availableORE: availableORE, reactions: reactions)
   }
 
-  private static func findMaxFuel(minimumFuel: Int64, maximumFuel: Int64, availableORE: Int64, reactions: [String: Reaction]) -> Int64 {
+  private static func findMaxFuel(
+    minimumFuel: Int64,
+    maximumFuel: Int64,
+    availableORE: Int64,
+    reactions: [String: Reaction]
+  ) -> Int64 {
     guard minimumFuel != maximumFuel else { return minimumFuel }
 
     let midFuel = (maximumFuel + minimumFuel) / 2
     let minRequiredORE = Self.requiredORE(for: midFuel, reactions: reactions)
 
     if minRequiredORE > availableORE {
-      return self.findMaxFuel(minimumFuel: minimumFuel, maximumFuel: midFuel - 1, availableORE: availableORE, reactions: reactions)
+      return self.findMaxFuel(
+        minimumFuel: minimumFuel,
+        maximumFuel: midFuel - 1,
+        availableORE: availableORE,
+        reactions: reactions
+      )
     } else {
-      return self.findMaxFuel(minimumFuel: midFuel + 1, maximumFuel: maximumFuel, availableORE: availableORE, reactions: reactions)
+      return self.findMaxFuel(
+        minimumFuel: midFuel + 1,
+        maximumFuel: maximumFuel,
+        availableORE: availableORE,
+        reactions: reactions
+      )
     }
   }
 
@@ -51,10 +60,8 @@ struct Year2019Day14: DayBase {
       let requiredOutputChemical = requiredOutputChemicalAndQuantity.chemical
       var requiredOutputQuantity = requiredOutputChemicalAndQuantity.quantity
 
-      if
-        let availableOutputQuantity = availableChemicals[requiredOutputChemical]?.quantity,
-        availableOutputQuantity > 0
-      {
+      if let availableOutputQuantity = availableChemicals[requiredOutputChemical]?.quantity,
+         availableOutputQuantity > 0 {
         // we already have some of the required chemical as result of other reactions
         if availableOutputQuantity >= requiredOutputQuantity {
           // the available chemical covers the entire request, use that
@@ -77,10 +84,8 @@ struct Year2019Day14: DayBase {
         let requiredInputChemical = reactionInput.chemical
         let requiredInputQuantity = requiredReactions * reactionInput.quantity
 
-        if
-          let availableInputQuantity = availableChemicals[requiredInputChemical]?.quantity,
-          availableInputQuantity > 0
-        {
+        if let availableInputQuantity = availableChemicals[requiredInputChemical]?.quantity,
+           availableInputQuantity > 0 {
           // we already have some of the required input chemical as result of other reactions
           if availableInputQuantity >= requiredInputQuantity {
             // the available chemical covers the entire request, use that

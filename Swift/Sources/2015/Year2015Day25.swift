@@ -1,8 +1,4 @@
-//
-//  Year2015Day25.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -12,9 +8,9 @@ struct Year2015Day25: DayBase {
   func part1(_ input: String) -> CustomDebugStringConvertible {
     let requiredCode = input.requiredCode
     var current = Point(x: 0, y: 1)
-    var value = 20151125
+    var value = 20_151_125
     while true {
-      value = value * 252533 % 33554393
+      value = value * 252_533 % 33_554_393
       guard current != requiredCode else {
         return value
       }
@@ -22,7 +18,7 @@ struct Year2015Day25: DayBase {
     }
   }
 
-  func part2(_ input: String) -> CustomDebugStringConvertible {
+  func part2(_: String) -> CustomDebugStringConvertible {
     return ""
   }
 }

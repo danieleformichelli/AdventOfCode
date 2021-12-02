@@ -1,8 +1,4 @@
-//
-//  Year2015Day24.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -17,7 +13,7 @@ struct Year2015Day24: DayBase {
     Self.run(input: input, groupsCount: 4)
   }
 
-  static private func run(input: String, groupsCount: Int) -> Int {
+  private static func run(input: String, groupsCount: Int) -> Int {
     let weights = input.numbers.asSet
     let targetWeight = weights.sum / groupsCount
     var i = 0
@@ -37,7 +33,7 @@ extension Set where Element == Int {
   var quantumEntanglement: Int {
     return self.reduce(1) { result, value in
       let (result, overflow) = result.multipliedReportingOverflow(by: value)
-      return overflow ? Int.max: result
+      return overflow ? Int.max : result
     }
   }
 }

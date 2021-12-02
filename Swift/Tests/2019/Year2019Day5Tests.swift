@@ -1,13 +1,7 @@
-//
-//  Year2019Day5Tests.swift
-//  Tests
-//
-//  Created by Daniele Formichelli on 05/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
-@testable import AdventOfCode2019
 import XCTest
+@testable import AdventOfCode2019
 
 class Year2019Day5Tests: XCTestCase {
   func testPart1() {

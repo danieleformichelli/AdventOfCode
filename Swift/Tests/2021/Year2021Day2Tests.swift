@@ -1,15 +1,9 @@
-//
-//  Year2020Day1Tests.swift
-//  Tests
-//
-//  Created by Daniele Formichelli on 01/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
-@testable import AdventOfCode2021
 import XCTest
+@testable import AdventOfCode2021
 
-class Year2020Day2Tests: XCTestCase {
+class Year2020Day2Tesde 
   func testPart1() {
     XCTAssertEqual(Year2021Day2().part1(Self.input).debugDescription, "1561344")
   }

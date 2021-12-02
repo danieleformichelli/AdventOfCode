@@ -1,8 +1,4 @@
-//
-//  Year2015Day11.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -27,7 +23,7 @@ extension String {
     return current
   }
 
-  fileprivate var next: String {
+  private var next: String {
     var characters = self.asArray
     let indexToIncrease = characters.lastIndex { $0 != "z" }!
     if indexToIncrease < characters.count - 1 {
@@ -39,7 +35,7 @@ extension String {
     return String(characters)
   }
 
-  fileprivate var isValid: Bool {
+  private var isValid: Bool {
     let forbidden: Set<Character> = ["i", "o", "l"]
     guard !self.contains(where: { forbidden.contains($0) }) else {
       return false
@@ -51,7 +47,7 @@ extension String {
       let ascii1 = self[index].asciiValue!
       let ascii2 = self[self.index(index, offsetBy: 1)].asciiValue!
       let ascii3 = self[self.index(index, offsetBy: 2)].asciiValue!
-      if ascii3 == ascii2 + 1 && ascii2 == ascii1 + 1 {
+      if ascii3 == ascii2 + 1, ascii2 == ascii1 + 1 {
         break
       }
       index = self.index(after: index)

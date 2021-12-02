@@ -1,8 +1,4 @@
-//
-//  Year2015Day14.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -47,7 +43,7 @@ private struct Reindeer {
 
 extension String {
   fileprivate var reindeers: [Reindeer] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map { $0.asString }
+    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
     let reindeer = name
       .skip(StartsWith(" can fly "))
       .take(Int.parser())

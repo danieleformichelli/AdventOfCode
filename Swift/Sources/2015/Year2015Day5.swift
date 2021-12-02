@@ -1,8 +1,4 @@
-//
-//  Year2015Day5.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils

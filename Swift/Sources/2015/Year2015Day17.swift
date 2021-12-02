@@ -1,8 +1,4 @@
-//
-//  Year2015Day17.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -15,7 +11,7 @@ struct Year2015Day17: DayBase {
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
     let combinations = Self.combinations(containers: input.numbers, eggnog: 150)
-    let minContainersCount = combinations.map { $0.count }.min()!
+    let minContainersCount = combinations.map(\.count).min()!
     return combinations.filter { $0.count == minContainersCount }.count
   }
 

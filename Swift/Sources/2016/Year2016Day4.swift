@@ -1,8 +1,4 @@
-//
-//  Year2016Day4.swift
-//
-//  Copyright © 2021 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -55,7 +51,7 @@ private struct Room {
           return $0.key < $1.key
         }
       }
-      .map { $0.0 }
+      .map(\.0)
       .prefix(5)
       .asString
 
@@ -65,8 +61,8 @@ private struct Room {
 
 extension String {
   fileprivate var rooms: [Room] {
-    let name = Prefix<Substring> { !$0.isNumber }.map { $0.asString }
-    let checksum = Prefix<Substring> { $0.isLetter }.map { $0.asString }
+    let name = Prefix<Substring> { !$0.isNumber }.map(\.asString)
+    let checksum = Prefix<Substring> { $0.isLetter }.map(\.asString)
     let room = name
       .take(Int.parser())
       .skip(StartsWith("["))

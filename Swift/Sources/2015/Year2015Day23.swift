@@ -1,8 +1,4 @@
-//
-//  Year2015Day23.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -66,9 +62,10 @@ private enum Instruction {
     state.instructionPointer += jumpBy
   }
 }
+
 extension String {
   fileprivate var instructions: [Instruction] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map { $0.asString }
+    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
     let half = Skip(StartsWith("hlf ")).take(name).map { Instruction.half($0) }
     let triple = Skip(StartsWith("tpl ")).take(name).map { Instruction.triple($0) }
     let increment = Skip(StartsWith("inc ")).take(name).map { Instruction.increment($0) }

@@ -1,10 +1,4 @@
-//
-//  Year2019Day3.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 03/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -57,8 +51,8 @@ struct Year2019Day3: DayBase {
   }
 }
 
-private extension Year2019Day3 {
-  struct Segment {
+extension Year2019Day3 {
+  fileprivate struct Segment {
     let direction: Direction
     let length: Int
 
@@ -80,8 +74,8 @@ private extension Year2019Day3 {
   }
 }
 
-private extension String {
-  var wiresSegments: [[Year2019Day3.Segment]] {
+extension String {
+  fileprivate var wiresSegments: [[Year2019Day3.Segment]] {
     commaSeparatedLines.map { wire in
       wire.map { segmentString in
         .init(string: segmentString)

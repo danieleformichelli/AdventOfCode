@@ -1,11 +1,7 @@
-//
-//  Year2016Day3Tests.swift
-//
-//  Copyright © 2021 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
-@testable import AdventOfCode2016
 import XCTest
+@testable import AdventOfCode2016
 
 class Year20156ay3Tests: XCTestCase {
   func testPart1() {

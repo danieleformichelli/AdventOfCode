@@ -1,8 +1,4 @@
-//
-//  Year2015Day9.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -65,6 +61,6 @@ extension String {
 
 extension Dictionary where Key == Route {
   var allLocations: Set<String> {
-    self.keys.flatMap { $0.locations }.asSet
+    self.keys.flatMap(\.locations).asSet
   }
 }

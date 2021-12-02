@@ -1,10 +1,4 @@
-//
-//  Year2020Day23.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 23/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Utils
@@ -19,8 +13,8 @@ public struct Year2020Day23: DayBase {
 
   public func part2(_ input: String) -> CustomDebugStringConvertible {
     let firstCups = input.cups
-    let allCups = (1 ... 1000000).map { index in index <= firstCups.count ? firstCups[index - 1] : index }
-    var cups = self.run(cups: allCups, moves: 10000000)
+    let allCups = (1 ... 1_000_000).map { index in index <= firstCups.count ? firstCups[index - 1] : index }
+    var cups = self.run(cups: allCups, moves: 10_000_000)
     while cups.value != 1 {
       cups = cups.next!
     }
@@ -47,7 +41,8 @@ public struct Year2020Day23: DayBase {
       var destinationCup = currentCup.value
       repeat {
         destinationCup = (destinationCup - 2 + maxCup) % maxCup + 1
-      } while currentCup.next!.value == destinationCup || currentCup.next!.next!.value == destinationCup || currentCup.next!.next!.next!.value == destinationCup
+      } while currentCup.next!.value == destinationCup || currentCup.next!.next!.value == destinationCup || currentCup.next!.next!
+        .next!.value == destinationCup
 
       // Remove picked ones
       currentCup.next = nextCurrent

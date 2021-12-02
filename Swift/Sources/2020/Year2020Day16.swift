@@ -1,10 +1,4 @@
-//
-//  Year2020Day16.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 16/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -18,7 +12,7 @@ public struct Year2020Day16: DayBase {
     let ticketsInfo = input.ticketsInfo
     let invalidValues = self.invalidValues(from: input.ticketsInfo)
     let validTickets =
-      [ticketsInfo.myTicket] + ticketsInfo.nearbyTickets.enumerated().filter { invalidValues[$0.0].isEmpty }.map { $0.1 }
+      [ticketsInfo.myTicket] + ticketsInfo.nearbyTickets.enumerated().filter { invalidValues[$0.0].isEmpty }.map(\.1)
     var fieldIndex: [String: Int] = [:]
     var possibleFields: [Set<String>] = Array(repeating: ticketsInfo.fieldRanges.keys.asSet, count: ticketsInfo.myTicket.count)
     var remainingFields = ticketsInfo.fieldRanges
@@ -81,7 +75,7 @@ extension String {
       let field = split[0]
       let ranges = split[1].components(separatedBy: " or ").map { range -> ClosedRange<Int> in
         let rangeSplit = range.split(separator: "-")
-        return Int(rangeSplit[0])!...Int(rangeSplit[1])!
+        return Int(rangeSplit[0])! ... Int(rangeSplit[1])!
       }.asSet
       return (field, ranges)
     })

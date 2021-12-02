@@ -1,10 +1,4 @@
-//
-//  Year2020Day19.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 19/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Utils
@@ -20,11 +14,12 @@ public struct Year2020Day19: DayBase {
   public func part2(_ input: String) -> CustomDebugStringConvertible {
     var cache: [Int: String] = [:]
     let (rules, messages) = input.rulesAndMessages
-    let regex42 = regex(for: 42, rules: rules, cache: &cache)
-    let regex31 = regex(for: 31, rules: rules, cache: &cache)
+    let regex42 = self.regex(for: 42, rules: rules, cache: &cache)
+    let regex31 = self.regex(for: 31, rules: rules, cache: &cache)
     cache[8] = "(\(regex42)+)"
     // We ould need a way to say (\(regex42){N}\(regex31){N}), where N is unknown but the same for both matches. Hardcoding a small subset for now
-    cache[11] = "((\(regex42)\(regex31))|(\(regex42){1}\(regex31){1})|(\(regex42){2}\(regex31){2})|(\(regex42){3}\(regex31){3})|(\(regex42){4}\(regex31){4}))"
+    cache[11] =
+      "((\(regex42)\(regex31))|(\(regex42){1}\(regex31){1})|(\(regex42){2}\(regex31){2})|(\(regex42){3}\(regex31){3})|(\(regex42){4}\(regex31){4}))"
     cache[31] = regex31
     cache[42] = regex42
     return self.run(rules: rules, messages: messages, cache: &cache)
@@ -34,7 +29,7 @@ public struct Year2020Day19: DayBase {
     let regexString = regex(for: 0, rules: rules, cache: &cache)
     let regex = try! NSRegularExpression(pattern: "^(\(regexString))$")
     return messages
-      .filter { regex.firstMatch(in: $0, range: NSRange(location: 0, length: $0.count)) != nil}
+      .filter { regex.firstMatch(in: $0, range: NSRange(location: 0, length: $0.count)) != nil }
       .count
   }
 
@@ -85,7 +80,7 @@ extension String {
         first: ruleParts.prefix(orIndex).compactMap { Int($0) },
         second: ruleParts.dropFirst(orIndex + 1).compactMap { Int($0) }
       )
-    } else if ruleParts.count == 1 && Int(ruleParts[0]) == nil {
+    } else if ruleParts.count == 1, Int(ruleParts[0]) == nil {
       return .character(String(ruleParts[0].dropFirst().dropLast()))
     } else {
       return .list(ruleParts.compactMap { Int($0) })

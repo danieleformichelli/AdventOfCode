@@ -1,8 +1,4 @@
-//
-//  Year2015Day13.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -43,7 +39,7 @@ struct Year2015Day13: DayBase {
 
 extension String {
   fileprivate var happinessChanges: [String: [String: Int]] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map { $0.asString }
+    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
     let multiplier = StartsWith<Substring>(" would gain ").map { 1 }
       .orElse(StartsWith(" would lose ").map { -1 })
     let entry = name

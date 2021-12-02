@@ -1,10 +1,4 @@
-//
-//  Year2020Day11.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 11/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -31,7 +25,7 @@ public struct Year2020Day11: DayBase {
       for dRow in -1 ... 1 {
         for dColumn in -1 ... 1 where dRow != 0 || dColumn != 0 {
           var currentPoint = Point(x: point.x + dColumn, y: point.y + dRow)
-          while currentPoint.x >= 0 && currentPoint.x <= maxColumn && currentPoint.y >= 0 && currentPoint.y <= maxRow {
+          while currentPoint.x >= 0, currentPoint.x <= maxColumn, currentPoint.y >= 0, currentPoint.y <= maxRow {
             guard let currentSeat = seats[currentPoint] else {
               currentPoint = .init(x: currentPoint.x + dColumn, y: currentPoint.y + dRow)
               continue
@@ -52,9 +46,9 @@ public struct Year2020Day11: DayBase {
     while true {
       var toBeToggled: Set<Seat> = []
       seats.forEach { seat in
-        if seat.occupied && seat.occupiedAdjacents >= occupiedToLeave {
+        if seat.occupied, seat.occupiedAdjacents >= occupiedToLeave {
           toBeToggled.insert(seat)
-        } else if !seat.occupied && seat.occupiedAdjacents == 0 {
+        } else if !seat.occupied, seat.occupiedAdjacents == 0 {
           toBeToggled.insert(seat)
         }
       }

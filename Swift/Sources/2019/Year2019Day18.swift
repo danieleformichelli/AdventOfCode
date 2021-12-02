@@ -1,10 +1,4 @@
-//
-//  Day18.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 18/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -25,7 +19,7 @@ struct Year2019Day18: DayBase {
   }
 
   private func collect(status: Status, costCache: inout [Status: Int]) -> Int {
-    guard status.remainingKeys.count > 0 else {
+    guard !status.remainingKeys.isEmpty else {
       // search completed
       return 0
     }
@@ -56,8 +50,8 @@ struct Year2019Day18: DayBase {
   }
 }
 
-private extension Year2019Day18 {
-  struct Status: Hashable {
+extension Year2019Day18 {
+  fileprivate struct Status: Hashable {
     let map: [Point: Element]
     let currentPositions: [Point]
     let remainingKeys: Set<Point>
@@ -70,7 +64,7 @@ private extension Year2019Day18 {
       let collectedKey: String
       let element = self.map[key]
       switch element {
-      case let .key(letter):
+      case .key(let letter):
         collectedKey = letter
       default:
         fatalError("No key at position \(key)")
@@ -109,7 +103,7 @@ private extension Year2019Day18 {
           switch element {
           case .empty, .entrance:
             break
-          case let .door(letter) where self.collectedKeys.contains(letter):
+          case .door(let letter) where self.collectedKeys.contains(letter):
             break
           case .key:
             keysAndCost[nextInDirection] = nextCost
@@ -126,7 +120,7 @@ private extension Year2019Day18 {
     }
   }
 
-  enum Element: MapElement, Hashable {
+  fileprivate enum Element: MapElement, Hashable {
     case empty
     case wall
     case entrance
@@ -167,8 +161,8 @@ private extension Year2019Day18 {
   }
 }
 
-private extension String {
-  func initialStatus(splitMap: Bool) -> Year2019Day18.Status {
+extension String {
+  fileprivate func initialStatus(splitMap: Bool) -> Year2019Day18.Status {
     var map: [Point: Year2019Day18.Element] = [:]
     var remainingKeys: Set<Point> = []
     var entrance = Point(x: 0, y: 0)

@@ -1,10 +1,4 @@
-//
-//  Year2020Day25.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 25/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Utils
@@ -22,14 +16,14 @@ public struct Year2020Day25: DayBase {
     return encryptionKey1
   }
 
-  public func part2(_ input: String) -> CustomDebugStringConvertible {
+  public func part2(_: String) -> CustomDebugStringConvertible {
     return ""
   }
 
   private func transform(subject: Int, loopSize: Int) -> Int {
     var result = 1
     (1 ... loopSize).forEach { _ in
-      result = result * subject % 20201227
+      result = result * subject % 20_201_227
     }
     return result
   }
@@ -38,7 +32,7 @@ public struct Year2020Day25: DayBase {
     var result = 1
     var loopSize = 1
     while true {
-      result = result * subject % 20201227
+      result = result * subject % 20_201_227
       if result == expectedResult {
         return loopSize
       }

@@ -1,13 +1,7 @@
-//
-//  Year2020Day21Tests.swift
-//  Tests
-//
-//  Created by Daniele Formichelli on 21/12/20.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
-@testable import AdventOfCode2020
 import XCTest
+@testable import AdventOfCode2020
 
 class Year2020Day21Tests: XCTestCase {
   func testPart1() {
@@ -15,7 +9,10 @@ class Year2020Day21Tests: XCTestCase {
   }
 
   func testPart2() {
-    XCTAssertEqual(Year2020Day21().part2(Self.input).debugDescription, "gbt,rpj,vdxb,dtb,bqmhk,vqzbq,zqjm,nhjrzzj".debugDescription)
+    XCTAssertEqual(
+      Year2020Day21().part2(Self.input).debugDescription,
+      "gbt,rpj,vdxb,dtb,bqmhk,vqzbq,zqjm,nhjrzzj".debugDescription
+    )
   }
 
   static var input: String {

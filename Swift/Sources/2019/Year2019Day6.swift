@@ -1,10 +1,4 @@
-//
-//  Year2019Day6.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 06/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -81,8 +75,8 @@ struct Year2019Day6: DayBase {
   }
 }
 
-private extension String {
-  var orbits: [String: String] {
+extension String {
+  fileprivate var orbits: [String: String] {
     var orbits: [String: String] = [:]
     for orbit in lines {
       let centerAndOrbiting = orbit.components(separatedBy: ")")

@@ -1,10 +1,4 @@
-//
-//  Year2020Day8.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 08/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 

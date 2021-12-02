@@ -1,10 +1,4 @@
-//
-//  Year2020Day18.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 18/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -36,13 +30,13 @@ public struct Year2020Day18: DayBase {
         numbers.append(partialResult)
         index = endIndex
       case ")":
-        return (result: compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
+        return (result: self.compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
       default:
         numbers.append(Int(String(character))!)
       }
       index += 1
     }
-    return (result: compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
+    return (result: self.compute(numbers: numbers, operators: operators, precedence: precedence), endIndex: index)
   }
 
   private func compute(numbers: [Int], operators: [Operator], precedence: Precedence) -> Int {
@@ -79,7 +73,7 @@ extension Year2020Day18 {
     case sum
 
     func compute(_ left: Int, _ right: Int) -> Int {
-      switch  self {
+      switch self {
       case .product:
         return left * right
       case .sum:

@@ -1,10 +1,4 @@
-//
-//  Utils.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 15/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import CommonCrypto
 import Foundation
@@ -21,31 +15,31 @@ extension Int64: CustomDebugStringConvertible {
   }
 }
 
-public extension String {
-  var lines: [String] {
+extension String {
+  public var lines: [String] {
     components(separatedBy: "\n")
   }
 
-  var numbers: [Int] {
+  public var numbers: [Int] {
     components(separatedBy: "\n").compactMap { Int($0) }
   }
 
-  var commaSeparatedNumbers: [Int] {
+  public var commaSeparatedNumbers: [Int] {
     components(separatedBy: ",").compactMap { Int($0) }
   }
 
-  var commaSeparatedLines: [[String]] {
+  public var commaSeparatedLines: [[String]] {
     components(separatedBy: "\n").compactMap { $0.components(separatedBy: ",") }
   }
 
-  var intCodeMemory: [Int64: Int64] {
+  public var intCodeMemory: [Int64: Int64] {
     var pairs = Array(commaSeparatedNumbers.enumerated().map { (Int64($0.offset), Int64($0.element)) })
     // store relative base at address -1
     pairs.append((IntCode.relativeBaseAddress, 0))
     return Dictionary(uniqueKeysWithValues: pairs)
   }
 
-  var operations: [Operation] {
+  public var operations: [Operation] {
     return self.split(separator: "\n").map { .init(from: String($0)) }
   }
 }
@@ -87,8 +81,8 @@ public struct Point: Hashable {
   public static let zero: Point = .zero
 }
 
-public extension Dictionary where Key == Point, Value: MapElement {
-  func print(invertedY: Bool, clearElement: Value) -> String {
+extension Dictionary where Key == Point, Value: MapElement {
+  public func print(invertedY: Bool, clearElement: Value) -> String {
     let minX = keys.min { lhs, rhs in lhs.x < rhs.x }!.x
     let maxX = keys.min { lhs, rhs in lhs.x > rhs.x }!.x
     let minY = keys.min { lhs, rhs in lhs.y < rhs.y }!.y
@@ -152,44 +146,44 @@ public enum Utils {
   }
 }
 
-public extension Collection where Element: Numeric {
-  var sum: Element {
+extension Collection where Element: Numeric {
+  public var sum: Element {
     reduce(0, +)
   }
 }
 
-public extension Collection where Element: Numeric {
-  var multiply: Element {
+extension Collection where Element: Numeric {
+  public var multiply: Element {
     reduce(1, *)
   }
 }
 
-public extension Collection {
-  var asArray: [Element] {
+extension Collection {
+  public var asArray: [Element] {
     Array(self)
   }
 }
 
-public extension Collection where Element: Hashable {
-  var asSet: Set<Element> {
+extension Collection where Element: Hashable {
+  public var asSet: Set<Element> {
     Set(self)
   }
 }
 
-public extension Substring {
-  var asString: String {
+extension Substring {
+  public var asString: String {
     return String(self)
   }
 }
 
-public extension Collection where Element == Character {
-  var asString: String {
+extension Collection where Element == Character {
+  public var asString: String {
     String(self)
   }
 }
 
-public extension String {
-  var md5: String {
+extension String {
+  public var md5: String {
     let data = Data(self.utf8)
     return data
       .withUnsafeBytes { bytes -> [UInt8] in
@@ -201,32 +195,30 @@ public extension String {
   }
 }
 
-public extension Array {
-  var headAndTail: (Element, [Element])? {
+extension Array {
+  public var headAndTail: (Element, [Element])? {
     guard let x = self.first else { return nil }
     return (x, self.suffix(from: 1).asArray)
   }
 
-  func interleaved(_ element: Element) -> [[Element]] {
+  public func interleaved(_ element: Element) -> [[Element]] {
     guard let (head, rest) = self.headAndTail else { return [[element]] }
     return [[element] + self] + rest.interleaved(element).map { [head] + $0 }
   }
 
-  var permutations: [[Element]] {
+  public var permutations: [[Element]] {
     guard let (head, rest) = self.headAndTail else { return [[]] }
     return rest.permutations.flatMap { $0.interleaved(head) }
   }
 }
 
-public extension String {
-  func allIndexes(of substring: String) -> [Int] {
+extension String {
+  public func allIndexes(of substring: String) -> [Int] {
     var indices = [Int]()
     var searchStartIndex = self.startIndex
-    while
-      searchStartIndex < self.endIndex,
-      let range = self.range(of: substring, range: searchStartIndex..<self.endIndex),
-      !range.isEmpty
-    {
+    while searchStartIndex < self.endIndex,
+          let range = self.range(of: substring, range: searchStartIndex ..< self.endIndex),
+          !range.isEmpty {
       let index = distance(from: self.startIndex, to: range.lowerBound)
       indices.append(index)
       searchStartIndex = range.upperBound
@@ -236,10 +228,10 @@ public extension String {
   }
 }
 
-public extension Int {
-  static var divisorsCache: [Int: Set<Int>] = [1: [1]]
+extension Int {
+  public static var divisorsCache: [Int: Set<Int>] = [1: [1]]
 
-  func divisors() -> Set<Int> {
+  public func divisors() -> Set<Int> {
     if let cached = Self.divisorsCache[self] {
       return cached
     }

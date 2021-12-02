@@ -1,10 +1,4 @@
-//
-//  Year2019Day19.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 19/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -50,10 +44,8 @@ struct Year2019Day19: DayBase {
           return Int64(point.y)
         }
       })
-      if
-        let output = output,
-        let element = Element(rawValue: output)
-      {
+      if let output = output,
+         let element = Element(rawValue: output) {
         cache[point] = element
         return element
       }

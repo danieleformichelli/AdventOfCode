@@ -1,3 +1,5 @@
+// Created by Daniele Formichelli.
+
 import ProjectDescription
 
 // MARK: - Project
@@ -30,7 +32,7 @@ let project = Project(
       bundleId: "df.AdventOfCode.Utils",
       infoPlist: .default,
       sources: ["Sources/Utils/**"]
-    )
+    ),
   ] + years.flatMap { year($0) }
 )
 
@@ -57,8 +59,8 @@ func year(_ year: Int) -> [ProjectDescription.Target] {
       infoPlist: .default,
       sources: ["Tests/\(year)/**"],
       dependencies: [
-        .target(name: name)
+        .target(name: name),
       ]
-    )
+    ),
   ]
 }

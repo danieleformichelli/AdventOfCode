@@ -1,10 +1,4 @@
-//
-//  Year2020Day4.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 04/12/20.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -15,7 +9,7 @@ struct Year2020Day4: DayBase {
   }
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
-    input.asPassports.filter { $0.isValidDocument }.count
+    input.asPassports.filter(\.isValidDocument).count
   }
 }
 
@@ -78,12 +72,12 @@ extension Year2020Day4 {
             return false
           }
         case .hairColor:
-          return value.first == "#" && value.dropFirst().allSatisfy { $0.isAlphanumeric }
+          return value.first == "#" && value.dropFirst().allSatisfy(\.isAlphanumeric)
         case .eyeColor:
           let allowed = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
           return allowed.contains(value)
         case .passportID:
-          return value.count == 9 && value.allSatisfy { $0.isNumber }
+          return value.count == 9 && value.allSatisfy(\.isNumber)
         case .countryID:
           return true
         }
@@ -92,8 +86,8 @@ extension Year2020Day4 {
   }
 }
 
-private extension String {
-  var asPassports: [Year2020Day4.Passport] {
+extension String {
+  fileprivate var asPassports: [Year2020Day4.Passport] {
     components(separatedBy: "\n\n")
       .compactMap { passportInput in
         var fields: [Year2020Day4.Passport.Field: String] = [:]

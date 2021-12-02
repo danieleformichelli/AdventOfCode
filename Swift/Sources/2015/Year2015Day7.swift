@@ -1,8 +1,4 @@
-//
-//  Year2015Day7.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -22,7 +18,7 @@ struct Year2015Day7: DayBase {
     return Self.value(of: "a", instructions: instructions, cache: &cache)
   }
 
-  static private func value(of id: String, instructions: [String: Instruction], cache: inout [String: Int]) -> Int {
+  private static func value(of id: String, instructions: [String: Instruction], cache: inout [String: Int]) -> Int {
     print("DF: \(id)")
     if let intValue = Int(id) {
       return intValue
@@ -74,7 +70,7 @@ private enum Instruction {
 
 extension String {
   fileprivate var instructions: [String: Instruction] {
-    let id = Prefix<Substring>(minLength: 1) { $0.isLetter || $0.isNumber }.map { $0.asString }
+    let id = Prefix<Substring>(minLength: 1) { $0.isLetter || $0.isNumber }.map(\.asString)
     let value = id.map { Instruction.value($0) }
     let and = id.skip(StartsWith(" AND ")).take(id).map { Instruction.and($0, $1) }
     let or = id.skip(StartsWith(" OR ")).take(id).map { Instruction.or($0, $1) }
@@ -83,7 +79,8 @@ extension String {
     let rShift = id.skip(StartsWith(" RSHIFT ")).take(id).map { Instruction.rShift($0, by: $1) }
     let instruction = and.orElse(or).orElse(not).orElse(lShift).orElse(rShift).orElse(value)
     let destinationAndInstruction = instruction.skip(StartsWith(" -> ")).take(id).map { ($1, $0) }
-    let destinationsAndInstruction: [(String, Instruction)] = Many(destinationAndInstruction, separator: StartsWith("\n")).parse(self)!
+    let destinationsAndInstruction: [(String, Instruction)] = Many(destinationAndInstruction, separator: StartsWith("\n"))
+      .parse(self)!
     return Dictionary(uniqueKeysWithValues: destinationsAndInstruction)
   }
 }

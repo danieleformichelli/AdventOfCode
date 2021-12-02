@@ -1,10 +1,4 @@
-//
-//  Year2020Day13.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 13/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -21,7 +15,7 @@ public struct Year2020Day13: DayBase {
   }
 
   public func part2(_ input: String) -> CustomDebugStringConvertible {
-    let split =  input.lines[1].components(separatedBy: ",")
+    let split = input.lines[1].components(separatedBy: ",")
     let firstBusID = Int(split[0])!
     var intervalAndBusID: [(interval: Int, busID: Int)] = [(interval: 0, busID: firstBusID)]
     var interval = 0
@@ -41,13 +35,13 @@ public struct Year2020Day13: DayBase {
     while !intervalAndBusID.allSatisfy({ (earliestDeparture + $0.interval).isMultiple(of: $0.busID) }) {
       stepElements += 1
       let considered = intervalAndBusID.dropFirst(intervalAndBusID.count - stepElements - 1)
-      step = Utils.lcm(intervalAndBusID.dropFirst(intervalAndBusID.count - stepElements).map { $0.busID })
+      step = Utils.lcm(intervalAndBusID.dropFirst(intervalAndBusID.count - stepElements).map(\.busID))
       earliestDeparture += step
       while !considered.allSatisfy({ (earliestDeparture + $0.interval).isMultiple(of: $0.busID) }) {
         earliestDeparture += step
       }
     }
 
-    return earliestDeparture + intervalAndBusID.map { $0.interval }.min()!
+    return earliestDeparture + intervalAndBusID.map(\.interval).min()!
   }
 }

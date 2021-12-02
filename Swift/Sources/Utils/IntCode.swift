@@ -1,10 +1,4 @@
-//
-//  IntCode.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 05/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 
@@ -90,23 +84,27 @@ public enum OpCode: Equatable {
 
     var returnValue: Int64?
     switch self {
-    case let .sum(firstOperand, secondOperand, result):
+    case .sum(let firstOperand, let secondOperand, let result):
       let sumResult = firstOperand.value(from: memory) + secondOperand.value(from: memory)
       if IntCode.debug {
         print("\(memory[address]!)(sum),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
-        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) + \(secondOperand.value(from: memory)) = \(sumResult)")
+        print(
+          "memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) + \(secondOperand.value(from: memory)) = \(sumResult)"
+        )
       }
       memory[result.targetAddress(from: memory)] = sumResult
 
-    case let .multiply(firstOperand, secondOperand, result):
+    case .multiply(let firstOperand, let secondOperand, let result):
       let multiplyResult = firstOperand.value(from: memory) * secondOperand.value(from: memory)
       if IntCode.debug {
         print("\(memory[address]!)(mul),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
-        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) * \(secondOperand.value(from: memory)) = \(multiplyResult)")
+        print(
+          "memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) * \(secondOperand.value(from: memory)) = \(multiplyResult)"
+        )
       }
       memory[result.targetAddress(from: memory)] = multiplyResult
 
-    case let .read(to):
+    case .read(let to):
       let value = input!()
       if IntCode.debug {
         print("\(memory[address]!)(read),\(memory[address + 1]!)")
@@ -114,14 +112,14 @@ public enum OpCode: Equatable {
       }
       memory[to.targetAddress(from: memory)] = value
 
-    case let .write(from):
+    case .write(let from):
       if IntCode.debug {
         print("\(memory[address]!)(write),\(memory[address + 1]!)")
         print("return \(from.value(from: memory))")
       }
       returnValue = from.value(from: memory)
 
-    case let .jumpIfTrue(condition, target):
+    case .jumpIfTrue(let condition, let target):
       if IntCode.debug {
         print("\(memory[address]!)(jt),\(memory[address + 1]!),\(memory[address + 2]!)")
       }
@@ -134,7 +132,7 @@ public enum OpCode: Equatable {
         return nil
       }
 
-    case let .jumpIfFalse(condition, target):
+    case .jumpIfFalse(let condition, let target):
       if IntCode.debug {
         print("\(memory[address]!)(jf),\(memory[address + 1]!),\(memory[address + 2]!)")
       }
@@ -147,27 +145,33 @@ public enum OpCode: Equatable {
         return nil
       }
 
-    case let .less(firstOperand, secondOperand, result):
+    case .less(let firstOperand, let secondOperand, let result):
       let isLess: Int64 = firstOperand.value(from: memory) < secondOperand.value(from: memory) ? 1 : 0
       if IntCode.debug {
         print("\(memory[address]!)(<),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
-        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) < \(secondOperand.value(from: memory)) = \(isLess)")
+        print(
+          "memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) < \(secondOperand.value(from: memory)) = \(isLess)"
+        )
       }
       memory[result.targetAddress(from: memory)] = isLess
 
-    case let .equal(firstOperand, secondOperand, result):
+    case .equal(let firstOperand, let secondOperand, let result):
       let isEqual: Int64 = firstOperand.value(from: memory) == secondOperand.value(from: memory) ? 1 : 0
       if IntCode.debug {
         print("\(memory[address]!)(==),\(memory[address + 1]!),\(memory[address + 2]!),\(memory[address + 3]!)")
-        print("memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) == \(secondOperand.value(from: memory)) = \(isEqual)")
+        print(
+          "memory[\(result.targetAddress(from: memory))] = \(firstOperand.value(from: memory)) == \(secondOperand.value(from: memory)) = \(isEqual)"
+        )
       }
       memory[result.targetAddress(from: memory)] = isEqual
 
-    case let .adjustRelativeBase(firstOperand):
+    case .adjustRelativeBase(let firstOperand):
       let resultAddress = memory[IntCode.relativeBaseAddress]! + firstOperand.value(from: memory)
       if IntCode.debug {
         print("\(memory[address]!)(adj),\(memory[address + 1]!)")
-        print("memory[\(IntCode.relativeBaseAddress)] = \(memory[IntCode.relativeBaseAddress]!) + \(firstOperand.value(from: memory)) = \(resultAddress)")
+        print(
+          "memory[\(IntCode.relativeBaseAddress)] = \(memory[IntCode.relativeBaseAddress]!) + \(firstOperand.value(from: memory)) = \(resultAddress)"
+        )
       }
       memory[IntCode.relativeBaseAddress] = resultAddress
 
@@ -184,8 +188,8 @@ public enum OpCode: Equatable {
   }
 }
 
-public extension OpCode {
-  init(from memory: [Int64: Int64], at address: Int64) {
+extension OpCode {
+  public init(from memory: [Int64: Int64], at address: Int64) {
     var opCodeValue = memory[address]!
     let instructionInt: Int64
     var parametersMode: [Int64] = [0, 0, 0]
@@ -198,9 +202,8 @@ public extension OpCode {
     var parameters: [Parameter] = []
     for parameterOffset in 0 ..< parametersMode.count {
       let parameterAddress = address + Int64(parameterOffset + 1)
-      guard
-        let addressOrValue = memory[parameterAddress],
-        let mode = Parameter.Mode(rawValue: Int(parametersMode[parameterOffset]))
+      guard let addressOrValue = memory[parameterAddress],
+            let mode = Parameter.Mode(rawValue: Int(parametersMode[parameterOffset]))
       else {
         break
       }
@@ -234,7 +237,7 @@ public extension OpCode {
     }
   }
 
-  struct Parameter: Equatable {
+  public struct Parameter: Equatable {
     public enum Mode: Int {
       case position = 0
       case immediate = 1

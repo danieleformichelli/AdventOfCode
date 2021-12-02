@@ -1,10 +1,4 @@
-//
-//  Year2020Day5.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 05/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -63,24 +57,24 @@ public struct Year2020Day5: DayBase {
   }
 }
 
-private extension Year2020Day5 {
-  enum RowPartition: String {
+extension Year2020Day5 {
+  fileprivate enum RowPartition: String {
     case front = "F"
     case back = "B"
   }
 
-  enum ColumnPartition: String {
+  fileprivate enum ColumnPartition: String {
     case left = "L"
     case right = "R"
   }
 }
 
-private extension String {
-  var rowPartitions: [Year2020Day5.RowPartition] {
+extension String {
+  fileprivate var rowPartitions: [Year2020Day5.RowPartition] {
     compactMap { Year2020Day5.RowPartition(rawValue: String($0)) }
   }
 
-  var columnPartitions: [Year2020Day5.ColumnPartition] {
+  fileprivate var columnPartitions: [Year2020Day5.ColumnPartition] {
     compactMap { Year2020Day5.ColumnPartition(rawValue: String($0)) }
   }
 }

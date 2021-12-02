@@ -1,10 +1,4 @@
-//
-//  Year2019Day16.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 16/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -48,8 +42,8 @@ struct Year2019Day16: DayBase {
   }
 }
 
-private extension String {
-  var numbers: [Int] {
+extension String {
+  fileprivate var numbers: [Int] {
     map { Int(String($0))! }
   }
 }

@@ -1,10 +1,7 @@
-//
-//  Year2016Day1Tests.swift
-//  AdventOfCode2016Tests
-//
+// Created by Daniele Formichelli.
 
-@testable import AdventOfCode2016
 import XCTest
+@testable import AdventOfCode2016
 
 class Year2016Day1Tests: XCTestCase {
   func testPart1() {

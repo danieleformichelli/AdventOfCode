@@ -1,8 +1,4 @@
-//
-//  Year2015Day8.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -25,8 +21,8 @@ struct Year2015Day8: DayBase {
 extension String {
   fileprivate var encoded: String {
     let encoded = self
-        .replacingOccurrences(of: "\\", with: "\\\\")
-        .replacingOccurrences(of: "\"", with: "\\\"")
+      .replacingOccurrences(of: "\\", with: "\\\\")
+      .replacingOccurrences(of: "\"", with: "\\\"")
     return "\"\(encoded)\""
   }
 

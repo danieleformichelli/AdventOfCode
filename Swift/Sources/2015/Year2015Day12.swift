@@ -1,8 +1,4 @@
-//
-//  Year2015Day12.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Foundation
 import Parsing
@@ -36,7 +32,7 @@ struct Year2015Day12: DayBase {
     return Self.sum(json: try! JSONSerialization.jsonObject(with: input.data(using: .utf8)!, options: []))
   }
 
-  static private func sum(json: Any) -> Int {
+  private static func sum(json: Any) -> Int {
     if let jsonArray = json as? [Any] {
       return jsonArray.map { Self.sum(json: $0) }.sum
     } else if let jsonDictionary = json as? [String: Any] {

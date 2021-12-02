@@ -1,7 +1,4 @@
-//
-//  Year2015Day2.swift
-//  AdventOfCode2015
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils

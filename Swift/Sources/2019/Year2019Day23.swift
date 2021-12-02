@@ -1,10 +1,4 @@
-//
-//  Year2019Day23.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 23/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -35,11 +29,9 @@ struct Year2019Day23: DayBase {
           if useNAT {
             if input == -1 {
               lastInput[i] = input
-              if
-                let unwrappedNattedPacket = nattedPacket,
-                nics.filter({ $0.isEmpty }).count == computersCount,
-                lastInput.filter({ $0 == -1 }).count == computersCount
-              {
+              if let unwrappedNattedPacket = nattedPacket,
+                 nics.filter(\.isEmpty).count == computersCount,
+                 lastInput.filter({ $0 == -1 }).count == computersCount {
                 nics[0].newPacket(unwrappedNattedPacket)
                 nattedPacket = nil
               }

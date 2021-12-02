@@ -1,10 +1,4 @@
-//
-//  Year2019Day15.swift
-//  AdventOfCode2019
-//
-//  Created by Daniele Formichelli on 15/12/2019.
-//  Copyright © 2019 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -43,7 +37,11 @@ struct Year2019Day15: DayBase {
   }
 
   @discardableResult
-  private func explore(_ input: String, map: inout [Point: Output], stopOnOxygen: Bool) -> (oxygenPosition: Point, oxygenDistance: Int) {
+  private func explore(
+    _ input: String,
+    map: inout [Point: Output],
+    stopOnOxygen: Bool
+  ) -> (oxygenPosition: Point, oxygenDistance: Int) {
     var explorationDone: Set<Point> = []
     var currentDroidPosition: Point = .zero
     var stepsFromDroid: [Point: Int] = [Point(x: 0, y: 0): 0]
@@ -82,10 +80,8 @@ struct Year2019Day15: DayBase {
           explorationDone.insert(currentDroidPosition)
         }
         let movedPosition = Point(x: currentDroidPosition.x + direction.dx, y: currentDroidPosition.y + direction.dy)
-        if
-          let output = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: { direction.input }),
-          let outputValue = Output(rawValue: output)
-        {
+        if let output = IntCode.executeProgram(memory: &memory, from: &address, stopOnWrite: true, input: { direction.input }),
+           let outputValue = Output(rawValue: output) {
           map[movedPosition] = outputValue
           if outputValue == .wall {
             explorationDone.insert(movedPosition)
@@ -146,8 +142,8 @@ extension Year2019Day15 {
   }
 }
 
-private extension Direction {
-  var input: Int64 {
+extension Direction {
+  fileprivate var input: Int64 {
     switch self {
     case .up:
       return 1

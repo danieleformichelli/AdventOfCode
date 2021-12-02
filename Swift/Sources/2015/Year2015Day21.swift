@@ -1,8 +1,4 @@
-//
-//  Year2015Day21.swift
-//
-//  Copyright © 2020 Bending Spoons. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Parsing
 import Utils
@@ -72,7 +68,7 @@ struct Year2015Day21: DayBase {
       .init(cost: 10, damage: 5, armor: 0),
       .init(cost: 25, damage: 6, armor: 0),
       .init(cost: 40, damage: 7, armor: 0),
-      .init(cost: 74, damage: 8, armor: 0)
+      .init(cost: 74, damage: 8, armor: 0),
     ]
   }
 
@@ -82,7 +78,7 @@ struct Year2015Day21: DayBase {
       .init(cost: 31, damage: 0, armor: 2),
       .init(cost: 53, damage: 0, armor: 3),
       .init(cost: 75, damage: 0, armor: 4),
-      .init(cost: 102, damage: 0, armor: 5)
+      .init(cost: 102, damage: 0, armor: 5),
     ]
   }
 
@@ -93,18 +89,18 @@ struct Year2015Day21: DayBase {
       .init(cost: 100, damage: 3, armor: 0),
       .init(cost: 20, damage: 0, armor: 1),
       .init(cost: 40, damage: 0, armor: 2),
-      .init(cost: 80, damage: 0, armor: 3)
+      .init(cost: 80, damage: 0, armor: 3),
     ]
   }
 }
 
-fileprivate enum ItemType {
+private enum ItemType {
   case weapon
   case armor
   case ring
 }
 
-fileprivate struct ItemDetails: Hashable {
+private struct ItemDetails: Hashable {
   let cost: Int
   let damage: Int
   let armor: Int
@@ -114,8 +110,7 @@ fileprivate struct ItemDetails: Hashable {
   }
 }
 
-
-fileprivate struct Stats {
+private struct Stats {
   let hitPoints: Int
   let damage: Int
   let armor: Int
@@ -140,4 +135,3 @@ extension String {
     return properties.parse(self)!
   }
 }
-

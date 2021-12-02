@@ -1,10 +1,4 @@
-//
-//  Year2020Day7.swift
-//  AdventOfCode2020
-//
-//  Created by Daniele Formichelli on 07/12/2020.
-//  Copyright © 2020 Daniele Formichelli. All rights reserved.
-//
+// Created by Daniele Formichelli.
 
 import Utils
 
@@ -23,7 +17,6 @@ public struct Year2020Day7: DayBase {
     var cache: [String: Int] = [:]
     return Self.shinyGold.containedBags(bagDetails: input.bagDetails, cache: &cache) - 1
   }
-
 }
 
 extension String {
@@ -33,16 +26,16 @@ extension String {
     }
 
     let canContainDirectly = bagDetails[self]?[Year2020Day7.shinyGold] != nil
-    let canContainInContainedBags = (bagDetails[self] ?? [:]).keys.asArray.contains { $0.canContainGold(bagDetails: bagDetails, cache: &cache) }
+    let canContainInContainedBags = (bagDetails[self] ?? [:]).keys.asArray
+      .contains { $0.canContainGold(bagDetails: bagDetails, cache: &cache) }
     let canContain = canContainDirectly || canContainInContainedBags
     cache[self] = canContain
     return canContain
   }
 
   fileprivate func containedBags(bagDetails: [String: [String: Int]], cache: inout [String: Int]) -> Int {
-    guard
-      let bagDetail = bagDetails[self],
-      !bagDetail.isEmpty
+    guard let bagDetail = bagDetails[self],
+          !bagDetail.isEmpty
     else {
       return 1
     }
