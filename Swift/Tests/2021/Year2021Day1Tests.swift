@@ -3,7 +3,7 @@
 import XCTest
 @testable import AdventOfCode2021
 
-class Year2020Day1Tests: XCTestCase {
+class Year2021Day1Tests: XCTestCase {
   func testPart1() {
     XCTAssertEqual(Year2021Day1().part1(Self.input).debugDescription, "1754")
   }
