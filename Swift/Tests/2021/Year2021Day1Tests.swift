@@ -2014,7 +2014,6 @@ class Year2021Day1Tests: XCTestCase {
     10397
     10406
     10415
-
     """
   }
 }

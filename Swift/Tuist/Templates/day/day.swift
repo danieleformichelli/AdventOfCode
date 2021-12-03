@@ -42,7 +42,7 @@ let template = Template(
             """
         ),
         .string(
-            path: "Tests/\(year)/Year\(year)Day\(day).swift",
+            path: "Tests/\(year)/Year\(year)Day\(day)Tests.swift",
             contents: """
             // Created by Daniele Formichelli.
 
