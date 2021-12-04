@@ -72,17 +72,3 @@ struct Year2021Day3: DayBase {
     return Self.filter(lines: remainingLines, keepMostCommon: keepMostCommon, index: index + 1)
   }
 }
-
-extension Year2021Day3 {
-  struct Input {
-    let value: Int
-  }
-}
-
-extension String {
-  var parsedInput: [Year2021Day3.Input] {
-    self.lines.map { line in
-      return .init(value: Int(line)!)
-    }
-  }
-}
