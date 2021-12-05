@@ -33,7 +33,7 @@ let template = Template(
             }
 
             extension String {
-              var parsedInput: [Year\(year)Day\(day).Input] {
+              fileprivate var parsedInput: [Year\(year)Day\(day).Input] {
                 self.lines.map { line in
                   return .init(value: Int(line)!)
                 }
