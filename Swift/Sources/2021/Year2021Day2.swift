@@ -66,7 +66,7 @@ struct Year2021Day2: DayBase {
 
 extension String {
   var directions: [Year2021Day2.Direction] {
-    return self.lines.dropLast().map { line in
+    return self.lines.map { line in
       let split = line.split(separator: " ")
       let value = Int(split[1])!
       switch split[0] {
