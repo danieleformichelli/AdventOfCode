@@ -24,6 +24,10 @@ extension String {
     components(separatedBy: "\n").compactMap { Int($0) }
   }
 
+  public var groupedNumbers: [[Int]] {
+    components(separatedBy: "\n\n").map { $0.numbers }
+  }
+
   public var commaSeparatedNumbers: [Int] {
     components(separatedBy: ",").compactMap { Int($0) }
   }
