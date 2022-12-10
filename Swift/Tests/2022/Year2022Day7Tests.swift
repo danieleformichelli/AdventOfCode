@@ -9,7 +9,7 @@ class Year2022Day7Tests: XCTestCase {
   }
 
   func testPart2() {
-    XCTAssertEqual(Year2022Day7().part2(Self.input).debugDescription, "")
+    XCTAssertEqual(Year2022Day7().part2(Self.input).debugDescription, "2195372")
   }
 
   static var input: String {
