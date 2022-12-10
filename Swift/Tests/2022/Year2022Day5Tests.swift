@@ -5,11 +5,11 @@ import XCTest
 
 class Year2022Day5Tests: XCTestCase {
   func testPart1() {
-    XCTAssertEqual(Year2022Day5().part1(Self.input).debugDescription, "\"BZLVHBWQF\"")
+    XCTAssertEqual(Year2022Day5().part1(Self.input).debugDescription, "BZLVHBWQF".debugDescription)
   }
 
   func testPart2() {
-    XCTAssertEqual(Year2022Day5().part2(Self.input).debugDescription, "\"TDGJQTZSL\"")
+    XCTAssertEqual(Year2022Day5().part2(Self.input).debugDescription, "TDGJQTZSL".debugDescription)
   }
 
   static var input: String {
