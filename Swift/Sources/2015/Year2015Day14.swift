@@ -43,18 +43,16 @@ private struct Reindeer {
 
 extension String {
   fileprivate var reindeers: [Reindeer] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
-    let reindeer = name
-      .skip(StartsWith(" can fly "))
-      .take(Int.parser())
-      .skip(StartsWith(" km/s for "))
-      .take(Int.parser())
-      .skip(StartsWith(" seconds, but then must rest for "))
-      .take(Int.parser())
-      .skip(StartsWith(" seconds."))
-      .map {
-        return Reindeer(name: $0, speed: $1, duration: $2, rest: $3)
-      }
-    return Many(reindeer, separator: StartsWith("\n")).parse(self)!
+    return self.lines.map {
+      let nameSplit = $0.components(separatedBy: " can fly ")
+      let name = nameSplit[0]
+      let speedSplit = nameSplit[1].components(separatedBy: " km/s for ")
+      let speed = Int(speedSplit[0])!
+      let durationSplit = speedSplit[1].components(separatedBy: " seconds, but then must rest for ")
+      let duration = Int(durationSplit[0])!
+      let restSplit = durationSplit[1].components(separatedBy: " seconds.")
+      let rest = Int(restSplit[0])!
+      return Reindeer(name: name, speed: speed, duration: duration, rest: rest)
+    }
   }
 }

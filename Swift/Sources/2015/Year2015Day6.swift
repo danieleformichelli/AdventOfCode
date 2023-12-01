@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/6
@@ -60,19 +59,24 @@ private struct Instruction {
 
 extension String {
   fileprivate var instructions: [Instruction] {
-    let action = StartsWith<Substring>("toggle").map { Action.toggle }
-      .orElse(StartsWith("turn off").map { Action.off })
-      .orElse(StartsWith("turn on").map { Action.on })
-    let point = Int.parser()
-      .skip(StartsWith(","))
-      .take(Int.parser())
-      .map { Point(x: $0, y: $1) }
-    let instruction = action
-      .skip(StartsWith(" "))
-      .take(point)
-      .skip(StartsWith(" through "))
-      .take(point)
-      .map { Instruction(action: $0, from: $1, to: $2) }
-    return Many(instruction, separator: StartsWith("\n")).parse(self)!
+    return self.lines.map {
+      let split = $0.components(separatedBy: " ")
+      let action: Action
+      switch split[0] {
+      case "toggle":
+        action = Action.toggle
+      case "turn off":
+        action = Action.off
+      case "turn on":
+        action = Action.on
+      default:
+        fatalError("Unknown action \(split[0])")
+      }
+      let fromSplit = split[1].components(separatedBy: ",")
+      let from = Point(x: Int(fromSplit[0])!, y: Int(fromSplit[1])!)
+      let toSplit = split[3].components(separatedBy: ",")
+      let to = Point(x: Int(toSplit[0])!, y: Int(toSplit[1])!)
+      return Instruction(action: action, from: from, to: to)
+    }
   }
 }

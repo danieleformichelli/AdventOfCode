@@ -70,17 +70,29 @@ private enum Instruction {
 
 extension String {
   fileprivate var instructions: [String: Instruction] {
-    let id = Prefix<Substring>(minLength: 1) { $0.isLetter || $0.isNumber }.map(\.asString)
-    let value = id.map { Instruction.value($0) }
-    let and = id.skip(StartsWith(" AND ")).take(id).map { Instruction.and($0, $1) }
-    let or = id.skip(StartsWith(" OR ")).take(id).map { Instruction.or($0, $1) }
-    let not = StartsWith("NOT ").take(id).map { Instruction.not($0) }
-    let lShift = id.skip(StartsWith(" LSHIFT ")).take(id).map { Instruction.lShift($0, by: $1) }
-    let rShift = id.skip(StartsWith(" RSHIFT ")).take(id).map { Instruction.rShift($0, by: $1) }
-    let instruction = and.orElse(or).orElse(not).orElse(lShift).orElse(rShift).orElse(value)
-    let destinationAndInstruction = instruction.skip(StartsWith(" -> ")).take(id).map { ($1, $0) }
-    let destinationsAndInstruction: [(String, Instruction)] = Many(destinationAndInstruction, separator: StartsWith("\n"))
-      .parse(self)!
-    return Dictionary(uniqueKeysWithValues: destinationsAndInstruction)
+    return Dictionary(uniqueKeysWithValues: self.lines.map {
+      let split = $0.components(separatedBy: " -> ")
+      let id = split[1]
+      let instructionString = split[0]
+      let instruction: Instruction
+      if instructionString.starts(with: "NOT") {
+        instruction = .not(String(instructionString[instructionString.index(instructionString.startIndex, offsetBy: 4)...]))
+      } else if instructionString.contains(" AND ") {
+        let instructionSplit = instructionString.components(separatedBy: " AND ")
+        instruction = .and(instructionSplit[0], instructionSplit[1])
+      } else if instructionString.contains(" OR ") {
+        let instructionSplit = instructionString.components(separatedBy: " OR ")
+        instruction = .or(instructionSplit[0], instructionSplit[1])
+      } else if instructionString.contains(" LSHIFT ") {
+        let instructionSplit = instructionString.components(separatedBy: " LSHIFT ")
+        instruction = .lShift(instructionSplit[0], by: instructionSplit[1])
+      } else if instructionString.contains(" LSHIFT ") {
+        let instructionSplit = instructionString.components(separatedBy: " LSHIFT ")
+        instruction = .rShift(instructionSplit[0], by: instructionSplit[1])
+      } else {
+        instruction = .value(instructionString)
+      }
+      return (id, instruction)
+    })
   }
 }

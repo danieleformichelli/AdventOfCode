@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/1
@@ -42,8 +41,6 @@ private enum Direction: String {
 
 extension String {
   fileprivate var directions: [Direction] {
-    let direction = StartsWith<Substring>("(").map { Direction.up }
-      .orElse(StartsWith(")").map { Direction.down })
-    return Many(direction).parse(self)!
+    return self.map { $0 == "{" ? Direction.up : Direction.down }
   }
 }

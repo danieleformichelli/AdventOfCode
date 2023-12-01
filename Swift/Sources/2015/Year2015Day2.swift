@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/2
@@ -39,13 +38,7 @@ private struct Dimensions {
 
 extension String {
   fileprivate var dimensions: [Dimensions] {
-    let dimension = Int.parser()
-      .skip(StartsWith("x"))
-      .take(Int.parser())
-      .skip(StartsWith("x"))
-      .take(Int.parser())
-      .map { Dimensions(length: $0, width: $1, height: $2) }
-
-    return Many(dimension, separator: StartsWith("\n")).parse(self)!
+    let split = self.components(separatedBy: "x")
+    return [Dimensions(length: Int(split[0])!, width: Int(split[1])!, height: Int(split[2])!)]
   }
 }

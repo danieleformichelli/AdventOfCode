@@ -43,19 +43,21 @@ struct Year2015Day9: DayBase {
 }
 
 private struct Route: Hashable {
-  let locations: Set<String>
-
-  init(_ location: String, _ otherLocation: String) {
-    self.locations = [location, otherLocation]
+  let from: String
+  let to: String
+  
+  var locations: [String] {
+    return [self.from, self.to]
   }
 }
 
 extension String {
   fileprivate var distances: [Route: Int] {
-    let id = Prefix<Substring>(minLength: 1) { $0.isLetter }.map(\.asString)
-    let distance = id.skip(StartsWith(" to ")).take(id).skip(StartsWith(" = ")).take(Int.parser()).map { (Route($0, $1), $2) }
-    let distances = Many(distance, separator: StartsWith("\n")).parse(self)!
-    return Dictionary(uniqueKeysWithValues: distances)
+    return Dictionary(uniqueKeysWithValues: self.lines.map {
+      let split = $0.components(separatedBy: " = ")
+      let routeSplit = split[0].components(separatedBy: " to ")
+      return (Route(from: routeSplit[0], to: routeSplit[1]), Int(split[1])!)
+    })
   }
 }
 

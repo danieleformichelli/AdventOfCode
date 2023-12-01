@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/3
@@ -34,10 +33,19 @@ struct Year2015Day3: DayBase {
 
 extension String {
   fileprivate var directions: [Direction] {
-    let direction = StartsWith<Substring>("^").map { Direction.up }
-      .orElse(StartsWith("v").map { Direction.down })
-      .orElse(StartsWith(">").map { Direction.right })
-      .orElse(StartsWith("<").map { Direction.left })
-    return Many(direction).parse(self)!
+    return self.map {
+      switch $0 {
+      case "^":
+        Direction.up
+      case "v":
+        Direction.down
+      case ">":
+        Direction.right
+      case "<":
+        Direction.left
+      default:
+        fatalError("Uknown direction \($0)")
+      }
+    }
   }
 }

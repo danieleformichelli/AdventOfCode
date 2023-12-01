@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/13
@@ -39,23 +38,27 @@ struct Year2015Day13: DayBase {
 
 extension String {
   fileprivate var happinessChanges: [String: [String: Int]] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
-    let multiplier = StartsWith<Substring>(" would gain ").map { 1 }
-      .orElse(StartsWith(" would lose ").map { -1 })
-    let entry = name
-      .take(multiplier)
-      .take(Int.parser())
-      .skip(StartsWith(" happiness units by sitting next to "))
-      .take(name)
-      .skip(StartsWith("."))
-      .map {
-        return ($0, $3, $1 * $2)
+    return self.lines.reduce(into: [:]) { result, line in
+      let split = line.components(separatedBy: " happiness units by sitting next to ")
+      let other = split[1]
+      
+      let whoSplit = split[0].components(separatedBy: " would ")
+      let who = split[0]
+      
+      let changeSplit = whoSplit[1].components(separatedBy: " ")
+      let value: Int
+      switch changeSplit[0] {
+      case "gain":
+        value = Int(changeSplit[1])!
+      case "lose":
+        value = -Int(changeSplit[1])!
+      default:
+        fatalError("Unknown multiplier \(changeSplit[0])")
       }
-    let happinessChanges = Many(entry, separator: StartsWith("\n")).parse(self)!
-    return happinessChanges.reduce(into: [:]) { result, value in
-      var current = result[value.0] ?? [:]
-      current[value.1] = value.2
-      result[value.0] = current
+      
+      var current = result[who] ?? [:]
+      current[other] = value
+      result[who] = current
     }
   }
 }
