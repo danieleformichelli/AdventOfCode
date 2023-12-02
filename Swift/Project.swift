@@ -12,13 +12,10 @@ func yearName(_ year: Int) -> String {
 
 let project = Project(
   name: "AdventOfCode",
-  packages: [
-    .package(url: "https://github.com/pointfreeco/swift-parsing", .upToNextMajor(from: "0.1.0")),
-  ],
   targets: [
     .init(
       name: "AdventOfCode",
-      platform: .macOS,
+      destinations: [.mac],
       product: .commandLineTool,
       bundleId: "df.AdventOfCode",
       infoPlist: .default,
@@ -27,7 +24,7 @@ let project = Project(
     ),
     .init(
       name: "Utils",
-      platform: .macOS,
+      destinations: [.mac],
       product: .staticLibrary,
       bundleId: "df.AdventOfCode.Utils",
       infoPlist: .default,
@@ -41,19 +38,18 @@ func year(_ year: Int) -> [ProjectDescription.Target] {
   return [
     .init(
       name: name,
-      platform: .macOS,
+      destinations: [.mac],
       product: .staticLibrary,
       bundleId: "df.AdventOfCode.\(name)",
       infoPlist: .default,
       sources: ["Sources/\(year)/**"],
       dependencies: [
-        .package(product: "Parsing"),
         .target(name: "Utils"),
       ]
     ),
     .init(
       name: "\(name)Tests",
-      platform: .macOS,
+      destinations: [.mac],
       product: .unitTests,
       bundleId: "df.AdventOfCode.\(name)Tests",
       infoPlist: .default,
