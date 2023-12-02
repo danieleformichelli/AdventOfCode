@@ -65,22 +65,24 @@ private enum Instruction {
 
 extension String {
   fileprivate var instructions: [Instruction] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
-    let half = Skip(StartsWith("hlf ")).take(name).map { Instruction.half($0) }
-    let triple = Skip(StartsWith("tpl ")).take(name).map { Instruction.triple($0) }
-    let increment = Skip(StartsWith("inc ")).take(name).map { Instruction.increment($0) }
-    let jump = Skip(StartsWith("jmp ")).take(Int.parser()).map { Instruction.jump($0) }
-    let jumpIfEven = Skip(StartsWith("jie "))
-      .take(name)
-      .skip(StartsWith(", "))
-      .take(Int.parser())
-      .map { Instruction.jumpIfEven($0, $1) }
-    let jumpIfOne = Skip(StartsWith("jio "))
-      .take(name)
-      .skip(StartsWith(", "))
-      .take(Int.parser())
-      .map { Instruction.jumpIfOne($0, $1) }
-    let instruction = half.orElse(triple).orElse(increment).orElse(jump).orElse(jumpIfEven).orElse(jumpIfOne)
-    return Many(instruction, separator: StartsWith("\n")).parse(self)!
+    return self.lines.map {
+      let split = $0.components(separatedBy: " ")
+      switch split[0] {
+      case "hlf":
+        return .half(split[1])
+      case "tpl":
+        return .triple(split[1])
+      case "inc":
+        return .increment(split[1])
+      case "jmp":
+        return .jump(Int(split[1])!)
+      case "jie":
+        return .jumpIfEven(String(split[1].dropLast()), Int(split[2])!)
+      case "jio":
+        return .jumpIfOne(String(split[1].dropLast()), Int(split[2])!)
+      default:
+        fatalError("Unknown instruction \(split[0])")
+      }
+    }
   }
 }

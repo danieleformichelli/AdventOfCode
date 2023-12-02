@@ -52,17 +52,14 @@ struct Year2015Day16: DayBase {
 
 extension String {
   fileprivate var auntAndCompounds: [Int: [String: Int]] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
-    let compounds = name.skip(StartsWith(": ")).take(Int.parser()).map { ($0, $1) }
-
-    let auntAndCompounds = Skip(StartsWith("Sue "))
-      .take(Int.parser())
-      .skip(StartsWith(": "))
-      .take(Many(compounds, atLeast: 3, separator: StartsWith(", ")))
-      .map {
-        return ($0, Dictionary(uniqueKeysWithValues: $1))
-      }
-
-    return Dictionary(uniqueKeysWithValues: Many(auntAndCompounds, separator: StartsWith("\n")).parse(self)!)
+    return Dictionary(uniqueKeysWithValues: self.lines.enumerated().map { index, line in
+      // Sue 291: akitas: 0, pomeranians: 7, vizslas: 4
+      let dropped = line.drop(while: { $0 != " "}).drop(while: { $0 != " "}).dropFirst()
+      let compounds = dropped.components(separatedBy: ",")
+      return (index + 1, compounds.reduce(into: [:], { result, compound in
+        let split = compound.components(separatedBy: ": ")
+        result[split[0]] = Int(split[1])!
+      }))
+    })
   }
 }

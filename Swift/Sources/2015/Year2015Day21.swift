@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/21
@@ -122,16 +121,10 @@ private struct Stats {
 
 extension String {
   fileprivate var bossStats: Stats {
-    let properties = Skip(StartsWith("Hit Points: "))
-      .take(Int.parser())
-      .skip(StartsWith("\nDamage: "))
-      .take(Int.parser())
-      .skip(StartsWith("\nArmor: "))
-      .take(Int.parser())
-      .map {
-        return Stats(hitPoints: $0, damage: $1, armor: $2)
-      }
-
-    return properties.parse(self)!
+    let lines = self.lines
+    let hitPoints = Int(lines[0].components(separatedBy: ": ")[1])!
+    let damage = Int(lines[1].components(separatedBy: ": ")[1])!
+    let armor = Int(lines[2].components(separatedBy: ": ")[1])!
+    return Stats(hitPoints: hitPoints, damage: damage, armor: armor)
   }
 }

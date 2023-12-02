@@ -5,15 +5,17 @@ import Utils
 /// https://adventofcode.com/2023/day/1
 struct Year2023Day1: DayBase {
   func part1(_ input: String) -> CustomDebugStringConvertible {
-    return Self.solve(input: input, includeWords: false)
+    return input.digits(includeWords: false).sum
   }
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
-    return Self.solve(input: input, includeWords: true)
+    return input.digits(includeWords: true).sum
   }
-  
-  static func solve(input: String, includeWords: Bool) -> Int {
-    return input.lines.map { line in
+}
+
+extension String {
+  func digits(includeWords: Bool) -> [Int] {
+    return self.lines.map { line in
       var first: Int? = nil
       var last: Int? = nil
       for (index, char) in line.enumerated() {
@@ -36,6 +38,6 @@ struct Year2023Day1: DayBase {
         }
       }
       return first! * 10 + last!
-    }.sum
+    }
   }
 }

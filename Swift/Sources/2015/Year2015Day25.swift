@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/25
@@ -43,13 +42,10 @@ extension Point {
 
 extension String {
   fileprivate var requiredCode: Point {
-    let point = Skip(StartsWith("To continue, please consult the code grid in the manual.  Enter the code at row "))
-      .take(Int.parser())
-      .skip(StartsWith(", column "))
-      .take(Int.parser())
-      .skip(StartsWith("."))
-      .map { Point(x: $1, y: $0) }
-    let oneBased = point.parse(self)!
-    return Point(x: oneBased.x - 1, y: oneBased.y - 1)
+    let rowSplit = self.components(separatedBy: " at row ")
+    let row = Int(rowSplit[0])!
+    let columnSplit = rowSplit[1].components(separatedBy: " column ")
+    let column = Int(rowSplit[1].dropLast())!
+    return Point(x: column - 1, y: row - 1)
   }
 }

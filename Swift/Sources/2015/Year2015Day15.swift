@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2015/day/15
@@ -66,21 +65,33 @@ private struct Properties {
 
 extension String {
   fileprivate var ingredients: [Properties] {
-    let name = Prefix<Substring>(minLength: 0) { $0.isLetter }.map(\.asString)
-    let properties = Skip(name)
-      .skip(StartsWith(": capacity "))
-      .take(Int.parser())
-      .skip(StartsWith(", durability "))
-      .take(Int.parser())
-      .skip(StartsWith(", flavor "))
-      .take(Int.parser())
-      .skip(StartsWith(", texture "))
-      .take(Int.parser())
-      .skip(StartsWith(", calories "))
-      .take(Int.parser())
-      .map {
-        return Properties(capacity: $0, durability: $1, flavor: $2, texture: $3, calories: $4)
+    return self.lines.map {
+      let split = $0.components(separatedBy: ": ")
+      let properties = split[1].components(separatedBy: ", ")
+      var capacity: Int = 0
+      var durability: Int = 0
+      var flavor: Int = 0
+      var texture: Int = 0
+      var calories: Int = 0
+      for property in properties {
+        let split = property.components(separatedBy: " ")
+        let value = Int(split[1])!
+        switch split[0] {
+        case "capacity":
+          capacity = value
+        case "durability":
+          durability = value
+        case "flavor":
+          flavor = value
+        case "texture":
+          texture = value
+        case "calories":
+          calories = value
+        default:
+          fatalError("Unknown property \(split[0])")
+        }
       }
-    return Many(properties, separator: StartsWith("\n")).parse(self)!
+      return Properties(capacity: capacity, durability: durability, flavor: flavor, texture: texture, calories: calories)
+    }
   }
 }
