@@ -92,11 +92,21 @@ extension Point {
 
 extension String {
   fileprivate var directions: [[Direction]] {
-    let direction = StartsWith<Substring>("U").map { Direction.up }
-      .orElse(StartsWith("D").map { Direction.down })
-      .orElse(StartsWith("L").map { Direction.left })
-      .orElse(StartsWith("R").map { Direction.right })
-    let codeDirections = Many(direction)
-    return Many(codeDirections, separator: StartsWith("\n")).parse(self)!
+    return self.lines.map { line in
+      return line.map { direction in
+        switch (direction) {
+        case "U":
+          return .up
+        case "D":
+          return .down
+        case "L":
+          return .left
+        case "R":
+          return .right
+        default:
+          fatalError("Unknown direction \(direction)")
+        }
+      }
+    }
   }
 }

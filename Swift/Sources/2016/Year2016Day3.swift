@@ -39,14 +39,9 @@ private struct Triangle {
 
 extension String {
   fileprivate var triangles: [Triangle] {
-    let space = Prefix<Substring> { $0 == " " }
-    let triangle = Skip(space)
-      .take(Int.parser())
-      .skip(space)
-      .take(Int.parser())
-      .skip(space)
-      .take(Int.parser())
-      .map { Triangle(a: $0, b: $1, c: $2) }
-    return Many(triangle, separator: StartsWith("\n")).parse(self)!
+    return self.lines.map { triangle in
+      let split = triangle.components(separatedBy: " ").filter { !$0.isEmpty }
+      return Triangle(a: Int(split[0])!, b: Int(split[1])!, c: Int(split[2])!)
+    }
   }
 }

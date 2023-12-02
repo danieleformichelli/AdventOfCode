@@ -1,6 +1,5 @@
 // Created by Daniele Formichelli.
 
-import Parsing
 import Utils
 
 /// https://adventofcode.com/2016/day/1
@@ -49,9 +48,6 @@ private struct Instruction {
 
 extension String {
   fileprivate var instructions: [Instruction] {
-    let instruction = Prefix<Substring>(minLength: 1, maxLength: 1).take(Int.parser()).map {
-      return Instruction(rotation: $0 == "R" ? .right : .left, distance: $1)
-    }
-    return Many(instruction, separator: StartsWith(", ")).parse(self)!
+    return self.components(separatedBy: ", ").map { Instruction(rotation: $0.first == "R" ? .right : .left, distance: Int(String($0.dropFirst()))!) }
   }
 }

@@ -61,14 +61,13 @@ private struct Room {
 
 extension String {
   fileprivate var rooms: [Room] {
-    let name = Prefix<Substring> { !$0.isNumber }.map(\.asString)
-    let checksum = Prefix<Substring> { $0.isLetter }.map(\.asString)
-    let room = name
-      .take(Int.parser())
-      .skip(StartsWith("["))
-      .take(checksum)
-      .skip(StartsWith("]"))
-      .map { Room(name: $0, sector: $1, checksum: $2) }
-    return Many(room, separator: StartsWith("\n")).parse(self)!
+    return self.lines.map { line in
+      let splitIndex = line.lastIndex(of: "-")!
+      let name = String(line[...splitIndex])
+      let split = String(line[line.index(after: splitIndex)...]).components(separatedBy: "[")
+      let sector = Int(split[0])!
+      let checksum = String(split[1].dropLast())
+      return Room(name: name, sector: sector, checksum: checksum)
+    }
   }
 }
