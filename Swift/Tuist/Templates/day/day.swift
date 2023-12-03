@@ -26,14 +26,12 @@ let template = Template(
               }
             }
 
-            extension Year\(year)Day\(day) {
-              struct Input {
-                let value: Int
-              }
+            struct Input {
+              let value: Int
             }
 
             extension String {
-              fileprivate var parsedInput: [Year\(year)Day\(day).Input] {
+              fileprivate var parsedInput: [Input] {
                 self.lines.map { line in
                   return .init(value: Int(line)!)
                 }
