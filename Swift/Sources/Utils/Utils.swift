@@ -20,6 +20,10 @@ extension String {
     components(separatedBy: "\n")
   }
 
+  public var groupedLines: [[String]] {
+    components(separatedBy: "\n\n").map { $0.lines }
+  }
+
   public var numbers: [Int] {
     components(separatedBy: "\n").compactMap { Int($0) }
   }
@@ -30,6 +34,10 @@ extension String {
 
   public var commaSeparatedNumbers: [Int] {
     components(separatedBy: ",").compactMap { Int($0) }
+  }
+
+  public var spaceSeparatedNumbers: [Int] {
+    components(separatedBy: " ").compactMap { Int($0) }
   }
 
   public var commaSeparatedLines: [[String]] {
