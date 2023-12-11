@@ -5,14 +5,13 @@ import Utils
 /// https://adventofcode.com/2023/day/8
 struct Year2023Day8: DayBase {
   func part1(_ input: String) -> CustomDebugStringConvertible {
-    let instructions = input.instructions
     return Self.solveSingle(from: "AAA", condition: { $0 == "ZZZ" }, instructions: input.instructions)
   }
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
     let instructions = input.instructions
     let current = instructions.nodes.keys.filter { $0.hasSuffix("A") }
-    var firstLoop = current.map {
+    let firstLoop = current.map {
       return Self.solveSingle(from: $0, condition: { $0.hasSuffix("Z") }, instructions: instructions)
     }
     return Utils.lcm(firstLoop)
