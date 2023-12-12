@@ -39,6 +39,9 @@ struct Year2023Day10: DayBase {
             walls += 1
           case .NW, .NE:
             if let unwrappedComingFromNorth = comingFromNorth {
+              if !unwrappedComingFromNorth {
+                walls += 1
+              }
               comingFromNorth = nil
             } else {
               comingFromNorth = true
@@ -62,46 +65,9 @@ struct Year2023Day10: DayBase {
         }
       }
     }
-    for x in minX ..< maxX {
-      var comingFromWest: Bool? = nil
-      var walls = 0
-      for y in minY ..< maxY {
-        let point = Point(x: x, y: y)
-        if loop.contains(point) {
-          switch tiles[point] {
-          case .START:
-            // for the specific input, start is a NS
-            break
-          case .WE:
-            walls += 1
-          case .NW, .SW:
-            if let unwrappedComingFromWest = comingFromWest {
-              comingFromWest = nil
-            } else {
-              comingFromWest = true
-            }
-          case .NE, .SE:
-            if let unwrappedComingFromWest = comingFromWest {
-              if unwrappedComingFromWest {
-                walls += 1
-              }
-              comingFromWest = nil
-            } else {
-              comingFromWest = false
-            }
-          case .NS, .EMPTY, .none:
-            break
-          }
-        } else {
-          if walls % 2 == 0 {
-            inside.remove(point)
-          }
-        }
-      }
-    }
     return inside.count
   }
-  
+
   static func loop(from: Point, tiles: [Point: Tile]) -> [Point] {
     var toExplore = Tile.START.connectsTo(from: from).map { (from: $0, loop: [from]) }
     while let last = toExplore.last {
@@ -130,7 +96,7 @@ enum Tile: String {
   case SW = "7"
   case SE = "F"
   case EMPTY = "."
-  
+
   func connectsTo(from point: Point) -> Set<Point> {
     switch self {
     case .START:
