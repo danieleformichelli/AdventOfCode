@@ -26,7 +26,7 @@ struct Year2023Day14: DayBase {
     var maxX = 0
     var maxY = 0
     for rock in rocks.rounded.union(rocks.cubic) {
-      maxX = max(rock.y, maxY)
+      maxX = max(rock.x, maxX)
       maxY = max(rock.y, maxY)
     }
     
