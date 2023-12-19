@@ -34,7 +34,7 @@ struct Year2023Day19: DayBase {
     } else if current == "R" {
       return 0
     }
-    
+
     let workflow = workflows[current]!
     var constraints = constraints
     var result = 0
@@ -52,7 +52,7 @@ struct Constraints {
   let m: Set<Int>
   let a: Set<Int>
   let s: Set<Int>
-  
+
   func intersect(category: String, range: ClosedRange<Int>) -> Self {
     var x = self.x
     var m = self.m
@@ -73,7 +73,7 @@ struct Constraints {
     }
     return Constraints(x: x, m: m, a: a, s: s)
   }
-  
+
   func exclude(rule: (String, ClosedRange<Int>, String)) -> Self {
     var x = self.x
     var m = self.m
@@ -82,19 +82,19 @@ struct Constraints {
     let reducedRange = max(1, rule.1.lowerBound) ... min(4000, rule.1.upperBound)
     switch rule.0 {
     case "x":
-      x.formSymmetricDifference(reducedRange)
+      x.subtract(reducedRange)
     case "m":
-      m.formSymmetricDifference(reducedRange)
+      m.subtract(reducedRange)
     case "a":
-      a.formSymmetricDifference(reducedRange)
+      a.subtract(reducedRange)
     case "s":
-      s.formSymmetricDifference(reducedRange)
+      s.subtract(reducedRange)
     default:
       fatalError()
     }
     return Constraints(x: x, m: m, a: a, s: s)
   }
-  
+
   var combinations: Int {
     return self.x.count * self.m.count * self.a.count * self.s.count
   }
