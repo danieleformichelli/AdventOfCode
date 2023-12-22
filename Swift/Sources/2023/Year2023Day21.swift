@@ -5,34 +5,67 @@ import Utils
 /// https://adventofcode.com/2023/day/21
 struct Year2023Day21: DayBase {
   func part1(_ input: String) -> CustomDebugStringConvertible {
-    var visited = Set<CacheKey>()
-    var result = Set<Point>()
-    let (start, rocks) = input.startAndRocks
-    Self.solve(start: start, rocks: rocks, steps: 64, visited: &visited, result: &result)
-    return result.count
+    return Self.solve(input: input, steps: 64)
   }
 
   func part2(_ input: String) -> CustomDebugStringConvertible {
-    return 0
+    return Self.solve(input: input, steps: 26501365)
   }
   
-  static func solve(start point: Point, rocks: Set<Point>, steps: Int, visited: inout Set<CacheKey>, result: inout Set<Point>) {
-    guard steps != 0 else {
-      result.insert(point)
-      return
+  static func solve(input: String, steps: Int) -> Int {
+    let (start, rocks) = input.startAndRocks
+    var maxX = 0
+    var maxY = 0
+    for rock in rocks {
+      maxX = max(maxX, rock.x)
+      maxY = max(maxY, rock.y)
     }
-
-    let cacheKey = CacheKey(point: point, steps: steps)
-    if !visited.insert(cacheKey).inserted {
-      return
-    }
+    let modulo = Point(x: maxX, y: maxY)
     
-    for direction in Direction.allCases {
-      let nextPoint = Point(x: point.x + direction.dx, y: point.y + direction.dy)
-      if !rocks.contains(nextPoint) {
-        Self.solve(start: nextPoint, rocks: rocks, steps: steps - 1, visited: &visited, result: &result)
+
+    var visited = Set<Point>([])
+    var remainingSteps: Int
+    if steps % 2 == 0 {
+      remainingSteps = steps
+      visited.insert(start)
+    } else {
+      remainingSteps = steps - 1
+      for direction in Direction.allCases {
+        let nextPoint = Point(x: start.x + direction.dx, y: start.y + direction.dy)
+        visited.insert(nextPoint)
       }
     }
+    
+    var current = visited
+    while remainingSteps > 0 {
+      var next = Set<Point>([])
+      remainingSteps -= 2
+      for point in current {
+        for step1 in Direction.allCases {
+          guard let nextPoint1 = Self.modulo(point: point, rocks: rocks, modulo: modulo, direction: step1) else {
+            continue
+          }
+          for step2 in Direction.allCases {
+            guard let nextPoint2 = Self.modulo(point: nextPoint1, rocks: rocks, modulo: modulo, direction: step2) else {
+              continue
+            }
+            if visited.insert(nextPoint2).inserted {
+              next.insert(nextPoint2)
+            }
+          }
+        }
+      }
+      current = next
+    }
+    return visited.count
+  }
+  
+  static func modulo(point: Point, rocks: Set<Point>, modulo: Point, direction: Direction) -> Point? {
+    let x = (point.x + direction.dx) % modulo.x
+    let y = (point.y + direction.dy) % modulo.y
+    let moduloNextPoint = Point(x: x < 0 ? x + modulo.x : x, y: y)
+    guard !rocks.contains(moduloNextPoint) else { return nil }
+    return moduloNextPoint
   }
 }
 
