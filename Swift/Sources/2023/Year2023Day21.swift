@@ -11,7 +11,7 @@ struct Year2023Day21: DayBase {
   func part2(_ input: String) -> CustomDebugStringConvertible {
     return Self.solve(input: input, steps: 26501365)
   }
-  
+
   static func solve(input: String, steps: Int) -> Int {
     let (start, rocks) = input.startAndRocks
     var maxX = 0
@@ -21,7 +21,7 @@ struct Year2023Day21: DayBase {
       maxY = max(maxY, rock.y)
     }
     let modulo = Point(x: maxX, y: maxY)
-    
+
 
     var visited = Set<Point>([])
     var remainingSteps: Int
@@ -32,10 +32,12 @@ struct Year2023Day21: DayBase {
       remainingSteps = steps - 1
       for direction in Direction.allCases {
         let nextPoint = Point(x: start.x + direction.dx, y: start.y + direction.dy)
-        visited.insert(nextPoint)
+        if !rocks.contains(nextPoint) {
+          visited.insert(nextPoint)
+        }
       }
     }
-    
+
     var current = visited
     while remainingSteps > 0 {
       var next = Set<Point>([])
@@ -49,8 +51,15 @@ struct Year2023Day21: DayBase {
             guard let nextPoint2 = Self.modulo(point: nextPoint1, rocks: rocks, modulo: modulo, direction: step2) else {
               continue
             }
-            if visited.insert(nextPoint2).inserted {
-              next.insert(nextPoint2)
+            if remainingSteps == 2 {
+              // At last 2 steps, we won't be able to go back to next point, so we shouldn't add it to visited
+              if !visited.contains(nextPoint2) {
+                next.insert(nextPoint2)
+              }
+            } else {
+              if visited.insert(nextPoint2).inserted {
+                next.insert(nextPoint2)
+              }
             }
           }
         }
@@ -59,7 +68,7 @@ struct Year2023Day21: DayBase {
     }
     return visited.count
   }
-  
+
   static func modulo(point: Point, rocks: Set<Point>, modulo: Point, direction: Direction) -> Point? {
     let x = (point.x + direction.dx) % modulo.x
     let y = (point.y + direction.dy) % modulo.y
