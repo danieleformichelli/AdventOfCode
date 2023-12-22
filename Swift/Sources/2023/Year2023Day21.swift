@@ -44,11 +44,13 @@ struct Year2023Day21: DayBase {
       remainingSteps -= 2
       for point in current {
         for step1 in Direction.allCases {
-          guard let nextPoint1 = Self.modulo(point: point, rocks: rocks, modulo: modulo, direction: step1) else {
+          let nextPoint1 = Point(x: point.x + step1.dx, y: point.y + step1.dy)
+          guard !Self.isModuloRock(point: nextPoint1, rocks: rocks, modulo: modulo) else {
             continue
           }
           for step2 in Direction.allCases {
-            guard let nextPoint2 = Self.modulo(point: nextPoint1, rocks: rocks, modulo: modulo, direction: step2) else {
+            let nextPoint2 = Point(x: nextPoint1.x + step2.dx, y: nextPoint1.y + step2.dy)
+            guard !Self.isModuloRock(point: nextPoint2, rocks: rocks, modulo: modulo) else {
               continue
             }
             if remainingSteps == 2 {
@@ -69,12 +71,11 @@ struct Year2023Day21: DayBase {
     return visited.count
   }
 
-  static func modulo(point: Point, rocks: Set<Point>, modulo: Point, direction: Direction) -> Point? {
-    let x = (point.x + direction.dx) % modulo.x
-    let y = (point.y + direction.dy) % modulo.y
-    let moduloNextPoint = Point(x: x < 0 ? x + modulo.x : x, y: y)
-    guard !rocks.contains(moduloNextPoint) else { return nil }
-    return moduloNextPoint
+  static func isModuloRock(point: Point, rocks: Set<Point>, modulo: Point) -> Bool {
+    let x = point.x % modulo.x
+    let y = point.y % modulo.y
+    let moduloPoint = Point(x: x < 0 ? x + modulo.x : x, y:  y < 0 ? y + modulo.y : y)
+    return rocks.contains(moduloPoint)
   }
 }
 
