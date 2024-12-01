@@ -1,0 +1,19 @@
+{
+  "name": "adventofcode",
+  "private": true,
+  "repository": "https://github.com/danieleformichelli/AdventOfCode",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint . --fix && prettier . --write --list-different && yarn-deduplicate yarn.lock"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.4.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0",
+    "yarn-deduplicate": "^6.0.2"
+  }
+}
